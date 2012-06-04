@@ -1,0 +1,170 @@
+/*=================================*/
+/* Nivo Slider Demo
+/* November 2010
+/* By: Gilbert Pellegrom
+/* http://dev7studios.com
+/*=================================*/
+
+/*====================*/
+/*=== Reset Styles ===*/
+/*====================*/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, font, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td {
+	margin:0;
+	padding:0;
+	border:0;
+	outline:0;
+	font-weight:inherit;
+	font-style:inherit;
+	font-size:100%;
+	font-family:inherit;
+	vertical-align:baseline;
+}
+body {
+	line-height:0;
+	color:black;
+	background:white;
+}
+table {
+	border-collapse:separate;
+	border-spacing:0;
+}
+caption, th, td {
+	text-align:left;
+	font-weight:normal;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content:"";
+}
+blockquote, q {
+	quotes:"" "";
+}
+/* HTML5 tags */
+header, section, footer,
+aside, nav, article, figure {
+	display: block;
+}
+
+/*===================*/
+/*=== Main Styles ===*/
+/*===================*/
+body {
+	font:14px/1.6 Georgia, Palatino, Palatino Linotype, Times, Times New Roman, serif;
+	color:#ccc;
+	background:#000;
+}
+
+a, a:visited {
+	color:blue;
+	text-decoration:none;
+}
+a:hover, a:active {
+	color:#000;
+	text-decoration:none;
+}
+
+
+.theme-default #slider {
+	position:absolute;
+	z-index:1;
+    margin:-100px auto 0 auto;
+    width:236px; /* Make sure your images are the same size */
+    height:43px; /* Make sure your images are the same size */
+}
+.theme-pascal.slider-wrapper,
+.theme-orman.slider-wrapper {
+    margin-top:0px;
+}
+
+/*====================*/
+/*=== Other Styles ===*/
+/*====================*/
+.clear {
+	clear:both;
+}
+
+#contenedor {
+	background-image:url(img/fondo.jpg);
+	width:1000px;
+	height:600px;
+	margin-left:auto;
+	margin-right:auto;
+	z-index:-1;
+}
+
+#ls {
+	width:68px;
+	height:61px;
+	float:right;
+	padding-top:10px;
+	padding-right:10px;
+}
+
+#ls img {
+	background-image:url(img/ls1.png);
+	
+}
+
+#ls img:hover {
+	background-image:url(img/ls2.png);
+	
+}
+
+#usm {
+	width:68px;
+	height:61px;
+	float:right;
+	padding-top:10px;
+	padding-right:10px;
+}
+#usm img {
+	background-image:url(img/usm.png);
+	
+}
+
+#ie {
+	width:68px;
+	height:61px;
+	float:right;
+	padding-top:10px;
+	padding-right:10px;
+}
+#ie img {
+	background-image:url(img/3ie.png);
+	
+}
+
+#seccionb {
+	padding-top:55px;
+}
+
+#chile {
+	width:68px;
+	height:61px;
+	float:right;
+	padding-top:10px;
+	padding-right:10px;
+}
+#chile img {
+	background-image:url(img/chile.png);
+	
+}
+
+#corfo {
+	width:68px;
+	height:61px;
+	float:right;
+	padding-top:10px;
+	padding-right:10px;
+}
+#corfo img {
+	background-image:url(img/corfo.png);
+	
+}
