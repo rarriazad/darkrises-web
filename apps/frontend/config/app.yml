@@ -1,0 +1,12 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+
+  facebook:
+    app_id: 233902406664495 
+    secret: f9d64b8519a49f04784f9ef66dd051b4 
+    
+  frontend:
+    base_url: http://190.114.255.51/~darkrise/index.php
