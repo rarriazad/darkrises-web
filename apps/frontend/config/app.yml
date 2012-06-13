@@ -6,7 +6,7 @@ all:
 
   facebook:
     app_id: 233902406664495
-    secret: XXXXXXXXXXXXXXXXXXXXXXX
+    secret: XXXXXXXXXXXX
     
   frontend:
     base_url: http://190.114.255.51/~darkrise/index.php
