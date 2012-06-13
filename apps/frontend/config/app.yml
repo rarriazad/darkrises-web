@@ -5,8 +5,8 @@
 all:
 
   facebook:
-    app_id: 233902406664495 
-    secret: f9d64b8519a49f04784f9ef66dd051b4 
+    app_id: 233902406664495
+    secret: XXXXXXXXXXXXXXXXXXXXXXX
     
   frontend:
     base_url: http://190.114.255.51/~darkrise/index.php
