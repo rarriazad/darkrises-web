@@ -77,7 +77,12 @@ body {
                                     url    : 'http://lilith.darkrises.com/backend_dev.php/userinfo/preregisterweb'
                           }).always(function(){
 
-                                        window.history.back();
+                                    if (window.history.length>0){
+                                      window.history.go(-1);
+                                      window.location.href = app_frontend_base_url; 
+                                    }else{
+                                      window.location.href = app_frontend_base_url; 
+                                    }
 
                           });
 */
