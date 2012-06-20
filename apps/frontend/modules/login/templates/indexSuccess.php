@@ -86,12 +86,15 @@ body {
 
                           });
 */
+                      /*** Eliminar esta seccion cuando se active el request a lilith para el registro ***/
                           if (window.history.length>0){
                             window.history.go(-1);
                             window.location.href = app_frontend_base_url; 
                           }else{
                             window.location.href = app_frontend_base_url; 
                           }
+
+                      /*******************************************************************************/
                       }else{
 
                           if (window.history.length>0){
