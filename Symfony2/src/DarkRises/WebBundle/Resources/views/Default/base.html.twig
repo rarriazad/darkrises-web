@@ -1,0 +1,49 @@
+<!Doctype html>
+<html xmlns:fb="http://www.facebook.com/2008/fbml"
+      xmlns:og="http://opengraphprotocol.org/schema/">
+	<head>
+		<title>Dark Rises</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		{% block stylesheets %}
+		{% include 'DarkRisesWebBundle:Default:css.html.twig' %}
+		{% endblock %}
+	</head>
+	<body>
+	{% block lightboxes %}
+		<div class='shadow'></div>
+	{% endblock %}
+		<div class="page">
+			<div class="header head">
+				<img src="{{ asset("img/logo.png") }}" alt="Dark Rises"/>
+			</div>
+		</div>
+		{% block menu %}
+		  {% include 'DarkRisesWebBundle:Default:menu.html.twig' %}
+		{% endblock %}
+		<div class="page main-content">
+			{% block idioma %}
+				{% include 'DarkRisesWebBundle:Default:idioma.html.twig' %}
+			{% endblock %}
+			<div class="body">
+				
+				<div class="main">
+					{% block body %}
+					
+					{% endblock %}
+					<div class="clear"></div>
+				</div>
+			</div>
+			<div class="clear"></div>
+		</div>
+		<div class="menu up">
+			<div class="foot yellow">
+			{% trans %} Dark Rises y todas las imagenes asociadas con Dark Rises son propiedad de © Copyright 2012 Last Seal S A. Todos los Derechos Reservados {% endtrans %}
+			</div>
+		</div>
+		
+		{% block javascript %}
+			{% include 'DarkRisesWebBundle:Default:javascriptMenu.html.twig' %}
+		{% endblock %}
+		
+	</body>
+</html>

@@ -1,0 +1,35 @@
+<div id="idioma">
+	{% if (app.session.locale == 'es') %}
+	<div id="selected-idioma" class="idioma idioma-spanish"></div>
+	{% elseif (app.session.locale == 'en') %}
+	<div id="selected-idioma" class="idioma idioma-english"></div>
+	{% endif %}
+	<div id="flecha-idioma" class="flecha-arriba"/></div>
+	<div id="select-idioma">
+		{% if (app.session.locale != 'es') %}
+		<a href="{{ (("/es//"~app.request.getRequestUri)|replace({ ("/"~app.request.get('_locale')~"/") : ""}))|replace({ "//": "/" }) }}" class="idioma-spanish idioma"></a>
+		{% endif %}
+		{% if (app.session.locale != 'en') %}
+		<a href="{{ (("/en//"~app.request.getRequestUri)|replace({ ("/"~app.request.get('_locale')~"/") : ""}))|replace({ "//": "/" }) }}" class="idioma-english idioma"></a>
+		{% endif %}
+	</div>
+</div>
+<div class="botones">
+	<div class="inside-botones">
+		<div class="ir-al-juego"><div class="ir-al-juego-inside">{% trans %}Ir al Juego{% endtrans %}</div></div>
+		<img src="{{ asset("img/lastSeal.png") }}"/>
+		<img src="{{ asset("img/twitter.png") }}"/>
+	</div>
+</div>
+<div class="breadcrums">
+	<div class="inside-breadcrums">
+		{% for crum in breadcrums %}
+			{% if loop.last %}
+				<span class="white">{{ crum.crum|trans }} </span> 
+			{% else %}
+				<a href="{{ crum.address }}" class="yellow">{{ crum.crum|trans }} > </a>
+			{% endif %}
+		{% endfor %}
+	</div>
+</div>
+

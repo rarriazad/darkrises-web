@@ -1,0 +1,49 @@
+<div class="menu">
+	<div class="header page">
+		<div class="head">
+			<ul class="nav">
+				<li>
+					<div class="menu-buttons button-inicio">
+						<a href="/inicio/" class="menu-buttons">
+							<div class="menu-buttons-inside"> {% trans %} Inicio {% endtrans %}  </div>
+						</a>
+					</div>
+				</li>
+				<li><div class="menu-buttons button-guia"><a href="/guia/" class="menu-buttons">
+					<div class="menu-buttons-inside"> {% trans %} Guia del Juego {% endtrans %}  </div>
+				</a></div></li>
+				<li><div class="menu-buttons button-media"><a href="/media/" class="menu-buttons">
+					<div class="menu-buttons-inside"> {% trans %} Media {% endtrans %}  </div>
+				</a></div></li>
+				<li><div class="menu-buttons button-comunidad"><a class="menu-buttons">
+					<div class="menu-buttons-inside off"> {% trans %} Comunidad {% endtrans %}  </div>
+				</a></div></li>
+				<li><div class="menu-buttons button-biblioteca"><a class="menu-buttons">
+					<div class="menu-buttons-inside off"> {% trans %} Biblioteca {% endtrans %}  </div>
+				</a></div></li>
+				<li><div class="menu-buttons button-comprar"><a class="menu-buttons">
+					<div class="menu-buttons-inside off"> {% trans %} Comprar {% endtrans %}  </div>
+				</a></div></li>
+				<li><div class="menu-buttons button-eventos"><a href="/eventos/" class="menu-buttons">
+					<div class="menu-buttons-inside"> {% trans %} Eventos {% endtrans %}  </div>
+				</a></div></li>
+				<li><div class="login">
+					<div class="login-inside">
+						{% if facebook == null %}
+						<span class="facebook-button"><fb:login-button class="facebook-button" size="large">{% trans %} facebook {% endtrans %}</fb:login-button></span>
+						
+						{% else %}
+						<div class="facebook-button-login">
+						<div class="left">
+							<img src="https://graph.facebook.com/{{ facebook['username'] }}/picture" id="facebook-picture"/>
+						</div>
+						<br/>
+						{{ facebook['name'] }}
+						</div>
+						{% endif %}
+					</div>
+				</div></li>
+			</ul>
+		</div>
+	</div>
+</div>

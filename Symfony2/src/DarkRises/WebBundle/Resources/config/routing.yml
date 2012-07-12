@@ -1,0 +1,24 @@
+DarkRisesWebBundle_localesecondhomepage:
+    pattern:  /{_locale}/{name}/{second}/
+    defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", _locale: es, second: "empty" }
+    requirements:
+        _locale: en|es
+DarkRisesWebBundle_localehomepage:
+    pattern:  /{_locale}/{name}/
+    defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", _locale: es, second: "empty" }
+    requirements:
+        _locale: en|es
+DarkRisesWebBundle_localeindexpage:
+    pattern:  /{_locale}/
+    defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", _locale: es, second: "empty" }
+    requirements:
+        _locale: es|en
+DarkRisesWebBundle_secondhomepage:
+    pattern:  /{name}/{second}/
+    defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", second: "empty" }
+DarkRisesWebBundle_indexpage:
+    pattern:  /{name}/
+    defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", second: "empty"}
+DarkRisesWebBundle_homepage:
+    pattern:  /
+    defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", second: "empty"}

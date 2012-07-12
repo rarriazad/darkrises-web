@@ -1,0 +1,35 @@
+<?xml version="1.0"?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+    <file source-language="es" datatype="plaintext" original="file.ext">
+        <body>
+            <trans-unit id="1">
+                <source>saludo</source>
+                <target>Hola!</target>
+            </trans-unit>
+            <trans-unit id="2">
+                <source>facebook</source>
+                <target>Iniciar Sesión con Facebook</target>
+            </trans-unit>
+            <trans-unit id="3">
+                <source>idioma-selection</source>
+                <target>idioma-spanish</target>
+            </trans-unit>
+            <trans-unit id="4">
+                <source>media</source>
+                <target>Media</target>
+            </trans-unit>
+            <trans-unit id="5">
+                <source>Bestiario</source>
+                <target>Bestiario</target>
+            </trans-unit>
+            <trans-unit id="6">
+                <source>VerMas</source>
+                <target>Ver Mas</target>
+            </trans-unit>
+            <trans-unit id="7">
+                <source>LogininFacebook</source>
+                <target>Login in Facebook</target>
+            </trans-unit>
+        </body>
+    </file>
+</xliff>

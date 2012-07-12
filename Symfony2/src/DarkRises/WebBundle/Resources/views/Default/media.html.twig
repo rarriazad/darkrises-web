@@ -1,0 +1,62 @@
+{% extends 'DarkRisesWebBundle:Default:base.html.twig' %}
+
+ {% block body %}
+     <div class="video-trailer"> 
+     	<iframe class="video" width="560" height="315" src="http://www.youtube.com/embed/EdXSKfnWWzo" frameborder="0" allowfullscreen>
+     	</iframe>
+     </div>
+     <div class="info">
+     	<div class="h2"><div class="inside-h2">{% trans %} Wallpaper {% endtrans %}</div></div>
+     	<div class="inside-info">
+			{% if facebook == null %}
+			<img src="{{ asset("img/wallpaper/mini1.png") }}" />
+			<img src="{{ asset("img/wallpaper/mini2.png") }}" />
+			<img src="{{ asset("img/wallpaper/mini3.png") }}" />
+			<img src="{{ asset("img/wallpaper/mini4.png") }}" />
+			<div class="ver-mas"><div class="ver-mas-inside-logout">{% trans %} LogininFacebook {% endtrans %}</div></div>
+			{% else %}
+			<a href="/media/wallpaper/" class="media-link"><img src="{{ asset("img/wallpaper/mini1.png") }}" /></a>
+			<a href="/media/wallpaper/" class="media-link"><img src="{{ asset("img/wallpaper/mini2.png") }}" /></a>
+			<a href="/media/wallpaper/" class="media-link"><img src="{{ asset("img/wallpaper/mini3.png") }}" /></a>
+			<a href="/media/wallpaper/" class="media-link"><img src="{{ asset("img/wallpaper/mini4.png") }}" /></a>
+			<a href="/media/wallpaper/" class="media-link"><div class="ver-mas"><div class="ver-mas-inside">{% trans %} VerMas {% endtrans %}</div></div></a>
+			{% endif %}
+		</div>
+     </div>
+     <!-- <div class="info">
+     	<div class="h2"><div class="inside-h2">{% trans %} Bestiario {% endtrans %}</div></div>
+     	<div class="inside-info">
+     		{% if facebook == null %}
+			<img src="{{ asset("img/bestiario.png") }}" />
+			<div class="ver-mas"><div class="ver-mas-inside-logout">{% trans %} LogininFacebook {% endtrans %}</div></div>
+			{% else %}
+			<a href="/media/bestiario/" class="media-link"><img src="{{ asset("img/bestiario.png") }}" /></a>
+			<a href="/media/bestiario/" class="media-link"><div class="ver-mas"><div class="ver-mas-inside">{% trans %} VerMas {% endtrans %}</div></div></a>
+			{% endif %}
+     	</div>
+     </div> -->
+     <div class="info">
+     	<div class="h2"><div class="inside-h2">{% trans %} Artwork {% endtrans %}</div></div>
+     	<div class="inside-info">
+     		{% if facebook == null %}
+			<img src="{{ asset("img/monstruos.png") }}" />
+			<div class="ver-mas"><div class="ver-mas-inside-logout">{% trans %} LogininFacebook {% endtrans %}</div></div>
+			{% else %}
+			<a href="/media/artwork/" class="media-link"><img src="{{ asset("img/monstruos.png") }}" /></a>
+			<a href="/media/artwork/" class="media-link"><div class="ver-mas"><div class="ver-mas-inside">{% trans %} VerMas {% endtrans %}</div></div></a>
+			{% endif %}
+     	</div>
+     </div>
+ {% endblock %}
+
+{% block javascript %}
+
+	{{ parent() }}
+	<script type="text/javascript">
+		$("#document").ready(
+			function(){
+				$(".ver-mas").hover(function(){$(this).addClass("ver-mas-hover");},function(){$(this).removeClass("ver-mas-hover");});
+			}
+		);
+	</script>
+{% endblock %}

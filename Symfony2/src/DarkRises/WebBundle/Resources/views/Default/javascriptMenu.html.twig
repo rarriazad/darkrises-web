@@ -1,0 +1,70 @@
+<script src="{{ asset("js/facebook.js") }}" type="text/javascript"></script>
+<script src="http://cufon.shoqolate.com/js/cufon-yui.js?v=1.09i" type="text/javascript"></script>
+<script src="{{ asset("js/copperplate_700.font.js") }}" type="text/javascript"></script>
+<script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script type="text/javascript">
+	jQuery(document).ready(
+		function(){
+			jQuery("#idioma").click(
+				function(){
+					select = jQuery("#select-idioma");
+					if(select.css("display") == "block"){
+						select.hide();
+						$("#flecha-idioma").removeClass("flecha-abajo").addClass("flecha-arriba");
+					}else{
+						select.show();
+						$("#flecha-idioma").addClass("flecha-abajo").removeClass("flecha-arriba");
+					}
+				}
+			);
+			
+			jQuery("#select-idioma").click(function(){jQuery("#idioma").click();});
+			
+			$(".idioma-english").hover(function(){$(this).addClass("idioma-english-hover")},function(){$(this).removeClass("idioma-english-hover")});
+			$(".idioma-spanish").hover(function(){$(this).addClass("idioma-spanish-hover")},function(){$(this).removeClass("idioma-spanish-hover")});
+			
+			$(".button-inicio").hover(
+				function(){
+					$(this).addClass("button-inicio-on").find(".menu-buttons .menu-buttons-inside").addClass("white");
+				},
+				function(){
+					$(this).removeClass("button-inicio-on").find(".menu-buttons .menu-buttons-inside").removeClass("white");
+				}
+			);
+			
+			$(".button-guia").hover(
+				function(){
+					$(this).addClass("button-guia-on").find(".menu-buttons .menu-buttons-inside").addClass("white");
+				},
+				function(){
+					$(this).removeClass("button-guia-on").find(".menu-buttons .menu-buttons-inside").removeClass("white");
+				}
+			);
+			
+			$(".button-media").hover(
+				function(){
+					$(this).addClass("button-media-on").find(".menu-buttons .menu-buttons-inside").addClass("white");
+				},
+				function(){
+					$(this).removeClass("button-media-on").find(".menu-buttons .menu-buttons-inside").removeClass("white");
+				}
+			);
+			
+			$(".button-eventos").hover(
+				function(){
+					$(this).addClass("button-eventos-on").find(".menu-buttons .menu-buttons-inside").addClass("white");
+				},
+				function(){
+					$(this).removeClass("button-eventos-on").find(".menu-buttons .menu-buttons-inside").removeClass("white");
+				}
+			);
+			
+			$(".shadow").height($("body").height()).click(
+				function(){
+					$(this).hide();
+					$(".shadow-inside").hide();
+				}
+			);
+		}
+	);
+</script>

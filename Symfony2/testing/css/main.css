@@ -1,0 +1,427 @@
+*{
+	border: 0px solid;
+}
+
+.clear{
+	clear: both;
+}
+
+a{
+	text-decoration: none; 	
+}
+
+.up{
+	margin-top: -20px;
+}
+
+body{
+	background: url("../img/fondo.png") no-repeat center top #000000;
+	padding: 0;
+	border: 0;
+	margin: 0;
+	font-family: verdana, helvetica, sans-serif;
+	font-size: 14px;
+	color: white;
+}
+
+.menu{
+	background: url("../img/fondo_menu.png") repeat-x top;
+	height: 121px;
+	padding: 0;
+	z-index: 50000001;
+	position: relative;
+}
+
+.header{	
+	height: 120px;
+	width: 1100px !important;
+	margin: 0;
+	padding: 0;
+	border: 0px;
+	z-index: 50000000;
+	position: relative;
+}
+
+.main-content{
+	background: url("../img/fondo_main.png") repeat-y;
+	height: 1000px auto;
+	width: 1006px !important;
+	z-index: 0;
+	position: relative;
+	margin-top: -15px !important; 
+	padding: 10px 0px 20px 0px;
+	border: 0px;
+}
+
+.body{
+	margin-top:-10px;
+	clear: both;
+	padding: 5px;
+	height: auto;
+}
+
+.main{
+	width: 990px !important;
+}
+
+.foot{
+	background: url("../img/fondo-copyright.png") repeat-x center;
+	clear: both;
+	height: 43px;
+	font-family: copperplate, serif;
+	padding-top: 30px;
+	text-align: center;
+}
+
+.nav{
+    float: left;
+    width: 100%;
+    padding-left:0;
+    padding-right:0;
+}
+
+.nav li{
+	float: left;
+	display: inline;
+	list-style: none;
+}
+.menu-buttons{
+	width: 110px;
+	height: 107px;
+	overflow: hidden;
+	display: block;
+	margin-top: -10px;
+}
+
+.menu-buttons-inside{
+	padding: 80px 10px 0px 10px;
+	font-family: copperplate, serif;
+	color: #cfcf74;
+	margin: 0 auto;
+	text-align:center;
+}
+
+.button-inicio{
+	background: url("../img/botones/inicio/off.png") no-repeat center;
+}
+
+.button-inicio-on{
+	background: url("../img/botones/inicio/on.png") no-repeat center;
+}
+
+.button-guia{
+	background: url("../img/botones/guia/off.png") no-repeat center;
+}
+
+.button-guia-on{
+	background: url("../img/botones/guia/on.png") no-repeat center;
+}
+
+.button-media{
+	background: url("../img/botones/media/off.png") no-repeat center;
+}
+
+.button-media-on{
+	background: url("../img/botones/media/on.png") no-repeat center;
+}
+
+.button-comunidad{
+	background: url("../img/botones/comunidad.png") no-repeat center;
+}
+
+.button-biblioteca{
+	background: url("../img/botones/biblioteca.png") no-repeat center;
+}
+
+.button-comprar{
+	background: url("../img/botones/comprar.png") no-repeat center;
+}
+
+.button-eventos{
+	background: url("../img/botones/eventos/off.png") no-repeat center;
+}
+
+.button-eventos-on{
+	background: url("../img/botones/eventos/on.png") no-repeat center;
+}
+
+.login{
+	background: url("../img/background-login.png") no-repeat center;
+	width: 319px;
+	height: 101px;
+	margin-top: -10px;
+}
+
+.login-inside{
+	height:100%;
+	padding:10px 10px;
+	display: table-cell;
+	vertical-align: middle;
+	font-family: copperplate, serif;
+}
+
+#idioma{
+	background: url("../img/fondo-idioma.png") no-repeat center;
+	width: 100px;
+	height: 41px;
+	float: right;
+	margin-top: -15px;
+	z-index: 49999999;
+}
+
+.breadcrums{
+	background: url("../img/fondo-breadcrums.png") no-repeat center;
+	width: 704px;
+	height: 41px;
+	float: left;
+	margin-top: -15px;
+	color: #cfcf74;
+	font-family: copperplate, serif !important;
+}
+
+.inside-breadcrums{
+	margin: 10px 20px;
+}
+
+.botones{
+	background: url("../img/fondo_botones.png") no-repeat center;
+	height: 41px;
+	float: right;
+	margin-top: -17px;
+	z-index: 49999999;
+	width: 188px;
+}
+
+.inside-botones{
+	margin: 3px 10px;
+}
+
+.facebook-button{
+	margin: 25px 15px;
+}
+
+.facebook-button-login{
+	width: 100%;
+	margin: 15px 15px;
+}
+
+#select-idioma{
+	margin-top: 25px;
+	width: 133px;
+	height: 40px;
+	float: left;
+	position: absolute;
+	display: none;
+	background: url("../img/fondo-idioma-select.png") no-repeat center;
+	z-index: 49999998;
+}
+
+.idioma{
+	width: 60px;
+	height: 25px;
+	float: left;
+	margin-left: 5px;
+	margin-top: 5px;
+}
+
+a.idioma{
+	display: block;
+}
+
+.flecha-abajo{
+	background: url("../img/botones/idiomas/flecha/abajo.png") no-repeat center;
+}
+
+.flecha-arriba{
+	background: url("../img/botones/idiomas/flecha/arriba.png") no-repeat center;
+}
+
+#flecha-idioma{
+	width: 10px;
+	height: 25px;
+	float: right;
+	margin-right: 15px;
+	margin-top: 5px;
+}
+
+.idioma-english{
+	background: url("../img/botones/idiomas/english/normal.png") no-repeat center;
+}
+
+.idioma-english-hover{
+	background: url("../img/botones/idiomas/english/over.png") no-repeat center;
+}
+
+.idioma-spanish{
+	background: url("../img/botones/idiomas/spanish/normal.png") no-repeat center;
+}
+
+.idioma-spanish-hover{
+	background: url("../img/botones/idiomas/spanish/over.png") no-repeat center;
+}
+
+.video-trailer{
+	background: url("../img/fondo-youtube.png") no-repeat center;
+	width: 711px;
+	height: 435px;
+	margin: 0 auto;
+}
+
+.video{
+	margin: 60px 70px;
+}
+
+.white{
+	color: white !important;
+}
+
+.yellow{
+	 color: #cfcf74;
+	 text-decoration: none;
+}
+
+.info{
+	clear: both;
+	width: 990px !important;
+}
+
+.h2{
+	background: url("../img/fondo-header2.png") no-repeat center;
+	width: 445px;
+	height: 62px;
+	float: left;
+	margin: 15px 0;
+}
+
+.h2-right{
+	background: url("../img/fondo-header2.png") no-repeat center;
+	width: 445px;
+	height: 62px;
+	float: right;
+	margin: 15px 0;
+}
+
+.inside-h2{
+	font-family: copperplate, serif;
+	color: white;
+	margin: 10px;
+	font-size: 30px;
+}
+
+.inside-info{
+	clear: both;
+	margin: 40px;
+}
+
+.img{
+	border: 0;
+}
+
+.ver-mas{
+	background: url("../img/ver-mas.png") no-repeat center;
+	margin: 0 auto;
+	width: 192px;
+	height: 40px;
+	clear: both;
+	text-transform:capitalize;
+	text-decoration:none;
+}
+
+.ver-mas-hover{
+	background: url("../img/ver-mas-hover.png") no-repeat center;
+	color: #743c1a;
+}
+
+.ver-mas-inside{
+	padding-top: 10px;
+	text-align: center;
+	color: black;
+}
+
+.ver-mas-inside-logout{
+	padding-top: 10px;
+	text-align: center;
+	color: black;
+}
+
+.mini{
+	margin: 0 auto;
+}
+
+.media-link{
+	color: black;
+	text-decoration:none;
+}
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
+}
+
+.off{
+	filter: progid:DXImageTransform.Microsoft.Chroma(Color=#cccccc)
+	        progid:DXImageTransform.Microsoft.DropShadow(OffX=3, OffY=3, Color=#000000);
+	text-shadow: 3px 3px 5px black;
+	color: #600000;
+
+}
+
+.artwork{
+	margin: 0px 5px;
+}
+
+.ir-al-juego{
+	background: url("../img/irAlJuego.png") no-repeat center;
+	width: 95px;
+	height: 32px;
+	font-family: copperplate, serif;
+	float: left;
+}
+
+.ir-al-juego-inside{
+	float: right;
+	height: 30px;
+	width: 50px;
+	color: black;
+}
+
+.text-center{
+	text-align: center;
+}
+
+.shadow{
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	background-color: black;
+	z-index:100000000001;
+	-moz-opacity: 0.8;
+	opacity:.80;
+	filter: alpha(opacity=80);
+}
+
+.shadow-inside {
+	display: none;
+	position: absolute;
+	margin: 0 auto;
+	top: 25%;
+	left: 20%;
+	z-index:100000000002;
+	-moz-opacity: 1;
+	opacity:1;
+	filter: alpha(opacity=1);
+}
+
+.shadow-padding{
+	padding: 10px;
+}
+
+.copperplate{
+	font-family: copperplate, serif;
+}

@@ -1,0 +1,14 @@
+[11-Jul-2012 21:19:08 UTC] PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Warning: php_uname() has been disabled for security reasons in /home/darkrise/symfony2/darkrises.com/vendor/symfony/src/Symfony/Component/Console/Output/ConsoleOutput.php line 65' in /home/darkrise/symfony2/darkrises.com/vendor/symfony/src/Symfony/Component/HttpKernel/Debug/ErrorHandler.php:67
+Stack trace:
+#0 [internal function]: Symfony\Component\HttpKernel\Debug\ErrorHandler->handle(2, 'php_uname() has...', '/home/darkrise/...', 65, Array)
+#1 /home/darkrise/symfony2/darkrises.com/vendor/symfony/src/Symfony/Component/Console/Output/ConsoleOutput.php(65): php_uname('s')
+#2 /home/darkrise/symfony2/darkrises.com/vendor/symfony/src/Symfony/Component/Console/Output/ConsoleOutput.php(46): Symfony\Component\Console\Output\ConsoleOutput->hasStdoutSupport()
+#3 /home/darkrise/symfony2/darkrises.com/vendor/symfony/src/Symfony/Component/Console/Application.php(114): Symfony\Component\Console\Output\ConsoleOutput->__construct()
+#4 /home/darkrise/symfony2/darkrises.com/app in /home/darkrise/symfony2/darkrises.com/vendor/symfony/src/Symfony/Component/HttpKernel/Debug/ErrorHandler.php on line 67
+[11-Jul-2012 21:20:37 UTC] PHP Fatal error:  Uncaught exception 'ErrorException' with message 'Warning: php_uname() has been disabled for security reasons in /home/darkrise/symfony2/darkrises.com/vendor/symfony/src/Symfony/Component/Console/Output/ConsoleOutput.php line 65' in /home/darkrise/symfony2/darkrises.com/vendor/symfony/src/Symfony/Component/HttpKernel/Debug/ErrorHandler.php:67
+Stack trace:
+#0 [internal function]: Symfony\Component\HttpKernel\Debug\ErrorHandler->handle(2, 'php_uname() has...', '/home/darkrise/...', 65, Array)
+#1 /home/darkrise/symfony2/darkrises.com/vendor/symfony/src/Symfony/Component/Console/Output/ConsoleOutput.php(65): php_uname('s')
+#2 /home/darkrise/symfony2/darkrises.com/vendor/symfony/src/Symfony/Component/Console/Output/ConsoleOutput.php(46): Symfony\Component\Console\Output\ConsoleOutput->hasStdoutSupport()
+#3 /home/darkrise/symfony2/darkrises.com/vendor/symfony/src/Symfony/Component/Console/Application.php(114): Symfony\Component\Console\Output\ConsoleOutput->__construct()
+#4 /home/darkrise/symfony2/darkrises.com/app in /home/darkrise/symfony2/darkrises.com/vendor/symfony/src/Symfony/Component/HttpKernel/Debug/ErrorHandler.php on line 67

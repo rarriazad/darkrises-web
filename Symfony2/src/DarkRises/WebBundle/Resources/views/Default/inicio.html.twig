@@ -1,0 +1,128 @@
+{% extends 'DarkRisesWebBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style type="text/css">
+		.inicio-quees{
+			background: url("{{ asset("img/inicio/quees/off.png") }}") no-repeat center;
+			width: 456px;
+			height: 139px;
+		}
+		.inicio-quees-inside{
+			font-family: copperplate, serif;
+			font-size: 30px;
+			padding-top: 35px;
+			padding-left: 160px;
+			text-align: center;
+			color: white;
+		}
+		.inicio-quees-over{
+			background: url("{{ asset("img/inicio/quees/on.png") }}") no-repeat center;
+		}
+		
+		.inicio-pack{
+			background: url("{{ asset("img/inicio/pack/off.png") }}") no-repeat center;
+			width: 456px;
+			height: 139px;
+		}
+		.inicio-pack-over{
+			background: url("{{ asset("img/inicio/pack/on.png") }}") no-repeat center;
+		}
+		.inicio-pack-inside{
+			font-family: copperplate, serif;
+			font-size: 18px;
+			padding-top: 45px;
+			padding-left: 10px;
+			text-align: center;
+			color: white;
+		}
+		
+		.red-glow{
+			filter: glow(color=#c00000,strength=3);
+			text-shadow: 0 0 0.2em #c00000, 0 0 0.2em #c00000, 0 0 0.2em #c00000;
+		}
+		
+		.principiante{
+			width: 799px;
+			height: 1034px;
+			background: url("{{ asset("img/inicio/fondo-principiante.png") }}") no-repeat center;
+		}
+		
+		h1{
+			font-size: 48px;
+			text-transform: capitalize;
+		}
+	</style>
+{% endblock %}
+
+ {% block body %}
+     <div class="video-trailer"> 
+     	<iframe class="video" width="560" height="315" src="http://www.youtube.com/embed/EdXSKfnWWzo" frameborder="0" allowfullscreen>
+     	</iframe>
+     </div>
+     <div class="info">
+     	<div class="inside-info">
+     		<div class="left text-center">
+				<a href="/guia/queues/"/>
+					<div class="inicio-quees"/>
+						<div class="inicio-quees-inside">
+							¿Qué es <br/> Dark Rises?				
+						</div>
+					</div>
+				</a>
+				<!-- <a href="/guia/queues/"/> -->
+					<div class="inicio-pack clear"/>
+						<div class="inicio-pack-inside">
+							¡Registrate y obtén el <br/> Pack de Principiante!				
+						</div>
+					</div>
+				<!-- </a> -->
+				<a id="principiante-popup" class="yellow"> {% trans %}¿Qué es esto? {% endtrans %}</a>
+				
+			</div>
+		</div>
+     </div>
+ {% endblock %}
+ 
+ {% block lightboxes %}
+ 	{{ parent() }}
+ 	<div class="shadow-inside principiante yellow text-center" name="principiante"/>
+ 		<div class="shadow-padding">
+			<h1 class="copperplate"> {% trans %} Pack de Principiante {% endtrans %}</h1>
+			<p> Dark Rises es un juego que por el momento aún no está funcional en las redes sociales, es por eso que si te registras ahora, y como muestra de agradecimiento a la buena fe de nuestro juego, le regalaremos un pack de principiante que constará de todos los objetos que se listan a continuación. </p>
+			<p> Para registrarte, lo único que debes hacer es iniciar tu sesión de Facebook en nuestra página. Muchas gracias por el apoyo y esperamos que pronto estén divirtiéndose junto a nosotros. </p>
+		</div>
+	</div>
+ {% endblock %}
+
+{% block javascript %}
+	{{ parent() }}
+	<script type="text/javascript">
+		$("#document").ready(
+			function(){
+				$("#principiante-popup").click(
+					function(e){
+						$(".shadow").show();
+						$(".principiante").show();
+					}
+				);
+			
+				$(".inicio-quees").hover(
+					function(){
+						$(this).addClass("inicio-quees-over").find(".inicio-quees-inside").addClass("red-glow");
+					},function(){
+						$(this).removeClass("inicio-quees-over").find(".inicio-quees-inside").removeClass("red-glow");
+					}
+				);
+				
+				$(".inicio-pack").hover(
+					function(){
+						$(this).addClass("inicio-pack-over").find(".inicio-pack-inside").addClass("red-glow");
+					},function(){
+						$(this).removeClass("inicio-pack-over").find(".inicio-pack-inside").removeClass("red-glow");
+					}
+				);
+			}
+		);
+	</script>
+{% endblock %}
