@@ -355,10 +355,12 @@ a.idioma{
 
 .left{
 	float: left;
+	padding: 5px;
 }
 
 .right{
 	float: right;
+	padding: 5px;
 }
 
 .off{
@@ -410,7 +412,7 @@ a.idioma{
 	display: none;
 	position: absolute;
 	margin: 0 auto;
-	top: 25%;
+	top: 10%;
 	left: 20%;
 	z-index:100000000002;
 	-moz-opacity: 1;
@@ -419,9 +421,30 @@ a.idioma{
 }
 
 .shadow-padding{
-	padding: 10px;
+	padding: 30px;
 }
 
 .copperplate{
 	font-family: copperplate, serif;
+}
+
+table{
+	border: none;
+	width: 100%;
+}
+table td{
+	border: none;
+}
+
+.footer{
+	background: url("../img/fondo-footer.png") repeat-x top;
+	height: 144px;
+	padding: 0;
+	z-index: 50000001;
+	position: relative;
+	text-align: center;
+}
+
+.credits{
+	margin-top: -30px;
 }

@@ -52,6 +52,15 @@
 			font-size: 48px;
 			text-transform: capitalize;
 		}
+		
+		.popup-info{
+			width: 620px;
+			text-align: left;
+		}
+		
+		.popup-info td{
+			width: 30%;
+		}
 	</style>
 {% endblock %}
 
@@ -90,7 +99,103 @@
  		<div class="shadow-padding">
 			<h1 class="copperplate"> {% trans %} Pack de Principiante {% endtrans %}</h1>
 			<p> Dark Rises es un juego que por el momento aún no está funcional en las redes sociales, es por eso que si te registras ahora, y como muestra de agradecimiento a la buena fe de nuestro juego, le regalaremos un pack de principiante que constará de todos los objetos que se listan a continuación. </p>
-			<p> Para registrarte, lo único que debes hacer es iniciar tu sesión de Facebook en nuestra página. Muchas gracias por el apoyo y esperamos que pronto estén divirtiéndose junto a nosotros. </p>
+			<div class="left">
+				<img src="{{ asset("img/inicio/popup/guantes.png") }}"/>
+			</div>
+			<div class="left popup-info">
+				<span class="yellow"> GUANTES NIVEL 2 (mejorado +8) </span>
+				<table class="white">
+					<tr>
+						<td> Mejoras </td>
+						<td> +0 </td>
+						<td> +8 </td>
+					</tr>
+					<tr>
+						<td> Defensa </td>
+						<td> 1 </td>
+						<td> 9 </td>
+					</tr>
+				</table>
+			</div>
+			<div class="left clear">
+				<img src="{{ asset("img/inicio/popup/calzado.png") }}"/>
+			</div>
+			<div class="left popup-info">
+				<span class="yellow"> CALZADO NIVEL 3 (mejorado +8) </span>
+				<table class="white">
+					<tr>
+						<td> Mejoras </td>
+						<td> +0 </td>
+						<td> +8 </td>
+					</tr>
+					<tr>
+						<td> Def. Mágica </td>
+						<td> 1 </td>
+						<td> 9 </td>
+					</tr>
+				</table>
+			</div>
+			<div class="left clear">
+				<img src="{{ asset("img/inicio/popup/canillera.png") }}"/>
+			</div>
+			<div class="left popup-info">
+				<span class="yellow"> PROTECTOR LIGERO NIVEL 1 (mejorado +8) </span>
+				<table class="white">
+					<tr>
+						<td> Mejoras </td>
+						<td> +0 </td>
+						<td> +8 </td>
+					</tr>
+					<tr>
+						<td> Defensa </td>
+						<td> 2 </td>
+						<td> 18 </td>
+					</tr>
+					<tr>
+						<td> Def. Mágica </td>
+						<td> 2 </td>
+						<td> 18 </td>
+					</tr>
+				</table>
+			</div>
+			<div class="left clear">
+				<img src="{{ asset("img/inicio/popup/cuchillo.png") }}"/>
+			</div>
+			<div class="left popup-info">
+				<span class="yellow"> CUCHILLO NIVEL 1 (mejorado +8) </span>
+				<table class="white">
+					<tr>
+						<td> Mejoras </td>
+						<td> +0 </td>
+						<td> +8 </td>
+					</tr>
+					<tr>
+						<td> Daño</td>
+						<td> 30 - 40 </td>
+						<td> 78 - 96 </td>
+					</tr>
+					<tr>
+						<td> Daño Mágico </td>
+						<td> 30 - 40 </td>
+						<td> 78 - 96 </td>
+					</tr>
+				</table>
+			</div>
+			<div class="left clear">
+				<img src="{{ asset("img/inicio/popup/bono.png") }}"/>
+			</div>
+			<div class="left popup-info">
+				<span class="yellow"> ESPACIO EXTRA PARA BONO EN EQUIPO </span>
+				<p class="white"> Con la energía de manos hábiles, obtendrás un nuevo espacio para insertar un bono adicional a tu equipo y mejorarlo más aún para tener un equipo único.</p>
+			</div>
+			<div class="left clear">
+				<img src="{{ asset("img/inicio/popup/fondo.png") }}"/>
+			</div>
+			<div class="left popup-info">
+				<span class="yellow"> FONDO EXCLUSIVO PARA AVATAR </span>
+				<p class="white">Este fondo sólo lo tendrán las personas que obtuvieron este pack, fondo limitado y de colección para los jugadores.</p>
+			</div>
+			<p class="clear"> Para registrarte, lo único que debes hacer es iniciar tu sesión de Facebook en nuestra página. Muchas gracias por el apoyo y esperamos que pronto estén divirtiéndose junto a nosotros. </p>
 		</div>
 	</div>
  {% endblock %}
