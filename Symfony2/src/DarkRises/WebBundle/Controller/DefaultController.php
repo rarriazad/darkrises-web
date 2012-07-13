@@ -8,6 +8,29 @@ include_once __DIR__.'/../facebook/facebook.php';
 
 class DefaultController extends Controller
 {
+	public function wallpaperAction($number, $address)
+    {
+    	$userInfo = $this->setFacebook();
+    	
+    	if($userInfo != null){
+			return $this->render('DarkRisesWebBundle:Default:seen-wallpaper.html.twig', 
+        		array(
+        			'wallpaper' => "img/wallpaper/highres/".$number."/".$address
+        		)
+        	);
+		}else{
+        	return $this->render('DarkRisesWebBundle:Default:inicio.html.twig', 
+        		array(
+        			'facebook' => $userInfo, 
+        			'breadcrums' => array( 
+        				0 => array('crum' => "Dark Rises", 'address' => "/" )
+        			)
+        		)
+        	);
+        }
+			 
+    }
+    
     public function indexAction($name, $second)
     {	
 		$userInfo = $this->setFacebook();

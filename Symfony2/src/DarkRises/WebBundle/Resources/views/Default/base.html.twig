@@ -41,7 +41,11 @@
 			</div>
 			<img src="{{ asset("img/credits.png") }}" class="credits" />
 		</div>
-		
+		<div style="display: none;">
+			{% block hidden %}
+				{% include 'DarkRisesWebBundle:Default:hideMenu.html.twig' %}
+			{% endblock %}
+		</div>
 		{% block javascript %}
 			{% include 'DarkRisesWebBundle:Default:javascriptMenu.html.twig' %}
 		{% endblock %}

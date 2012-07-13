@@ -16,6 +16,9 @@ DarkRisesWebBundle_localeindexpage:
 DarkRisesWebBundle_secondhomepage:
     pattern:  /{name}/{second}/
     defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", second: "empty" }
+DarkRisesWebBundle_wallapershomepage:
+    pattern:  /wallpaper/highres/{number}/{address}
+    defaults: { _controller: DarkRisesWebBundle:Default:wallpaper, number: "empty", address: "empty"}
 DarkRisesWebBundle_indexpage:
     pattern:  /{name}/
     defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", second: "empty"}

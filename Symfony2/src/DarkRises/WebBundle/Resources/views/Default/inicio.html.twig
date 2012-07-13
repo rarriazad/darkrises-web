@@ -66,8 +66,19 @@
 
  {% block body %}
      <div class="video-trailer"> 
-     	<iframe class="video" width="560" height="315" src="http://www.youtube.com/embed/EdXSKfnWWzo" frameborder="0" allowfullscreen>
-     	</iframe>
+     	<div id="video">
+           <object width="640" height="390" style="visibility: visible;background-color:black;" id="smluiswf0" data="https://www.youtube.com/v/EdXSKfnWWzo?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0" waitforclick="false" wmode="transparent" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash">
+              <param value="smluiswf0" name="id">
+              <param value="https://www.youtube.com/v/EdXSKfnWWzo?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0" name="swfSrc">
+              <param value="640" name="width">
+              <param value="390" name="height">
+              <param value="false" name="waitforclick">
+              <param value="transparent" name="wmode">
+              <param value="always" name="allowscriptaccess">
+              <param value="true" name="allowfullscreen">
+              <embed width="640" height="390" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="https://www.youtube.com/v/EdXSKfnWWzo?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0">
+           </object>
+       </div>
      </div>
      <div class="info">
      	<div class="inside-info">
@@ -198,6 +209,12 @@
 			<p class="clear"> Para registrarte, lo único que debes hacer es iniciar tu sesión de Facebook en nuestra página. Muchas gracias por el apoyo y esperamos que pronto estén divirtiéndose junto a nosotros. </p>
 		</div>
 	</div>
+ {% endblock %}
+ 
+ {% block hidden %}
+ 	{{ parent() }}
+ 	<img src="{{ asset("img/inicio/pack/on.png") }}" />
+ 	<img src="{{ asset("img/inicio/quees/on.png") }}" />
  {% endblock %}
 
 {% block javascript %}

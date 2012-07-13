@@ -30,9 +30,13 @@
 				<li><div class="login">
 					<div class="login-inside">
 						{% if facebook == null %}
-						<span class="facebook-button"><fb:login-button class="facebook-button" size="large">{% trans %} facebook {% endtrans %}</fb:login-button></span>
-						
+						<span class="facebook-button">
+							<fb:login-button class="facebook-button" id="auth-loginlink" size="large">{% trans %} facebook {% endtrans %}</fb:login-button>
+						</span>
 						{% else %}
+						<span class="facebook-button" style="display: none;">
+							<fb:login-button class="facebook-button" id="auth-loginlink" size="large">{% trans %} facebook {% endtrans %}</fb:login-button>
+						</span>
 						<div class="facebook-button-login">
 						<div class="left">
 							<img src="https://graph.facebook.com/{{ facebook['username'] }}/picture" id="facebook-picture"/>
