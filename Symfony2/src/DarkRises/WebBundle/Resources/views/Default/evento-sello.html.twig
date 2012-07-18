@@ -1,0 +1,300 @@
+{% extends 'DarkRisesWebBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style type="text/css">
+		body{
+			background: url("{{ asset("/img/eventos/sello/fondo-arriba.png") }}") no-repeat center top #000000 !important;
+		}
+		.main-content{
+			background: none !important;
+		}
+		.counter{
+			background: url("{{ asset("/img/eventos/sello/piedra-arriba.png") }}") no-repeat center top;
+			width: 979px;
+			height: 325px;
+			margin-top: -10px;
+			margin-right: 1000px;
+			padding-top: 50px;
+		}
+		.sello{
+			background: url("{{ asset("/img/eventos/sello/piedra-abajo.png") }}") no-repeat center top;
+			width: 1029px;
+			height: 1472px;
+			text-align: center;
+			margin-top: 100px;
+			padding-top: 150px;
+		}
+		.end{
+			height: 300px;
+			background: url("{{ asset("/img/eventos/sello/fondo-abajo.png") }}") no-repeat center top;
+		}
+		.pop-up{
+			width: 1000px;
+			height: 1293px;
+			background: url("{{ asset("/img/eventos/sello/pop-fondo.png") }}") no-repeat center top;
+			margin: auto;
+		}
+		.numeros{
+			background: url("{{ asset("/img/eventos/sello/counter-fondo.png") }}") no-repeat center top;
+			width: 485px;
+			height: 149px;
+		}
+		.margin{
+			margin-left: 350px;
+		}
+		.cantidad{
+			letter-spacing: 24px;
+			padding-top: 20px;
+			padding-left: 40px;
+			font-size: 100px;
+		}
+		.white-glow{
+			filter: glow(color=#ffffff,strength=1);
+			text-shadow: 0 0 0.1em #ffffff;
+		}
+		.black-glow{
+			filter: glow(color=#000000,strength=1);
+			text-shadow: 0 0 0.2em #000000;
+		}
+		.padding{
+			margin-top: 150px;
+		}
+		.counter-popup{
+			color: #fe6000;
+			text-align: center;
+			margin-left: 300px;
+		}
+		.shadow-padding{
+			padding-right: 170px;
+			padding-left: 170px;
+			text-align: left;
+		}
+		.flash{
+			width: 465px;
+			height: 440px;
+			margin-top: 100px;
+			position:relative;
+			z-index:1;
+		}
+		.sello-icons{
+			margin-top: -430px;
+			width: 465px;
+			height: 440px;
+			margin-left: 295px;
+			margin-right: auto;
+			position: absolute;
+			z-index: 10;
+		}
+		.sello-icon-interrogacion{
+			width: 60px;
+			height: 61px;
+			background: url("{{ asset("/img/eventos/sello/sello-icon-interrogacion/off.png") }}") no-repeat center;
+			margin: auto;
+			display: block;
+			margin-top: 5px;
+			margin-right: 206px;
+		}
+		.sello-icon-interrogacion-hover{
+			background: url("{{ asset("/img/eventos/sello/sello-icon-interrogacion/over.png") }}") no-repeat center;
+		}
+		.sello-icon-key{
+			width: 60px;
+			height: 77px;
+			background: url("{{ asset("/img/eventos/sello/sello-icon-key/off.png") }}") no-repeat center;
+			margin: auto;
+			display: block;
+			margin-top: 17px;
+			margin-right: 51px;
+		}
+		.sello-icon-key-hover{
+			background: url("{{ asset("/img/eventos/sello/sello-icon-key/over.png") }}") no-repeat center;
+		}
+		.sello-icon-media{
+			width: 60px;
+			height: 77px;
+			background: url("{{ asset("/img/eventos/sello/sello-icon-media/off.png") }}") no-repeat center;
+			margin: auto;
+			display: block;
+			margin-top: 50px;
+			margin-right: 29px;
+		}
+		.sello-icon-key-media{
+			background: url("{{ asset("/img/eventos/sello/sello-icon-media/over.png") }}") no-repeat center;
+		}
+	</style>
+{% endblock %}
+
+{% block main %}
+	<div class="counter">
+		<div class="numeros margin">
+			<div class="cantidad copperplate white-glow">
+				00000
+			</div>
+		</div>
+		<div class="counter-popup">¿Qué es ésto?</div>
+	</div>
+	<div class="sello">
+		 <object id="FlashID" class="flash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" >
+			<param name="movie" value="{{ asset("/img/eventos/sello/animacionsello.swf") }}" />
+			<param name="quality" value="high" />
+			<param name="wmode" value="transparent" />
+			<param name="swfversion" value="6.0.65.0" />
+			<!-- Esta etiqueta param indica a los usuarios de Flash Player 6.0 r65 o posterior que descarguen la versión más reciente de Flash Player. Elimínela si no desea que los usuarios vean el mensaje. -->
+			<!-- <param name="expressinstall" value="Scripts/expressInstall.swf" /> -->
+			<param name="BGCOLOR" value="#D6D6D6" />
+			<!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
+			<!--[if !IE]>-->
+			<object type="application/x-shockwave-flash" data="{{ asset("/img/eventos/sello/animacionsello.swf") }}" width="465" height="440">
+			  <!--<![endif]-->
+			  <param name="quality" value="high" />
+			  <param name="wmode" value="transparent" />
+			  <param name="swfversion" value="6.0.65.0" />
+			  <!--<param name="expressinstall" value="Scripts/expressInstall.swf" />-->
+			  <param name="BGCOLOR" value="#D6D6D6" />
+			  <!-- El navegador muestra el siguiente contenido alternativo para usuarios con Flash Player 6.0 o versiones anteriores. -->
+			  <div>
+				<h4>El contenido de esta página requiere una versión más reciente de Adobe Flash Player.</h4>
+				<p><a href="http://www.adobe.com/go/getflashplayer"><img src="http://www.adobe.com/images/shared/download_buttons/get_flash_player.gif" alt="Obtener Adobe Flash Player" width="112" height="33" /></a></p>
+			  </div>
+			  <!--[if !IE]>-->
+			</object>
+		<!--<![endif]-->
+	  </object>
+	  <div class="sello-icons">
+	  	<a class="sello-icon-interrogacion" href="/guia/quees/"></a>
+	  	<a class="sello-icon-key" href="/guia/quees/"></a>
+	  	<a class="sello-icon-media" href="/media/"></a>
+	  </div>
+	</div>
+{% endblock %}
+
+{% block lightboxes %}
+	{{ parent() }}
+	<div class="shadow-inside pop-up text-center" name="principiante"/>
+ 		<div class="shadow-padding">
+ 			<div class="numeros">
+				<div class="cantidad copperplate white-glow">
+					00000
+				</div>
+			</div>
+			
+			<p class="black-glow">
+			Todo empezó una noche en que una estrella fugaz pasó por los cielos<br/>
+			sin que nadie supiera que era exactamente.<br/>
+			<br/>
+			Con el pasar de los días, muchos fenómenos extraños fueron ocurriendo,<br/>
+			hechos bizarros y paranormales empezaron a aparecer en la prensa</br>
+			mundial.<br/>
+			<br/>
+			Avistamientos de criaturas sobrenaturales empezaron a hacerse<br/> 
+			muy común, hasta tal punto que uno de ellas ha aparecido</br>
+			para contar exactamente que ha ocurrido.<br/>
+			<br/>
+			Ueyotl, como se hace llamar este ser, dice que previo al<br/>
+			paso de esta estrella, algunas criaturas oscuras pedían<br/>
+			sacrificios para dar la posibilidad de juntar</br>
+			almas elegidas y tener la posibilidad de abrir un portal<br/>
+			que sólo sería posible si esas almas estuvieran<br/>
+			recolectadas antes del paso de la estrella fugaz.<br/>
+			<br/>
+			La estrella ha pasado y el portal ha sido abierto,<br/>
+			miles de criaturas han pasado a este mundo y corren <br/>
+			librememente por la noche dando rienda suelta a sus<br/>
+			deseos de sangre.<br/>
+			<br/>
+			Ueyotl dice que sólo hay una manera de cerrarlo y <br/>
+			hacer que las criaturas se devuelvan a su dimensión.<br/>
+			<br/>
+			Debemos reunir la mayor cantidad de apoyo de todas<br/>
+			las personas que lean estas líneas.</br>
+			La condición es una sóla, inscribirse en esta página<br/>
+			a través de Facebook para que vayan recibiendo<br/>
+			notícias de este evento.<br/>
+			<br/>
+			Además de eso, Ueyotl ha dicho que cada 2500<br/>
+			apoyos, él liberará un desafío para todos.<br/> 
+			No sabemos en qué consiste dichos desafíos<br/>
+			pero sólo hay una manera de averiguarlo.<br/>
+			<br/>
+			Únete a esta tarea y logremos cerrar el<br/> portal.<br/>
+			<br/>
+			</p>
+ 		</div>
+ 	</div>
+{% endblock %}
+
+{% block end %}
+	<div class="end">
+	</div>
+	{{ parent() }}
+{% endblock %}
+
+
+{% block javascript %}
+	{{ parent() }}
+	<script type="text/javascript">
+		$(document).ready(
+			function(){
+				$(".counter-popup").click(
+					function(e){
+						$(".shadow").show();
+						$(".pop-up").show();
+					}
+				);
+				
+				$(".sello-icon-interrogacion").hover(
+					function(){
+						$(this).addClass("sello-icon-interrogacion-hover")
+					},
+					function(){
+						$(this).removeClass("sello-icon-interrogacion-hover")
+					}
+				);
+				$(".sello-icon-key").hover(
+					function(){
+						$(this).addClass("sello-icon-key-hover")
+					},
+					function(){
+						$(this).removeClass("sello-icon-key-hover")
+					}
+				);
+				$(".sello-icon-media").hover(
+					function(){
+						$(this).addClass("sello-icon-key-media")
+					},
+					function(){
+						$(this).removeClass("sello-icon-key-media")
+					}
+				);
+				setInterval(
+					$.ajax({
+						url: "/counter/",
+						type: "GET",
+						success: function(object){
+							$(".cantidad").html(object);
+						}//,
+						//error: function(){alert("Fail!")}
+					})
+					,300000
+				);
+			});
+	</script>
+	{% if session == 'first' %}
+	<script type="text/javascript">
+		$(document).ready(
+			function(){
+				$(".counter-popup").click();
+			}
+		);
+	</script>
+	{% endif %}
+{% endblock %}
+
+{% block hidden %}
+	{{ parent() }}
+	<img src="{{ asset("/img/eventos/sello/sello-icon-interrogacion/over.png") }}"/>
+	<img src="{{ asset("/img/eventos/sello/sello-icon-key/over.png") }}"/>
+	<img src="{{ asset("/img/eventos/sello/sello-icon-media/over.png") }}"/>
+{% endblock %}
+	
