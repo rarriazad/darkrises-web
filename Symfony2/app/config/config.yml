@@ -15,6 +15,7 @@ framework:
     session:
         default_locale: es
         auto_start:     true
+        lifetime:       86400
 
 # Twig Configuration
 twig:

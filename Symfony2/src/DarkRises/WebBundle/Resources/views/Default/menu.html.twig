@@ -1,5 +1,5 @@
 <div class="menu">
-	<div class="header page">
+	<div class="header">
 		<div class="head">
 			<ul class="nav">
 				<li>
@@ -31,14 +31,19 @@
 					<div class="login-inside">
 						{% if facebook == null %}
 						<span class="facebook-button">
-							<fb:login-button class="facebook-button" id="auth-loginlink" size="large">{% trans %} facebook {% endtrans %}</fb:login-button>
+						<div class="left">
+							<img src="{{ asset("/img/botones/facebook-empty.png") }}" />
+						</div>
+						<div class="right padding-top">
+							<fb:login-button id="auth-loginlink" size="large">{% trans %} facebook {% endtrans %}</fb:login-button>
+						</div>
 						</span>
 						{% else %}
 						<span class="facebook-button" style="display: none;">
 							<fb:login-button class="facebook-button" id="auth-loginlink" size="large">{% trans %} facebook {% endtrans %}</fb:login-button>
 						</span>
 						<div class="facebook-button-login">
-						<div class="left">
+						<div class="left facebook-photo">
 							<img src="https://graph.facebook.com/{{ facebook['username'] }}/picture" id="facebook-picture"/>
 						</div>
 						<br/>

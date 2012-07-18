@@ -24,6 +24,7 @@
 			{% block idioma %}
 				{% include 'DarkRisesWebBundle:Default:idioma.html.twig' %}
 			{% endblock %}
+			{% block main %}
 			<div class="body">
 				
 				<div class="main">
@@ -33,14 +34,18 @@
 					<div class="clear"></div>
 				</div>
 			</div>
+			{% endblock %}
 			<div class="clear"></div>
 		</div>
+		{% block end %}
 		<div class="footer up">
+			{% block footer %}
 			<div class="foot yellow">
 			{% trans %} Dark Rises y todas las imagenes asociadas con Dark Rises son propiedad de © Copyright 2012 Last Seal S A. Todos los Derechos Reservados {% endtrans %}
 			</div>
-			<img src="{{ asset("img/credits.png") }}" class="credits" />
+			{% endblock %}
 		</div>
+		{% endblock %}
 		<div style="display: none;">
 			{% block hidden %}
 				{% include 'DarkRisesWebBundle:Default:hideMenu.html.twig' %}

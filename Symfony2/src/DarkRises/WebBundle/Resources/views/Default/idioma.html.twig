@@ -4,7 +4,7 @@
 	{% elseif (app.session.locale == 'en') %}
 	<div id="selected-idioma" class="idioma idioma-english"></div>
 	{% endif %}
-	<div id="flecha-idioma" class="flecha-arriba"/></div>
+	<div id="flecha-idioma" class="flecha-abajo"/></div>
 	<div id="select-idioma">
 		{% if (app.session.locale != 'es') %}
 		<a href="{{ (("/es//"~app.request.getRequestUri)|replace({ ("/"~app.request.get('_locale')~"/") : ""}))|replace({ "//": "/" }) }}" class="idioma-spanish idioma"></a>
