@@ -5,7 +5,7 @@ namespace DarkRises\WebBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
-include_once __DIR__.'/../facebook/facebook.php';
+include_once __DIR__.'/../Facebook/facebook.php';
 
 class DefaultController extends Controller
 {

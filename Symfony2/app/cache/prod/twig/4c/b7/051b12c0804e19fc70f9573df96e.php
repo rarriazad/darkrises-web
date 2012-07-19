@@ -63,17 +63,17 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/piedra-abajo.png"), "html", null, true);
         echo "\") no-repeat center top;
 \t\t\twidth: 1029px;
-\t\t\theight: 1472px;
+\t\t\theight: 1372px;
 \t\t\ttext-align: center;
 \t\t\tmargin-top: 100px;
 \t\t\tpadding-top: 150px;
 \t\t}
 \t\t.end{
-\t\t\theight: 300px;
+\t\t\theight: 200px;
 \t\t\tbackground: url(\"";
         // line 30
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/fondo-abajo.png"), "html", null, true);
-        echo "\") no-repeat center top;
+        echo "\") no-repeat center bottom;
 \t\t}
 \t\t.pop-up{
 \t\t\twidth: 1000px;
