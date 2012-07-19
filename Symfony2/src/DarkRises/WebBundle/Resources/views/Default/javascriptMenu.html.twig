@@ -2,6 +2,7 @@
 <script src="http://cufon.shoqolate.com/js/cufon-yui.js?v=1.09i" type="text/javascript"></script>
 <script src="{{ asset("js/copperplate_700.font.js") }}" type="text/javascript"></script>
 <script src="http://code.jquery.com/jquery-1.7.2.min.js" type="text/javascript"></script>
+<script src="{{ asset("js/jquery.xdomainajax.js") }}" type="text/javascript"></script>
 <script type="text/javascript">
 	jQuery(document).ready(
 		function(){
@@ -19,6 +20,11 @@
 			);
 			
 			jQuery("#select-idioma").click(function(){jQuery("#idioma").click();});
+			
+			$(".ir-al-juego").hover(
+				function(){$(".proximamente").show()},
+				function(){$(".proximamente").hide()}
+			);
 			
 			$(".idioma-english").hover(function(){$(this).addClass("idioma-english-hover")},function(){$(this).removeClass("idioma-english-hover")});
 			$(".idioma-spanish").hover(function(){$(this).addClass("idioma-spanish-hover")},function(){$(this).removeClass("idioma-spanish-hover")});
@@ -59,11 +65,24 @@
 				}
 			);
 			
+			$(".shadow-inside").prepend("<div class='close'></div>");
+			
 			$(".shadow").height($("body").height()).click(
 				function(){
 					$(this).hide();
 					$(".shadow-inside").hide();
 				}
+			);
+			
+			
+			$(".close").click(
+				function(){
+					$(".shadow").hide();
+					$(".shadow-inside").hide();
+				}
+			).hover(
+				function(){$(this).addClass("close-over")},
+				function(){$(this).removeClass("close-over")}
 			);
 		}
 	);

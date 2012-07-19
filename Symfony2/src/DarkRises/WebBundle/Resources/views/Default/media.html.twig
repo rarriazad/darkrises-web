@@ -13,7 +13,7 @@
 			<img src="{{ asset("img/wallpaper/mini2.png") }}" />
 			<img src="{{ asset("img/wallpaper/mini3.png") }}" />
 			<img src="{{ asset("img/wallpaper/mini4.png") }}" />
-			<div class="ver-mas"><div class="ver-mas-inside-logout">{% trans %} LogininFacebook {% endtrans %}</div></div>
+			<a href="#facebook" class="media-link link-to-login"><div class="ver-mas"><div class="ver-mas-inside-logout">{% trans %} LogininFacebook {% endtrans %}</div></div></a>
 			{% else %}
 			<a href="/media/wallpaper/" class="media-link"><img src="{{ asset("img/wallpaper/mini1.png") }}" /></a>
 			<a href="/media/wallpaper/" class="media-link"><img src="{{ asset("img/wallpaper/mini2.png") }}" /></a>
@@ -40,7 +40,7 @@
      	<div class="inside-info">
      		{% if facebook == null %}
 			<img src="{{ asset("img/monstruos.png") }}" />
-			<div class="ver-mas"><div class="ver-mas-inside-logout">{% trans %} LogininFacebook {% endtrans %}</div></div>
+			<a href="#facebook" class="media-link link-to-login"><div class="ver-mas"><div class="ver-mas-inside-logout">{% trans %} LogininFacebook {% endtrans %}</div></div></a>
 			{% else %}
 			<a href="/media/artwork/" class="media-link"><img src="{{ asset("img/monstruos.png") }}" /></a>
 			<a href="/media/artwork/" class="media-link"><div class="ver-mas"><div class="ver-mas-inside">{% trans %} VerMas {% endtrans %}</div></div></a>
@@ -56,6 +56,8 @@
 		$("#document").ready(
 			function(){
 				$(".ver-mas").hover(function(){$(this).addClass("ver-mas-hover");},function(){$(this).removeClass("ver-mas-hover");});
+				
+				$(".link-to-login").click(function(){$("#auth-loginlink").css("border", "solid 3px #cfcf74")})
 			}
 		);
 	</script>

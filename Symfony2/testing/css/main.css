@@ -14,6 +14,19 @@ a{
 	margin-top: -20px;
 }
 
+.head{
+	height: 141px;
+}
+
+.proximamente{
+	border: #8e8e48 2px solid;
+	background: #d1d179;
+	display: none;
+	position: absolute;
+	margin-top: 30px;
+	padding: 3px;
+}
+
 body{
 	background: url("../img/fondo.png") no-repeat center top #000000;
 	padding: 0;
@@ -27,13 +40,13 @@ body{
 .menu{
 	background: url("../img/fondo_menu.png") repeat-x top;
 	height: 121px;
-	padding: 0;
+	padding: 2px;
 	z-index: 50000001;
 	position: relative;
 }
 
 .header{	
-	height: 120px;
+	height: 70px;
 	margin: 0;
 	padding: 0;
 	border: 0px;
@@ -47,7 +60,7 @@ body{
 	width: 1006px !important;
 	z-index: 0;
 	position: relative;
-	margin-top: -15px !important; 
+	margin-top: -100px !important; 
 	padding: 10px 0px 20px 0px;
 	border: 0px;
 }
@@ -73,7 +86,10 @@ body{
 }
 
 .nav{
-    float: left;
+    width: 1026px !important;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     padding-left:0;
     padding-right:0;
 }
@@ -150,8 +166,8 @@ body{
 }
 
 .login-inside{
-	height:100%;
-	padding:10px 5px;
+	height: 51px;
+	padding:10px 5px 0px 0px;
 	display: table-cell;
 	vertical-align: middle;
 	font-family: copperplate, serif;
@@ -172,12 +188,16 @@ body{
 	margin: 3.5px !important;
 }
 
+.facebook-logout{
+	margin-right: 30px;
+	margin-left: 170px;
+}
+
 #idioma{
 	background: url("../img/fondo-idioma.png") no-repeat center;
 	width: 100px;
 	height: 41px;
 	float: right;
-	margin-top: -15px;
 	z-index: 49999999;
 }
 
@@ -186,7 +206,6 @@ body{
 	width: 704px;
 	height: 41px;
 	float: left;
-	margin-top: -15px;
 	color: #cfcf74;
 	font-family: copperplate, serif !important;
 }
@@ -199,7 +218,6 @@ body{
 	background: url("../img/fondo_botones.png") no-repeat center;
 	height: 41px;
 	float: right;
-	margin-top: -17px;
 	z-index: 49999999;
 	width: 188px;
 }
@@ -463,4 +481,16 @@ table td{
 
 .credits{
 	margin-top: -30px;
+}
+
+.close{
+	background: url("../img/botones/x/off.png") no-repeat center;
+	width: 46px;
+	height: 45px;
+	display: block;
+	float: right;
+}
+
+.close-over{
+	background: url("../img/botones/x/on.png") no-repeat center;
 }

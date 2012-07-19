@@ -13,7 +13,7 @@
 			background: url("{{ asset("/img/eventos/sello/piedra-arriba.png") }}") no-repeat center top;
 			width: 979px;
 			height: 325px;
-			margin-top: -10px;
+			margin-top: 60px;
 			margin-right: 1000px;
 			padding-top: 50px;
 		}
@@ -64,6 +64,7 @@
 			color: #fe6000;
 			text-align: center;
 			margin-left: 300px;
+			cursor: pointer;
 		}
 		.shadow-padding{
 			padding-right: 170px;
@@ -73,15 +74,24 @@
 		.flash{
 			width: 465px;
 			height: 440px;
-			margin-top: 100px;
+			margin-top: 200px;
 			position:relative;
 			z-index:1;
+		}
+		.flash-wrapper{
+			background: url("{{ asset("/img/eventos/sello/background-sello.png") }}") no-repeat center;
+			display: block;
+			margin-left: auto;
+			margin-right: auto;
+			width: 500px;
+			height: 500px;
+			padding-top: 50px;
 		}
 		.sello-icons{
 			margin-top: -430px;
 			width: 465px;
 			height: 440px;
-			margin-left: 295px;
+			margin-left: 30px;
 			margin-right: auto;
 			position: absolute;
 			z-index: 10;
@@ -135,6 +145,7 @@
 		<div class="counter-popup">¿Qué es ésto?</div>
 	</div>
 	<div class="sello">
+		<div class="flash-wrapper">
 		 <object id="FlashID" class="flash" classid="clsid:D27CDB6E-AE6D-11cf-96B8-444553540000" >
 			<param name="movie" value="{{ asset("/img/eventos/sello/animacionsello.swf") }}" />
 			<param name="quality" value="high" />
@@ -161,11 +172,13 @@
 			</object>
 		<!--<![endif]-->
 	  </object>
-	  <div class="sello-icons">
+	   <div class="sello-icons">
 	  	<a class="sello-icon-interrogacion" href="/guia/quees/"></a>
 	  	<a class="sello-icon-key" href="/guia/quees/"></a>
 	  	<a class="sello-icon-media" href="/media/"></a>
 	  </div>
+	  </div>
+	 
 	</div>
 {% endblock %}
 
@@ -269,12 +282,18 @@
 				);
 				setInterval(
 					$.ajax({
-						url: "/counter/",
+						url: "http://lilith.darkrises.com/backend.php/userinfo/getsouls/",
 						type: "GET",
+						crossDomain : true,
+						dataType: "jsonp",
 						success: function(object){
-							$(".cantidad").html(object);
-						}//,
-						//error: function(){alert("Fail!")}
+							if(object["souls"] < 10000)
+								object["souls"] = "00" + object["souls"];
+							else if(object["souls"] < 1000)	
+								object["souls"] = "0" + object["souls"];
+							$(".cantidad").html(object["souls"]);
+						},
+						error: function(){alert("Fail!")}
 					})
 					,300000
 				);

@@ -1,6 +1,6 @@
 <div class="menu">
 	<div class="header">
-		<div class="head">
+		<div>
 			<ul class="nav">
 				<li>
 					<div class="menu-buttons button-inicio">
@@ -28,26 +28,26 @@
 					<div class="menu-buttons-inside"> {% trans %} Eventos {% endtrans %}  </div>
 				</a></div></li>
 				<li><div class="login">
-					<div class="login-inside">
+					<div class="login-inside" id="facebook">
 						{% if facebook == null %}
 						<span class="facebook-button">
 						<div class="left">
 							<img src="{{ asset("/img/botones/facebook-empty.png") }}" />
 						</div>
 						<div class="right padding-top">
-							<fb:login-button id="auth-loginlink" size="large">{% trans %} facebook {% endtrans %}</fb:login-button>
+							<fb:login-button id="auth-loginlink" autologoutlink="true" size="large">{% trans %} facebook {% endtrans %}</fb:login-button>
 						</div>
 						</span>
 						{% else %}
-						<span class="facebook-button" style="display: none;">
-							<fb:login-button class="facebook-button" id="auth-loginlink" size="large">{% trans %} facebook {% endtrans %}</fb:login-button>
-						</span>
 						<div class="facebook-button-login">
 						<div class="left facebook-photo">
 							<img src="https://graph.facebook.com/{{ facebook['username'] }}/picture" id="facebook-picture"/>
 						</div>
 						<br/>
 						{{ facebook['name'] }}
+							<div class="right">
+								<fb:login-button class="facebook-logout" id="auth-loginlink" size="small">Cerrar Sesión</fb:login-button>
+							</div>
 						</div>
 						{% endif %}
 					</div>

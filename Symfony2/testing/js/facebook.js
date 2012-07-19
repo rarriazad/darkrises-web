@@ -31,9 +31,7 @@
 						url : 'http://developers.darkrises.com/fmartinez/backend.php/userinfo/preregisterweb',
 						//error: function(){alert("Error!");}
 					}).always(function(){
-						if (window.history.length>0){
-						 //window.location.reload();
-						}
+						 	window.location.reload();
 					});
 				}
 			},  {scope: 'email,user_about_me,user_games_activity,user_groups,publish_actions'});
