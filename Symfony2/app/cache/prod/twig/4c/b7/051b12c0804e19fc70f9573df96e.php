@@ -67,26 +67,28 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\ttext-align: center;
 \t\t\tmargin-top: 100px;
 \t\t\tpadding-top: 150px;
+\t\t\tmargin-bottom: -700px;
 \t\t}
 \t\t.end{
-\t\t\theight: 200px;
+\t\t\theight: 700px;
 \t\t\tbackground: url(\"";
-        // line 30
+        // line 31
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/fondo-abajo.png"), "html", null, true);
         echo "\") no-repeat center bottom;
+\t\t\tz-index: 0;
 \t\t}
 \t\t.pop-up{
 \t\t\twidth: 1000px;
 \t\t\theight: 1293px;
 \t\t\tbackground: url(\"";
-        // line 35
+        // line 37
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/pop-fondo.png"), "html", null, true);
         echo "\") no-repeat center top;
 \t\t\tmargin: auto;
 \t\t}
 \t\t.numeros{
 \t\t\tbackground: url(\"";
-        // line 39
+        // line 41
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/counter-fondo.png"), "html", null, true);
         echo "\") no-repeat center top;
 \t\t\twidth: 485px;
@@ -96,9 +98,9 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\tmargin-left: 350px;
 \t\t}
 \t\t.cantidad{
-\t\t\tletter-spacing: 24px;
-\t\t\tpadding-top: 20px;
-\t\t\tpadding-left: 40px;
+\t\t\tletter-spacing: 13px;
+\t\t\tpadding-left: 35px;
+\t\t\tpadding-top: 18px;
 \t\t\tfont-size: 100px;
 \t\t}
 \t\t.white-glow{
@@ -132,7 +134,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t}
 \t\t.flash-wrapper{
 \t\t\tbackground: url(\"";
-        // line 82
+        // line 84
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/background-sello.png"), "html", null, true);
         echo "\") no-repeat center;
 \t\t\tdisplay: block;
@@ -155,7 +157,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\twidth: 60px;
 \t\t\theight: 61px;
 \t\t\tbackground: url(\"";
-        // line 102
+        // line 104
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-interrogacion/off.png"), "html", null, true);
         echo "\") no-repeat center;
 \t\t\tmargin: auto;
@@ -165,7 +167,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t}
 \t\t.sello-icon-interrogacion-hover{
 \t\t\tbackground: url(\"";
-        // line 109
+        // line 111
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-interrogacion/over.png"), "html", null, true);
         echo "\") no-repeat center;
 \t\t}
@@ -173,7 +175,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\twidth: 60px;
 \t\t\theight: 77px;
 \t\t\tbackground: url(\"";
-        // line 114
+        // line 116
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-key/off.png"), "html", null, true);
         echo "\") no-repeat center;
 \t\t\tmargin: auto;
@@ -183,7 +185,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t}
 \t\t.sello-icon-key-hover{
 \t\t\tbackground: url(\"";
-        // line 121
+        // line 123
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-key/over.png"), "html", null, true);
         echo "\") no-repeat center;
 \t\t}
@@ -191,7 +193,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\twidth: 60px;
 \t\t\theight: 77px;
 \t\t\tbackground: url(\"";
-        // line 126
+        // line 128
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-media/off.png"), "html", null, true);
         echo "\") no-repeat center;
 \t\t\tmargin: auto;
@@ -201,7 +203,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t}
 \t\t.sello-icon-key-media{
 \t\t\tbackground: url(\"";
-        // line 133
+        // line 135
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-media/over.png"), "html", null, true);
         echo "\") no-repeat center;
 \t\t}
@@ -209,10 +211,10 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 ";
     }
 
-    // line 138
+    // line 140
     public function block_main($context, array $blocks = array())
     {
-        // line 139
+        // line 141
         echo "\t<div class=\"counter\">
 \t\t<div class=\"numeros margin\">
 \t\t\t<div class=\"cantidad copperplate white-glow\">
@@ -225,7 +227,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t<div class=\"flash-wrapper\">
 \t\t <object id=\"FlashID\" class=\"flash\" classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" >
 \t\t\t<param name=\"movie\" value=\"";
-        // line 150
+        // line 152
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/animacionsello.swf"), "html", null, true);
         echo "\" />
 \t\t\t<param name=\"quality\" value=\"high\" />
@@ -237,7 +239,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\t<!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
 \t\t\t<!--[if !IE]>-->
 \t\t\t<object type=\"application/x-shockwave-flash\" data=\"";
-        // line 159
+        // line 161
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/animacionsello.swf"), "html", null, true);
         echo "\" width=\"465\" height=\"440\">
 \t\t\t  <!--<![endif]-->
@@ -266,10 +268,10 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 ";
     }
 
-    // line 185
+    // line 187
     public function block_lightboxes($context, array $blocks = array())
     {
-        // line 186
+        // line 188
         echo "\t";
         $this->displayParentBlock("lightboxes", $context, $blocks);
         echo "
@@ -327,23 +329,23 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 ";
     }
 
-    // line 240
+    // line 242
     public function block_end($context, array $blocks = array())
     {
-        // line 241
+        // line 243
         echo "\t<div class=\"end\">
 \t</div>
 \t";
-        // line 243
+        // line 245
         $this->displayParentBlock("end", $context, $blocks);
         echo "
 ";
     }
 
-    // line 247
+    // line 249
     public function block_javascript($context, array $blocks = array())
     {
-        // line 248
+        // line 250
         echo "\t";
         $this->displayParentBlock("javascript", $context, $blocks);
         echo "
@@ -395,16 +397,16 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\t\t\t\t\t\$(\".cantidad\").html(object[\"souls\"]);
 \t\t\t\t\t\t},
 \t\t\t\t\t\terror: function(){alert(\"Fail!\")}
-\t\t\t\t\t})
-\t\t\t\t\t,300000
+\t\t\t\t\t}),
+\t\t\t\t\t300000
 \t\t\t\t);
 \t\t\t});
 \t</script>
 \t";
-        // line 302
+        // line 304
         if (isset($context["session"])) { $_session_ = $context["session"]; } else { $_session_ = null; }
         if (($_session_ == "first")) {
-            // line 303
+            // line 305
             echo "\t<script type=\"text/javascript\">
 \t\t\$(document).ready(
 \t\t\tfunction(){
@@ -416,25 +418,29 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
         }
     }
 
-    // line 313
+    // line 315
     public function block_hidden($context, array $blocks = array())
     {
-        // line 314
+        // line 316
         echo "\t";
         $this->displayParentBlock("hidden", $context, $blocks);
         echo "
 \t<img src=\"";
-        // line 315
+        // line 317
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-interrogacion/over.png"), "html", null, true);
         echo "\"/>
 \t<img src=\"";
-        // line 316
+        // line 318
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-key/over.png"), "html", null, true);
         echo "\"/>
 \t<img src=\"";
-        // line 317
+        // line 319
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-media/over.png"), "html", null, true);
         echo "\"/>
+\t<img src=\"";
+        // line 320
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/pop-fondo.png"), "html", null, true);
+        echo "\" />
 ";
     }
 
@@ -450,6 +456,6 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  434 => 317,  430 => 316,  426 => 315,  421 => 314,  418 => 313,  406 => 303,  403 => 302,  345 => 248,  342 => 247,  336 => 243,  332 => 241,  329 => 240,  271 => 186,  268 => 185,  239 => 159,  227 => 150,  214 => 139,  211 => 138,  203 => 133,  193 => 126,  185 => 121,  175 => 114,  167 => 109,  157 => 102,  134 => 82,  88 => 39,  81 => 35,  73 => 30,  61 => 21,  50 => 13,  41 => 7,  34 => 4,  31 => 3,);
+        return array (  440 => 320,  436 => 319,  432 => 318,  428 => 317,  423 => 316,  420 => 315,  408 => 305,  405 => 304,  347 => 250,  344 => 249,  338 => 245,  334 => 243,  331 => 242,  273 => 188,  270 => 187,  241 => 161,  229 => 152,  216 => 141,  213 => 140,  205 => 135,  195 => 128,  187 => 123,  177 => 116,  169 => 111,  159 => 104,  136 => 84,  90 => 41,  83 => 37,  74 => 31,  61 => 21,  50 => 13,  41 => 7,  34 => 4,  31 => 3,);
     }
 }

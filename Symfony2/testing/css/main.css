@@ -112,6 +112,7 @@ body{
 	color: #cfcf74;
 	margin: 0 auto;
 	text-align:center;
+	line-height: 100%;
 }
 
 .button-inicio{
@@ -194,6 +195,8 @@ body{
 	padding: 5px;
 	background: url("../img/logout.png") no-repeat center;
 	cursor: pointer;
+	font-size: 12px;
+	margin-top: -10px;
 }
 
 #auth-loginlink{
@@ -435,6 +438,7 @@ a.idioma{
 	height: 30px;
 	width: 50px;
 	color: black;
+	line-height: 100%;
 }
 
 .text-center{

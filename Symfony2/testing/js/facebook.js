@@ -17,13 +17,13 @@
 			}
 		); 
 	});
-	FB.Event.subscribe('auth.logout', function(response) {
+	/*FB.Event.subscribe('auth.logout', function(response) {
       if (response.status=="unknown") {
         //some weird session error
         document.location.href= actualPage;
         return;
       }
-    });
+    });*/
 	$("#auth-loginlink #auth-loginlink-inside").click(function(){
 			FB.login(); 
 	});
