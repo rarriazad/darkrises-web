@@ -364,13 +364,16 @@ a.idioma{
 
 .inside-info{
 	clear: both;
-	margin: 40px;
+	margin: 30px;
 }
 
 .img{
 	border: 0;
 }
 
+#fb{
+	margin-top: 20px;
+}
 .ver-mas{
 	background: url("../img/ver-mas.png") no-repeat center;
 	margin: 0 auto;
@@ -509,6 +512,7 @@ table td{
 	height: 45px;
 	display: block;
 	float: right;
+	cursor: pointer;
 }
 
 .close-over{

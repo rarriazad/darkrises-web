@@ -31,9 +31,9 @@ class __TwigTemplate_f9e12447a55378ebaa62ce8ed87b1e4c extends Twig_Template
         // line 4
         echo "     <div class=\"video-trailer\"> 
      \t<div id=\"video\">
-           <object class=\"video\" id=\"smluiswf0\" data=\"https://www.youtube.com/v/EdXSKfnWWzo?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0\" waitforclick=\"false\" wmode=\"transparent\" quality=\"high\" allowscriptaccess=\"always\" type=\"application/x-shockwave-flash\">
+           <object class=\"video\" id=\"smluiswf0\" data=\"https://www.youtube.com/v/VmxJJxRNArg?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0\" waitforclick=\"false\" wmode=\"transparent\" quality=\"high\" allowscriptaccess=\"always\" type=\"application/x-shockwave-flash\">
               <param value=\"smluiswf0\" name=\"id\">
-              <param value=\"https://www.youtube.com/v/EdXSKfnWWzo?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0\" name=\"swfSrc\">
+              <param value=\"https://www.youtube.com/v/VmxJJxRNArg?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0\" name=\"swfSrc\">
               <param value=\"640\" name=\"width\">
               <param value=\"390\" name=\"height\">
               <param value=\"false\" name=\"waitforclick\">

@@ -83,9 +83,9 @@
  {% block body %}
      <div class="video-trailer"> 
      	<div id="video">
-           <object class="video" id="smluiswf0" data="https://www.youtube.com/v/EdXSKfnWWzo?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0" waitforclick="false" wmode="transparent" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash">
+           <object class="video" id="smluiswf0" data="https://www.youtube.com/watch?v=VmxJJxRNArg?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0" waitforclick="false" wmode="transparent" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash">
               <param value="smluiswf0" name="id">
-              <param value="https://www.youtube.com/v/EdXSKfnWWzo?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0" name="swfSrc">
+              <param value="https://www.youtube.com/v/VmxJJxRNArg?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0" name="swfSrc">
               <param value="640" name="width">
               <param value="390" name="height">
               <param value="false" name="waitforclick">
@@ -106,7 +106,13 @@
 						</div>
 					</div>
 				</a>
-				<a href="#facebook" class="link-to-login">
+				<div id="fb">
+					<iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fdarkrises2012&amp;width=292&amp;height=590&amp;colorscheme=dark&amp;show_faces=true&amp;border_color&amp;stream=true&amp;header=true&amp;appId=274960540130" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:292px; height:590px;" allowTransparency="true"></iframe>
+				</div>
+		
+			</div>
+			<div class="right text-center">
+			<a href="#facebook" class="link-to-login">
 					<div class="inicio-pack clear"/>
 						<div class="inicio-pack-inside">
 							¡Registrate y obtén el <br/> Pack de Principiante!				
@@ -115,8 +121,6 @@
 				</a>
 				<a id="principiante-popup" href="#principiante" class="yellow"> {% trans %}¿Qué es esto? {% endtrans %}</a>
 				
-			</div>
-			<div class="right text-center">
 				<div id="twitter"><script charset="utf-8" src="http://widgets.twimg.com/j/2/widget.js"></script>
 <script>
 new TWTR.Widget({
@@ -145,8 +149,7 @@ new TWTR.Widget({
   }
 }).render().setUser('dark_rises').start();
 </script></div>
-				<div id="fb"><iframe src="//www.facebook.com/plugins/likebox.php?href=http%3A%2F%2Fwww.facebook.com%2Fpages%2FDarkrises%2F449464621736915&amp;width=320&amp;height=258&amp;colorscheme=dark&amp;show_faces=true&amp;border_color&amp;stream=false&amp;header=false" scrolling="no" frameborder="0" style="border:none; overflow:hidden; width:320px; height:258px;" allowTransparency="false"></iframe></div>
-			</div>
+					</div>
 		</div>
      </div>
  {% endblock %}
