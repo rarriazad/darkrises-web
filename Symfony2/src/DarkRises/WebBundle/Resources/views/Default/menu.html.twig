@@ -35,18 +35,36 @@
 							<img src="{{ asset("/img/botones/facebook-empty.png") }}" />
 						</div>
 						<div class="right padding-top">
-							<fb:login-button id="auth-loginlink" autologoutlink="true" size="large">{% trans %} facebook {% endtrans %}</fb:login-button>
+							<div id="auth-loginlink"><div id="auth-loginlink-inside">{% trans %} facebook {% endtrans %}</div></div>
 						</div>
 						</span>
+						<div class="facebook-button-login" style="display: none">
+						<div class="left facebook-photo">
+							<img src="https://graph.facebook.com/{{ facebook['username'] }}/picture" id="facebook-picture"/>
+						</div>
+						<br/>
+						<p id="facebook-name">{{ facebook['name'] }}</a>
+							<div class="right">
+								<div class="facebook-logout">Cerrar Sesión</div>
+							</div>
+						</div>
 						{% else %}
+						<span class="facebook-button" style="display: none">
+						<div class="left">
+							<img src="{{ asset("/img/botones/facebook-empty.png") }}" />
+						</div>
+						<div class="right padding-top">
+							<div id="auth-loginlink"><div id="auth-loginlink-inside">{% trans %} facebook {% endtrans %}</div></div>
+						</div>
+						</span>
 						<div class="facebook-button-login">
 						<div class="left facebook-photo">
 							<img src="https://graph.facebook.com/{{ facebook['username'] }}/picture" id="facebook-picture"/>
 						</div>
 						<br/>
-						{{ facebook['name'] }}
+						<p id="facebook-name">{{ facebook['name'] }}</a>
 							<div class="right">
-								<fb:login-button class="facebook-logout" id="auth-loginlink" size="small">Cerrar Sesión</fb:login-button>
+								<div class="facebook-logout">Cerrar Sesión</div>
 							</div>
 						</div>
 						{% endif %}

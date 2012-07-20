@@ -24,10 +24,12 @@
 			text-align: center;
 			margin-top: 100px;
 			padding-top: 150px;
+			margin-bottom: -700px;
 		}
 		.end{
-			height: 200px;
+			height: 700px;
 			background: url("{{ asset("/img/eventos/sello/fondo-abajo.png") }}") no-repeat center bottom;
+			z-index: 0;
 		}
 		.pop-up{
 			width: 1000px;
@@ -294,8 +296,8 @@
 							$(".cantidad").html(object["souls"]);
 						},
 						error: function(){alert("Fail!")}
-					})
-					,300000
+					}),
+					300000
 				);
 			});
 	</script>

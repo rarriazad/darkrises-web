@@ -26,11 +26,11 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         $pathinfo = urldecode($pathinfo);
 
         // DarkRisesWebBundle_counterpage
-        if (rtrim($pathinfo, '/') === '/counter') {
+        if (rtrim($pathinfo, '/') === '/refresh') {
             if (substr($pathinfo, -1) !== '/') {
                 return $this->redirect($pathinfo.'/', 'DarkRisesWebBundle_counterpage');
             }
-            return array (  '_controller' => 'DarkRises\\WebBundle\\Controller\\DefaultController::countingsoulsAction',  '_route' => 'DarkRisesWebBundle_counterpage',);
+            return array (  '_controller' => 'DarkRises\\WebBundle\\Controller\\DefaultController::refreshAction',  '_route' => 'DarkRisesWebBundle_counterpage',);
         }
 
         // DarkRisesWebBundle_localesecondhomepage

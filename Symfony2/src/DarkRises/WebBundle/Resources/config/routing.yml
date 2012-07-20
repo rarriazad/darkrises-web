@@ -1,6 +1,6 @@
 DarkRisesWebBundle_counterpage:
-    pattern:  /counter/
-    defaults: { _controller: DarkRisesWebBundle:Default:countingsouls}
+    pattern:  /refresh/
+    defaults: { _controller: DarkRisesWebBundle:Default:refresh}
 DarkRisesWebBundle_localesecondhomepage:
     pattern:  /{_locale}/{name}/{second}/
     defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", _locale: es, second: "empty" }

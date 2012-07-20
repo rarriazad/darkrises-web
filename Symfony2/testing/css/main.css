@@ -191,8 +191,22 @@ body{
 .facebook-logout{
 	margin-right: 30px;
 	margin-left: 170px;
+	padding: 5px;
+	background: url("../img/logout.png") no-repeat center;
+	cursor: pointer;
 }
 
+#auth-loginlink{
+	width: 219px;
+	height: 35px;
+	background: url("../img/botones/facebook.png") no-repeat center;
+	cursor: pointer;
+}
+
+#auth-loginlink-inside{
+	padding: 10px 0px 0px 33px;
+	font-size: 11px;
+}
 #idioma{
 	background: url("../img/fondo-idioma.png") no-repeat center;
 	width: 100px;

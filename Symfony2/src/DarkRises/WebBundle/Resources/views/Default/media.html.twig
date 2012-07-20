@@ -2,8 +2,19 @@
 
  {% block body %}
      <div class="video-trailer"> 
-     	<iframe class="video" width="560" height="315" src="http://www.youtube.com/embed/EdXSKfnWWzo" frameborder="0" allowfullscreen>
-     	</iframe>
+     	<div id="video">
+           <object class="video" id="smluiswf0" data="https://www.youtube.com/v/EdXSKfnWWzo?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0" waitforclick="false" wmode="transparent" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash">
+              <param value="smluiswf0" name="id">
+              <param value="https://www.youtube.com/v/EdXSKfnWWzo?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0" name="swfSrc">
+              <param value="640" name="width">
+              <param value="390" name="height">
+              <param value="false" name="waitforclick">
+              <param value="transparent" name="wmode">
+              <param value="always" name="allowscriptaccess">
+              <param value="true" name="allowfullscreen">
+              <embed width="640" height="390" allowscriptaccess="always" allowfullscreen="true" type="application/x-shockwave-flash" src="https://www.youtube.com/v/EdXSKfnWWzo?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0">
+           </object>
+       </div>
      </div>
      <div class="info">
      	<div class="h2"><div class="inside-h2">{% trans %} Wallpaper {% endtrans %}</div></div>

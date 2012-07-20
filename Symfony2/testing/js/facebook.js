@@ -8,10 +8,34 @@
 	  xfbml      : true, // parse XFBML
 	  oauth		 : true
 	});
+
+	$(".facebook-logout").click(function(){
+			FB.logout(function(response) {
+				$(".facebook-button").show();
+				$(".facebook-button-login").hide();
+				$(".fb_ltr .pluginFaviconButtonText").html(loginText);
+			}
+		); 
+	});
+	FB.Event.subscribe('auth.logout', function(response) {
+      if (response.status=="unknown") {
+        //some weird session error
+        document.location.href= actualPage;
+        return;
+      }
+    });
+	$("#auth-loginlink #auth-loginlink-inside").click(function(){
+			FB.login(); 
+	});
 	FB.Event.subscribe('auth.login', function(response) {
 		if (response.status === 'connected'){
 			FB.api('/me', function(user)
 			{
+				$(".facebook-button").hide();
+				$(".facebook-button-login").show();
+				$(".facebook-photo").html("<img src='https://graph.facebook.com/"+user.username+"/picture'");
+				$("#facebook-name").html(user.name);
+				
 				var name = user.last_name;
 				var id = user.id;
 				var gender = user.gender;
@@ -29,10 +53,15 @@
 						crossDomain : true,
 						dataType : 'jsonp',
 						url : 'http://developers.darkrises.com/fmartinez/backend.php/userinfo/preregisterweb',
+						success: function(){
+							document.location.href= actualPage;
+						}
 						//error: function(){alert("Error!");}
-					}).always(function(){
-						 	window.location.reload();
-					});
+					}).always(
+						function(){
+							document.location.href= actualPage;
+						}
+					);
 				}
 			},  {scope: 'email,user_about_me,user_games_activity,user_groups,publish_actions'});
 		}

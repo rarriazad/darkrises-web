@@ -81,36 +81,68 @@ class __TwigTemplate_9c73c75c02e58296033c65a7c45ef1fb extends Twig_Template
             echo "\" />
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<div class=\"right padding-top\">
-\t\t\t\t\t\t\t<fb:login-button id=\"auth-loginlink\" autologoutlink=\"true\" size=\"large\">";
+\t\t\t\t\t\t\t<div id=\"auth-loginlink\"><div id=\"auth-loginlink-inside\">";
             // line 38
             echo $this->env->getExtension('translator')->getTranslator()->trans("facebook", array(), "messages");
-            echo "</fb:login-button>
+            echo "</div></div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t</span>
-\t\t\t\t\t\t";
-        } else {
-            // line 42
-            echo "\t\t\t\t\t\t<div class=\"facebook-button-login\">
+\t\t\t\t\t\t<div class=\"facebook-button-login\" style=\"display: none\">
 \t\t\t\t\t\t<div class=\"left facebook-photo\">
 \t\t\t\t\t\t\t<img src=\"https://graph.facebook.com/";
-            // line 44
+            // line 43
             if (isset($context["facebook"])) { $_facebook_ = $context["facebook"]; } else { $_facebook_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_facebook_, "username", array(), "array"), "html", null, true);
             echo "/picture\" id=\"facebook-picture\"/>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t<br/>
-\t\t\t\t\t\t";
-            // line 47
+\t\t\t\t\t\t<p id=\"facebook-name\">";
+            // line 46
             if (isset($context["facebook"])) { $_facebook_ = $context["facebook"]; } else { $_facebook_ = null; }
             echo twig_escape_filter($this->env, $this->getAttribute($_facebook_, "name", array(), "array"), "html", null, true);
-            echo "
+            echo "</a>
 \t\t\t\t\t\t\t<div class=\"right\">
-\t\t\t\t\t\t\t\t<fb:login-button class=\"facebook-logout\" id=\"auth-loginlink\" size=\"small\">Cerrar Sesión</fb:login-button>
+\t\t\t\t\t\t\t\t<div class=\"facebook-logout\">Cerrar Sesión</div>
+\t\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t";
+        } else {
+            // line 52
+            echo "\t\t\t\t\t\t<span class=\"facebook-button\" style=\"display: none\">
+\t\t\t\t\t\t<div class=\"left\">
+\t\t\t\t\t\t\t<img src=\"";
+            // line 54
+            echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/botones/facebook-empty.png"), "html", null, true);
+            echo "\" />
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<div class=\"right padding-top\">
+\t\t\t\t\t\t\t<div id=\"auth-loginlink\"><div id=\"auth-loginlink-inside\">";
+            // line 57
+            echo $this->env->getExtension('translator')->getTranslator()->trans("facebook", array(), "messages");
+            echo "</div></div>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t</span>
+\t\t\t\t\t\t<div class=\"facebook-button-login\">
+\t\t\t\t\t\t<div class=\"left facebook-photo\">
+\t\t\t\t\t\t\t<img src=\"https://graph.facebook.com/";
+            // line 62
+            if (isset($context["facebook"])) { $_facebook_ = $context["facebook"]; } else { $_facebook_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_facebook_, "username", array(), "array"), "html", null, true);
+            echo "/picture\" id=\"facebook-picture\"/>
+\t\t\t\t\t\t</div>
+\t\t\t\t\t\t<br/>
+\t\t\t\t\t\t<p id=\"facebook-name\">";
+            // line 65
+            if (isset($context["facebook"])) { $_facebook_ = $context["facebook"]; } else { $_facebook_ = null; }
+            echo twig_escape_filter($this->env, $this->getAttribute($_facebook_, "name", array(), "array"), "html", null, true);
+            echo "</a>
+\t\t\t\t\t\t\t<div class=\"right\">
+\t\t\t\t\t\t\t\t<div class=\"facebook-logout\">Cerrar Sesión</div>
 \t\t\t\t\t\t\t</div>
 \t\t\t\t\t\t</div>
 \t\t\t\t\t\t";
         }
-        // line 53
+        // line 71
         echo "\t\t\t\t\t</div>
 \t\t\t\t</div></li>
 \t\t\t</ul>
@@ -131,6 +163,6 @@ class __TwigTemplate_9c73c75c02e58296033c65a7c45ef1fb extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  112 => 53,  91 => 42,  84 => 38,  74 => 33,  58 => 25,  52 => 22,  46 => 19,  40 => 16,  30 => 4,  26 => 8,  22 => 2,  17 => 1,  194 => 60,  191 => 59,  188 => 58,  184 => 56,  181 => 55,  178 => 54,  173 => 49,  171 => 48,  168 => 47,  165 => 46,  160 => 51,  158 => 46,  155 => 45,  152 => 44,  147 => 36,  144 => 35,  137 => 38,  135 => 35,  130 => 32,  127 => 31,  123 => 30,  120 => 29,  117 => 28,  113 => 26,  110 => 25,  107 => 24,  102 => 47,  99 => 16,  95 => 44,  92 => 12,  89 => 11,  83 => 61,  78 => 35,  76 => 54,  71 => 32,  67 => 42,  64 => 28,  62 => 28,  59 => 27,  57 => 24,  51 => 21,  47 => 19,  45 => 16,  39 => 11,  27 => 1,  434 => 317,  430 => 316,  426 => 315,  421 => 314,  418 => 313,  406 => 303,  403 => 302,  345 => 248,  342 => 247,  336 => 243,  332 => 241,  329 => 240,  271 => 186,  268 => 185,  239 => 159,  227 => 150,  214 => 139,  211 => 138,  203 => 133,  193 => 126,  185 => 121,  175 => 114,  167 => 109,  157 => 102,  134 => 82,  88 => 39,  81 => 58,  73 => 53,  61 => 21,  50 => 13,  41 => 14,  34 => 13,  31 => 3,);
+        return array (  134 => 65,  119 => 57,  109 => 52,  84 => 38,  74 => 33,  58 => 25,  52 => 22,  46 => 19,  40 => 16,  34 => 13,  26 => 8,  22 => 2,  17 => 1,  194 => 60,  191 => 59,  188 => 58,  184 => 56,  181 => 55,  173 => 49,  171 => 48,  168 => 47,  165 => 46,  160 => 51,  158 => 46,  155 => 45,  152 => 44,  147 => 36,  144 => 71,  137 => 38,  135 => 35,  130 => 32,  127 => 62,  120 => 29,  117 => 28,  107 => 24,  102 => 17,  99 => 46,  92 => 43,  89 => 11,  81 => 58,  76 => 54,  71 => 32,  67 => 42,  64 => 28,  62 => 28,  59 => 27,  57 => 24,  51 => 21,  47 => 19,  45 => 16,  41 => 14,  39 => 11,  178 => 54,  175 => 64,  172 => 63,  166 => 59,  161 => 57,  156 => 56,  151 => 54,  146 => 53,  143 => 52,  138 => 50,  133 => 47,  128 => 45,  123 => 30,  118 => 42,  113 => 54,  110 => 25,  105 => 38,  100 => 35,  95 => 13,  91 => 32,  87 => 31,  83 => 61,  78 => 35,  73 => 53,  69 => 26,  65 => 25,  61 => 24,  56 => 23,  53 => 22,  48 => 20,  30 => 4,  27 => 1,);
     }
 }

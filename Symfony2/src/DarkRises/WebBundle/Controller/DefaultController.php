@@ -33,26 +33,10 @@ class DefaultController extends Controller
         }
 			 
     }
-    public function countingsoulsAction()
-    {
-	  $db_host     = "168.144.38.34:3306";
-	  $db_usuario  = "observer";
-	  $db_password = "V3jj44W8LtPNeXEQ";
-	  $db_nombre   = "darkrises";
-
-	  $conexion = @mysql_connect($db_host, $db_usuario, $db_password) or die(mysql_error());
-	  $db       = @mysql_select_db($db_nombre, $conexion) or die(mysql_error()); 
-
-	  $sql    = "select id,fb_id from user_info ORDER BY id DESC limit 1";
-	  $result = @mysql_query($sql, $conexion) or die(mysql_error());
-
-	  $numero = @mysql_fetch_array($result, MYSQL_ASSOC);
-	  @mysql_close();
-
-	  $souls = $numero['id'] - 2;
-	  
-	  return new Response($souls);
-    }
+   	public function refreshAction()
+   	{
+    	return $this->redirect($this->get("session")->get('referrer'));
+   	}
     
     public function indexAction($name, $second)
     {	
