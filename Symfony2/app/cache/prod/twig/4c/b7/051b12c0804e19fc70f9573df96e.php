@@ -98,7 +98,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\tmargin-left: 350px;
 \t\t}
 \t\t.cantidad{
-\t\t\tletter-spacing: 13px;
+\t\t\tletter-spacing: 22px;
 \t\t\tpadding-left: 35px;
 \t\t\tpadding-top: 18px;
 \t\t\tfont-size: 100px;

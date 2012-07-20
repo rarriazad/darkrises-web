@@ -35,7 +35,9 @@ class DefaultController extends Controller
     }
    	public function refreshAction()
    	{
-    	return $this->redirect($this->get("session")->get('referrer'));
+   		$session = $this->get("session");
+   		$session->clear();
+    	return $this->render('<script type="text/javascript"> document.location.href= "'.$session->get('referrer').'"</script>');
    	}
     
     public function indexAction($name, $second)

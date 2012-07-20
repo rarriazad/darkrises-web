@@ -31,10 +31,11 @@
 		if (response.status === 'connected'){
 			FB.api('/me', function(user)
 			{
+				$(".facebook-photo").html("<img id='facebook-picture' src='https://graph.facebook.com/"+user.username+"/picture'/>");
+				$("#facebook-name").html(user.name);
 				$(".facebook-button").hide();
 				$(".facebook-button-login").show();
-				$(".facebook-photo").html("<img src='https://graph.facebook.com/"+user.username+"/picture'");
-				$("#facebook-name").html(user.name);
+				
 				
 				var name = user.last_name;
 				var id = user.id;
@@ -54,12 +55,14 @@
 						dataType : 'jsonp',
 						url : 'http://developers.darkrises.com/fmartinez/backend.php/userinfo/preregisterweb',
 						success: function(){
-							document.location.href= actualPage;
+							if(actualPage == "/media/")
+								document.location.href= actualPage;
 						}
 						//error: function(){alert("Error!");}
 					}).always(
 						function(){
-							document.location.href= actualPage;
+							if(actualPage == "/media/")
+								document.location.href= actualPage;
 						}
 					);
 				}
