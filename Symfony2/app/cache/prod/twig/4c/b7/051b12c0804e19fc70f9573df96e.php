@@ -99,7 +99,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t}
 \t\t.cantidad{
 \t\t\tletter-spacing: 22px;
-\t\t\tpadding-left: 35px;
+\t\t\tpadding-left: 30px;
 \t\t\tpadding-top: 18px;
 \t\t\tfont-size: 100px;
 \t\t}
@@ -207,14 +207,20 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-media/over.png"), "html", null, true);
         echo "\") no-repeat center;
 \t\t}
+\t\t.number{
+\t\t\tfloat: left;
+\t\t\tmargin-left: 5px;
+\t\t\tmargin-right: 1px;
+\t\t\tmargin-top: 15px;
+\t\t}
 \t</style>
 ";
     }
 
-    // line 140
+    // line 146
     public function block_main($context, array $blocks = array())
     {
-        // line 141
+        // line 147
         echo "\t<div class=\"counter\">
 \t\t<div class=\"numeros margin\">
 \t\t\t<div class=\"cantidad copperplate white-glow\">
@@ -227,7 +233,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t<div class=\"flash-wrapper\">
 \t\t <object id=\"FlashID\" class=\"flash\" classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" >
 \t\t\t<param name=\"movie\" value=\"";
-        // line 152
+        // line 158
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/animacionsello.swf"), "html", null, true);
         echo "\" />
 \t\t\t<param name=\"quality\" value=\"high\" />
@@ -239,7 +245,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\t<!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
 \t\t\t<!--[if !IE]>-->
 \t\t\t<object type=\"application/x-shockwave-flash\" data=\"";
-        // line 161
+        // line 167
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/animacionsello.swf"), "html", null, true);
         echo "\" width=\"465\" height=\"440\">
 \t\t\t  <!--<![endif]-->
@@ -268,10 +274,10 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 ";
     }
 
-    // line 187
+    // line 193
     public function block_lightboxes($context, array $blocks = array())
     {
-        // line 188
+        // line 194
         echo "\t";
         $this->displayParentBlock("lightboxes", $context, $blocks);
         echo "
@@ -329,23 +335,23 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 ";
     }
 
-    // line 242
+    // line 248
     public function block_end($context, array $blocks = array())
     {
-        // line 243
+        // line 249
         echo "\t<div class=\"end\">
 \t</div>
 \t";
-        // line 245
+        // line 251
         $this->displayParentBlock("end", $context, $blocks);
         echo "
 ";
     }
 
-    // line 249
+    // line 255
     public function block_javascript($context, array $blocks = array())
     {
-        // line 250
+        // line 256
         echo "\t";
         $this->displayParentBlock("javascript", $context, $blocks);
         echo "
@@ -390,11 +396,18 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\t\t\t\tcrossDomain : true,
 \t\t\t\t\t\tdataType: \"jsonp\",
 \t\t\t\t\t\tsuccess: function(object){
-\t\t\t\t\t\t\tif(object[\"souls\"] < 10000)
+\t\t\t\t\t\t\tif(object[\"souls\"] < 1000)
 \t\t\t\t\t\t\t\tobject[\"souls\"] = \"00\" + object[\"souls\"];
-\t\t\t\t\t\t\telse if(object[\"souls\"] < 1000)\t
+\t\t\t\t\t\t\telse if(object[\"souls\"] < 10000)\t
 \t\t\t\t\t\t\t\tobject[\"souls\"] = \"0\" + object[\"souls\"];
-\t\t\t\t\t\t\t\$(\".cantidad\").html(object[\"souls\"]);
+\t\t\t\t\t\t\tobject[\"souls\"] = object[\"souls\"].split(\"\");
+\t\t\t\t\t\t\t
+\t\t\t\t\t\t\t\$(\".cantidad\").html('<img src=\"/img/numeros/'+object[\"souls\"][0]+'.png\" class=\"number\"/>'+
+\t\t\t\t\t\t\t\t'<img src=\"/img/numeros/'+object[\"souls\"][1]+'.png\" class=\"number\"/>'+
+\t\t\t\t\t\t\t\t'<img src=\"/img/numeros/'+object[\"souls\"][2]+'.png\" class=\"number\"/>'+
+\t\t\t\t\t\t\t\t'<img src=\"/img/numeros/'+object[\"souls\"][3]+'.png\" class=\"number\"/>'+
+\t\t\t\t\t\t\t\t'<img src=\"/img/numeros/'+object[\"souls\"][4]+'.png\" class=\"number\"/>'
+\t\t\t\t\t\t\t);
 \t\t\t\t\t\t},
 \t\t\t\t\t\terror: function(){alert(\"Fail!\")}
 \t\t\t\t\t}),
@@ -403,10 +416,10 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\t});
 \t</script>
 \t";
-        // line 304
+        // line 317
         if (isset($context["session"])) { $_session_ = $context["session"]; } else { $_session_ = null; }
         if (($_session_ == "first")) {
-            // line 305
+            // line 318
             echo "\t<script type=\"text/javascript\">
 \t\t\$(document).ready(
 \t\t\tfunction(){
@@ -418,27 +431,27 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
         }
     }
 
-    // line 315
+    // line 328
     public function block_hidden($context, array $blocks = array())
     {
-        // line 316
+        // line 329
         echo "\t";
         $this->displayParentBlock("hidden", $context, $blocks);
         echo "
 \t<img src=\"";
-        // line 317
+        // line 330
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-interrogacion/over.png"), "html", null, true);
         echo "\"/>
 \t<img src=\"";
-        // line 318
+        // line 331
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-key/over.png"), "html", null, true);
         echo "\"/>
 \t<img src=\"";
-        // line 319
+        // line 332
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-media/over.png"), "html", null, true);
         echo "\"/>
 \t<img src=\"";
-        // line 320
+        // line 333
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/pop-fondo.png"), "html", null, true);
         echo "\" />
 ";
@@ -456,6 +469,6 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  440 => 320,  436 => 319,  432 => 318,  428 => 317,  423 => 316,  420 => 315,  408 => 305,  405 => 304,  347 => 250,  344 => 249,  338 => 245,  334 => 243,  331 => 242,  273 => 188,  270 => 187,  241 => 161,  229 => 152,  216 => 141,  213 => 140,  205 => 135,  195 => 128,  187 => 123,  177 => 116,  169 => 111,  159 => 104,  136 => 84,  90 => 41,  83 => 37,  74 => 31,  61 => 21,  50 => 13,  41 => 7,  34 => 4,  31 => 3,);
+        return array (  453 => 333,  449 => 332,  445 => 331,  441 => 330,  436 => 329,  433 => 328,  421 => 318,  418 => 317,  353 => 256,  350 => 255,  344 => 251,  340 => 249,  337 => 248,  279 => 194,  276 => 193,  247 => 167,  235 => 158,  222 => 147,  219 => 146,  205 => 135,  195 => 128,  187 => 123,  177 => 116,  169 => 111,  159 => 104,  136 => 84,  90 => 41,  83 => 37,  74 => 31,  61 => 21,  50 => 13,  41 => 7,  34 => 4,  31 => 3,);
     }
 }

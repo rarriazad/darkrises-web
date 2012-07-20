@@ -233,14 +233,16 @@ body{
 
 .botones{
 	background: url("../img/fondo_botones.png") no-repeat center;
-	height: 41px;
+	height: 64px;
 	float: right;
 	z-index: 49999999;
 	width: 188px;
+	margin-top: -5px;
 }
 
 .inside-botones{
 	margin: 3px 10px;
+	margin-top: 20px;
 }
 
 .facebook-button{
