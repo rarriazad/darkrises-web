@@ -25,7 +25,7 @@
       }
     });*/
 	$("#auth-loginlink #auth-loginlink-inside").click(function(){
-			FB.login(); 
+			FB.login(function(){},  {scope: 'email,user_about_me,user_games_activity,user_groups,publish_actions'}); 
 	});
 	FB.Event.subscribe('auth.login', function(response) {
 		if (response.status === 'connected'){
