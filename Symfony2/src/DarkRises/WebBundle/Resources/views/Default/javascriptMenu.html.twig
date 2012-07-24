@@ -8,6 +8,19 @@
 <script type="text/javascript">
 	jQuery(document).ready(
 		function(){
+		
+			if(actualPage != "/eventos/"){
+				date = new Date();
+				hora = date.getHours();
+				
+				if(hora >= 8 && hora < 14)
+					$("body").css("background", 'url("{{ asset("/img/fondos/dia.png") }}") no-repeat center top');
+				else if(hora >= 14 && hora < 22)
+					$("body").css("background", 'url("{{ asset("/img/fondos/tarde.png") }}") no-repeat center top');
+				else
+					$("body").css("background", 'url("{{ asset("/img/fondos/noche.png") }}") no-repeat center top');
+			}
+			
 			jQuery("#idioma").click(
 				function(){
 					select = jQuery("#select-idioma");

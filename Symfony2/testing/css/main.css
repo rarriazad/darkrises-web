@@ -28,7 +28,7 @@ a{
 }
 
 body{
-	background: url("../img/fondo.png") no-repeat center top #000000;
+	/*background: url("../img/fondo.png") no-repeat center top #000000;*/
 	padding: 0;
 	border: 0;
 	margin: 0;

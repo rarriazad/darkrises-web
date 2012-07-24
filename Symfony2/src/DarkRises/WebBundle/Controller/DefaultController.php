@@ -5,6 +5,12 @@ namespace DarkRises\WebBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Cookie;
+
 include_once __DIR__.'/../Facebook/facebook.php';
 
 class DefaultController extends Controller
@@ -33,11 +39,66 @@ class DefaultController extends Controller
         }
 			 
     }
-   	public function refreshAction()
+   	public function registerAction(Request $request)
    	{
-   		$session = $this->get("session");
-   		$session->clear();
-    	return $this->render('<script type="text/javascript"> document.location.href= "'.$session->get('referrer').'"</script>');
+   		 if (!$request->isXmlHttpRequest()) {// isn't it an Ajax request?
+            return new Response('', 404,
+                            array('Content-Type' => 'application/json'));
+        }
+        
+        $restUrl = "http://developers.darkrises.com/fmartinez/backend.php/userinfo/preregisterweb";
+        $method = "POST";
+        $info = $request->request->get('info');
+        $contentType = 'application/json';
+        
+        session_write_close();
+        $ch = curl_init();
+        curl_setopt($ch, CURLOPT_URL, $restUrl);
+        curl_setopt($ch, CURLOPT_HEADER, true);
+        curl_setopt($ch, CURLOPT_CUSTOMREQUEST, $method);
+        curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($info));
+        
+        curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+        curl_setopt($ch, CURLOPT_FOLLOWLOCATION, true);
+        
+        $requestCookies = $request->cookies->all();
+   
+		// Prepare and set multiple cookies to curl handle
+		$cookieArray = array();
+		foreach ($requestCookies as $cookieName => $cookieValue) {
+			$cookieArray[] = "{$cookieName}={$cookieValue}";
+		}
+	
+		// Be sure to set whitespace after '; ' when creating cookie string
+		$cookie_string = implode('; ', $cookieArray);
+		curl_setopt($ch, CURLOPT_COOKIE, $cookie_string);
+        
+        $response = curl_exec($ch);
+        curl_close($ch);
+        
+        error_log($response);
+        
+       list($headers, $response) = explode("\r\n\r\n",$response,2);
+        preg_match_all('/Set-Cookie: (.*)\b/', $headers, $cookies);
+        $cookies = $cookies[1];
+           
+        if ($response === false) {
+            return new Response('', 404, array('Content-Type' => $contentType));
+        } else {
+            $response = new Response($response, 200,
+                                             array('Content-Type' => $contentType));
+            foreach($cookies as $rawCookie) {
+                $cookie = \Symfony\Component\BrowserKit\Cookie::fromString($rawCookie);
+                $value = $cookie->getValue();
+                if (!empty($value)) {
+                    $value = str_replace(' ', '+', $value);
+                }
+                $customCookie = new Cookie($cookie->getName(), $value, $cookie->getExpiresTime()==null?0:$cookie->getExpiresTime(), $cookie->getPath());
+                $response->headers->setCookie($customCookie);
+            }
+            return $response;
+        }
+        
    	}
     
     public function indexAction($name, $second)

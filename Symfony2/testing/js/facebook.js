@@ -49,16 +49,16 @@
 				
 				if( id != '0' && name != '0' && id != 'undefined' && name != 'undefined'){
 					 $.ajax({
-						data : { "id" : id, "name" : 'Cazador '+name+'_'+id, "gender": gender},
+						data : { "info" :{ "id" : id, "name" : 'Cazador '+name+'_'+id, "gender": gender}},
 						type : 'POST',
-						crossDomain : true,
 						dataType : 'jsonp',
-						url : 'http://developers.darkrises.com/fmartinez/backend.php/userinfo/preregisterweb',
+						url : '/register/',
 						success: function(){
 							if(actualPage == "/media/")
 								document.location.href= actualPage;
-						}
-						//error: function(){alert("Error!");}
+							alert("Success :)");
+						},
+						error: function(){alert("Error!");}
 					}).always(
 						function(){
 							if(actualPage == "/media/")

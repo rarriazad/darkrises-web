@@ -24,10 +24,9 @@
 			text-align: center;
 			margin-top: 100px;
 			padding-top: 150px;
-			margin-bottom: -700px;
 		}
 		.end{
-			height: 700px;
+			height: 357px;
 			background: url("{{ asset("/img/eventos/sello/fondo-abajo.png") }}") no-repeat center bottom;
 			z-index: 0;
 		}
@@ -140,6 +139,56 @@
 			margin-right: 1px;
 			margin-top: 15px;
 		}
+		.info-sellos{
+			display:block;
+			width:70%;
+			margin: auto;
+		}
+		.text-sellos{
+			float: left;
+			display: none;
+			text-align: left;
+			width: 60%;
+		}
+		.text-sellos-quees{
+			display: block;
+		}
+		.menu-sellos{
+			float: right;
+			width: 30%;
+		}
+		.title{
+			font-family: copperplate;
+			font-size: 30px;
+		}
+		.sello-menu-interrogacion{
+			width: 51px;
+			height: 50px;
+			background: url("{{ asset("/img/eventos/sello/sello-icon-interrogacion/menu-off.png") }}") no-repeat center;
+		}
+		.sello-menu-interrogacion-over{
+			background: url("{{ asset("/img/eventos/sello/sello-icon-interrogacion/menu-over.png") }}") no-repeat center;
+		}
+		.sello-menu-key{
+			width: 36px;
+			height: 75px;
+			background: url("{{ asset("/img/eventos/sello/sello-icon-key/menu-off.png") }}") no-repeat center;
+		}
+		.sello-menu-key-over{
+			background: url("{{ asset("/img/eventos/sello/sello-icon-key/menu-over.png") }}") no-repeat center;
+		}
+		.sello-menu-media{
+			width: 47px;
+			height: 46px;
+			background: url("{{ asset("/img/eventos/sello/sello-icon-media/menu-off.png") }}") no-repeat center;
+		}
+		.sello-menu-media-over{
+			background: url("{{ asset("/img/eventos/sello/sello-icon-media/menu-over.png") }}") no-repeat center;
+		}
+		.sello-menu{
+			cursor:pointer;
+			margin: 5px auto;
+		}
 	</style>
 {% endblock %}
 
@@ -182,11 +231,37 @@
 	  </object>
 	   <div class="sello-icons">
 	  	<a class="sello-icon-interrogacion" href="/guia/quees/"></a>
-	  	<a class="sello-icon-key" href="/guia/quees/"></a>
+	  	<a class="sello-icon-key" href="/inicio/"></a>
 	  	<a class="sello-icon-media" href="/media/"></a>
 	  </div>
+	  
 	  </div>
-	 
+	 <div class="info-sellos">
+	  	<div class="text-sellos text-sellos-quees">
+	  		<p class="title">¿Qué es Dark Rises?</p>
+	  		<p>No basta solamente con conocer el nombre de un nuevo mundo, debes habituarte poco a poco hacia esa nueva realidad en que caerás.</p>
+			<p>Estas primeras imágenes muestran como es el mundo de Dark Rises y en qué consiste este mundo contemporáneo lleno de tantos sucesos bizarros.</p>
+			<p>Este primer sello sólo es una bienvenida, pero necesaria.</p>
+	  	</div>
+	  	<div class="text-sellos text-sellos-media">
+	  		<p class="title">Media</p>
+	  		<p>Ya vas avanzando en un mundo lleno de oscuridad y vas encontrando información cada vez más valiosa de este ambiente.</p>
+			<p>Aquí podrás encontrar una gran cantidad de archivos e información sobre todos los personajes involucrados en esta trama.</p>
+			<p>Cada vez más irás bajando por los peldaños que te llevan hacia lo desconocido, aún no tienes ninguna razón para temer.</p>
+	  	</div>
+	  	<div class="text-sellos text-sellos-key">
+	  		<p class="title">Inicio</p>
+	  		<p>Lo que sigue a una cordial bienvenida, es invitarte a ver todas las herramientas que te permitirán explorar, poco a poco, todo lo que el mundo de Dark Rises tiene para ofrecer.</p>
+			<p>Explore pacientemente, ya que no todo aparecerá instantaneamente. Algunas cosas tomarán más tiempo que otras en aparecer pero inevitablemente aparecerán.</p>
+			<p>Mire con cuidado donde caminas.</p>
+	  	</div>
+	  	<div class="menu-sellos">
+	  		<p class="title">Otros Sellos</p>
+	  		<p class="sello-menu-interrogacion sello-menu"></p>
+	  		<p class="sello-menu-key sello-menu"></p>
+	  		<p class="sello-menu-media sello-menu"></p>
+	  	</div>
+	  </div>
 	</div>
 {% endblock %}
 
@@ -264,6 +339,41 @@
 					}
 				);
 				
+				$(".sello-menu-interrogacion").hover(
+					function(){
+						$(this).addClass("sello-menu-interrogacion-over")
+					},
+					function(){
+						$(this).removeClass("sello-menu-interrogacion-over")
+					}
+				).click(function(){
+					$(".text-sellos").hide();
+					$(".text-sellos-quees").show();
+				});
+				
+				$(".sello-menu-key").hover(
+					function(){
+						$(this).addClass("sello-menu-key-over")
+					},
+					function(){
+						$(this).removeClass("sello-menu-key-over")
+					}
+				).click(function(){
+					$(".text-sellos").hide();
+					$(".text-sellos-key").show();
+				});;
+				$(".sello-menu-media").hover(
+					function(){
+						$(this).addClass("sello-menu-media-over")
+					},
+					function(){
+						$(this).removeClass("sello-menu-media-over")
+					}
+				).click(function(){
+					$(".text-sellos").hide();
+					$(".text-sellos-media").show();
+				});;
+				
 				$(".sello-icon-interrogacion").hover(
 					function(){
 						$(this).addClass("sello-icon-interrogacion-hover")
@@ -288,6 +398,7 @@
 						$(this).removeClass("sello-icon-key-media")
 					}
 				);
+				
 				setInterval(
 					$.ajax({
 						url: "http://lilith.darkrises.com/backend.php/userinfo/getsouls/",

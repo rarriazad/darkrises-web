@@ -99,7 +99,7 @@ class __TwigTemplate_9c73c75c02e58296033c65a7c45ef1fb extends Twig_Template
 \t\t\t\t\t\t<p id=\"facebook-name\">";
             // line 46
             if (isset($context["facebook"])) { $_facebook_ = $context["facebook"]; } else { $_facebook_ = null; }
-            echo twig_escape_filter($this->env, $this->getAttribute($_facebook_, "name", array(), "array"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($_facebook_, "first_name", array(), "array"), "html", null, true);
             echo "</a>
 \t\t\t\t\t\t\t<div class=\"right\">
 \t\t\t\t\t\t\t\t<div class=\"facebook-logout\">Cerrar Sesión</div>
@@ -134,7 +134,7 @@ class __TwigTemplate_9c73c75c02e58296033c65a7c45ef1fb extends Twig_Template
 \t\t\t\t\t\t<p id=\"facebook-name\">";
             // line 65
             if (isset($context["facebook"])) { $_facebook_ = $context["facebook"]; } else { $_facebook_ = null; }
-            echo twig_escape_filter($this->env, $this->getAttribute($_facebook_, "name", array(), "array"), "html", null, true);
+            echo twig_escape_filter($this->env, $this->getAttribute($_facebook_, "first_name", array(), "array"), "html", null, true);
             echo "</a>
 \t\t\t\t\t\t\t<div class=\"right\">
 \t\t\t\t\t\t\t\t<div class=\"facebook-logout\">Cerrar Sesión</div>
@@ -163,6 +163,6 @@ class __TwigTemplate_9c73c75c02e58296033c65a7c45ef1fb extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  134 => 65,  119 => 57,  109 => 52,  84 => 38,  74 => 33,  58 => 25,  52 => 22,  46 => 19,  40 => 16,  34 => 13,  26 => 8,  22 => 2,  17 => 1,  194 => 60,  191 => 59,  188 => 58,  184 => 56,  181 => 55,  173 => 49,  171 => 48,  168 => 47,  165 => 46,  160 => 51,  158 => 46,  155 => 45,  152 => 44,  147 => 36,  144 => 71,  137 => 38,  135 => 35,  130 => 32,  127 => 62,  120 => 29,  117 => 28,  107 => 24,  102 => 17,  99 => 46,  92 => 43,  89 => 11,  81 => 58,  76 => 54,  71 => 32,  67 => 42,  64 => 28,  62 => 28,  59 => 27,  57 => 24,  51 => 21,  47 => 19,  45 => 16,  41 => 14,  39 => 11,  178 => 54,  175 => 64,  172 => 63,  166 => 59,  161 => 57,  156 => 56,  151 => 54,  146 => 53,  143 => 52,  138 => 50,  133 => 47,  128 => 45,  123 => 30,  118 => 42,  113 => 54,  110 => 25,  105 => 38,  100 => 35,  95 => 13,  91 => 32,  87 => 31,  83 => 61,  78 => 35,  73 => 53,  69 => 26,  65 => 25,  61 => 24,  56 => 23,  53 => 22,  48 => 20,  30 => 4,  27 => 1,);
+        return array (  134 => 65,  119 => 57,  109 => 52,  84 => 38,  74 => 33,  58 => 25,  52 => 22,  46 => 19,  40 => 16,  30 => 4,  26 => 8,  22 => 2,  17 => 1,  194 => 60,  191 => 59,  188 => 58,  184 => 56,  181 => 55,  173 => 49,  171 => 48,  168 => 47,  165 => 46,  160 => 51,  158 => 46,  155 => 45,  152 => 44,  147 => 36,  144 => 71,  137 => 38,  130 => 32,  127 => 62,  123 => 30,  120 => 29,  117 => 28,  113 => 54,  110 => 25,  107 => 24,  102 => 17,  99 => 46,  95 => 13,  92 => 43,  89 => 11,  83 => 61,  81 => 58,  78 => 35,  76 => 54,  73 => 53,  71 => 32,  67 => 42,  62 => 28,  59 => 27,  51 => 21,  47 => 19,  45 => 16,  39 => 11,  27 => 1,  385 => 276,  382 => 275,  376 => 272,  371 => 271,  368 => 270,  362 => 267,  358 => 266,  353 => 265,  350 => 264,  336 => 253,  326 => 246,  300 => 223,  274 => 200,  253 => 182,  232 => 164,  226 => 161,  219 => 158,  216 => 157,  178 => 54,  138 => 84,  135 => 35,  115 => 66,  94 => 48,  72 => 29,  64 => 28,  57 => 24,  41 => 14,  34 => 13,  31 => 3,);
     }
 }
