@@ -14,11 +14,11 @@
 				hora = date.getHours();
 				
 				if(hora >= 8 && hora < 14)
-					$("body").css("background", 'url("{{ asset("/img/fondos/dia.png") }}") no-repeat center top');
+					$("body").css("background", 'url("{{ asset("/img/fondos/dia.png") }}") no-repeat center top #000000');
 				else if(hora >= 14 && hora < 22)
-					$("body").css("background", 'url("{{ asset("/img/fondos/tarde.png") }}") no-repeat center top');
+					$("body").css("background", 'url("{{ asset("/img/fondos/tarde.png") }}") no-repeat center top #000000');
 				else
-					$("body").css("background", 'url("{{ asset("/img/fondos/noche.png") }}") no-repeat center top');
+					$("body").css("background", 'url("{{ asset("/img/fondos/noche.png") }}") no-repeat center top #000000');
 			}
 			
 			jQuery("#idioma").click(
