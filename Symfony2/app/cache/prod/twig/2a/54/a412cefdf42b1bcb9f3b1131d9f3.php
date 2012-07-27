@@ -276,6 +276,32 @@ new TWTR.Widget({
 \t\t\t<div class=\"left clear\">
 \t\t\t\t<img src=\"";
         // line 203
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/inicio/popup/chaleco.png"), "html", null, true);
+        echo "\"/>
+\t\t\t</div>
+\t\t\t<div class=\"left popup-info\">
+\t\t\t\t<span class=\"yellow\"> CHALECO PROTECTOR NIVEL 1 (mejorado +8) </span>
+\t\t\t\t<table class=\"white\">
+\t\t\t\t\t<tr>
+\t\t\t\t\t\t<td> Mejoras </td>
+\t\t\t\t\t\t<td> +0 </td>
+\t\t\t\t\t\t<td> +8 </td>
+\t\t\t\t\t</tr>
+\t\t\t\t\t<tr>
+\t\t\t\t\t\t<td> Defensa </td>
+\t\t\t\t\t\t<td> 8 </td>
+\t\t\t\t\t\t<td> 40 </td>
+\t\t\t\t\t</tr>
+\t\t\t\t\t<tr>
+\t\t\t\t\t\t<td> Def. Mágica </td>
+\t\t\t\t\t\t<td> 8 </td>
+\t\t\t\t\t\t<td> 48 </td>
+\t\t\t\t\t</tr>
+\t\t\t\t</table>
+\t\t\t</div>
+\t\t\t<div class=\"left clear\">
+\t\t\t\t<img src=\"";
+        // line 226
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/inicio/popup/canillera.png"), "html", null, true);
         echo "\"/>
 \t\t\t</div>
@@ -301,7 +327,7 @@ new TWTR.Widget({
 \t\t\t</div>
 \t\t\t<div class=\"left clear\">
 \t\t\t\t<img src=\"";
-        // line 226
+        // line 249
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/inicio/popup/cuchillo.png"), "html", null, true);
         echo "\"/>
 \t\t\t</div>
@@ -327,7 +353,7 @@ new TWTR.Widget({
 \t\t\t</div>
 \t\t\t<div class=\"left clear\">
 \t\t\t\t<img src=\"";
-        // line 249
+        // line 272
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/inicio/popup/bono.png"), "html", null, true);
         echo "\"/>
 \t\t\t</div>
@@ -337,7 +363,7 @@ new TWTR.Widget({
 \t\t\t</div>
 \t\t\t<div class=\"left clear\">
 \t\t\t\t<img src=\"";
-        // line 256
+        // line 279
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/inicio/popup/fondo.png"), "html", null, true);
         echo "\"/>
 \t\t\t</div>
@@ -351,42 +377,42 @@ new TWTR.Widget({
  ";
     }
 
-    // line 267
+    // line 290
     public function block_hidden($context, array $blocks = array())
     {
-        // line 268
+        // line 291
         echo " \t";
         $this->displayParentBlock("hidden", $context, $blocks);
         echo "
  \t<img src=\"";
-        // line 269
+        // line 292
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/inicio/pack/on.png"), "html", null, true);
         echo "\" />
  \t<img src=\"";
-        // line 270
+        // line 293
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/inicio/quees/on.png"), "html", null, true);
         echo "\" />
  ";
     }
 
-    // line 273
+    // line 296
     public function block_footer($context, array $blocks = array())
     {
-        // line 274
+        // line 297
         echo " \t";
         $this->displayParentBlock("footer", $context, $blocks);
         echo "
  \t<img src=\"";
-        // line 275
+        // line 298
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/credits.png"), "html", null, true);
         echo "\" class=\"credits\" />
  ";
     }
 
-    // line 278
+    // line 301
     public function block_javascript($context, array $blocks = array())
     {
-        // line 279
+        // line 302
         echo "\t";
         $this->displayParentBlock("javascript", $context, $blocks);
         echo "
@@ -435,6 +461,6 @@ new TWTR.Widget({
 
     public function getDebugInfo()
     {
-        return array (  388 => 279,  385 => 278,  379 => 275,  374 => 274,  371 => 273,  365 => 270,  361 => 269,  356 => 268,  353 => 267,  339 => 256,  329 => 249,  303 => 226,  277 => 203,  256 => 185,  235 => 167,  229 => 164,  222 => 161,  219 => 160,  181 => 125,  141 => 87,  138 => 86,  118 => 69,  97 => 51,  75 => 32,  67 => 27,  60 => 23,  44 => 10,  34 => 4,  31 => 3,);
+        return array (  414 => 302,  411 => 301,  405 => 298,  400 => 297,  397 => 296,  391 => 293,  387 => 292,  382 => 291,  379 => 290,  365 => 279,  355 => 272,  329 => 249,  303 => 226,  277 => 203,  256 => 185,  235 => 167,  229 => 164,  222 => 161,  219 => 160,  181 => 125,  141 => 87,  138 => 86,  118 => 69,  97 => 51,  75 => 32,  67 => 27,  60 => 23,  44 => 10,  34 => 4,  31 => 3,);
     }
 }
