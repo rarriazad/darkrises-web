@@ -150,9 +150,6 @@
 			text-align: left;
 			width: 60%;
 		}
-		.text-sellos-quees{
-			display: block;
-		}
 		.menu-sellos{
 			float: right;
 			width: 30%;
@@ -169,6 +166,9 @@
 		.sello-menu-interrogacion-over{
 			background: url("{{ asset("/img/eventos/sello/sello-icon-interrogacion/menu-over.png") }}") no-repeat center;
 		}
+		.sello-menu-interrogacion-stay{
+			background: url("{{ asset("/img/eventos/sello/sello-icon-interrogacion/menu-over.png") }}") no-repeat center;
+		}
 		.sello-menu-key{
 			width: 36px;
 			height: 75px;
@@ -177,12 +177,18 @@
 		.sello-menu-key-over{
 			background: url("{{ asset("/img/eventos/sello/sello-icon-key/menu-over.png") }}") no-repeat center;
 		}
+		.sello-menu-key-stay{
+			background: url("{{ asset("/img/eventos/sello/sello-icon-key/menu-over.png") }}") no-repeat center;
+		}
 		.sello-menu-media{
 			width: 47px;
 			height: 46px;
 			background: url("{{ asset("/img/eventos/sello/sello-icon-media/menu-off.png") }}") no-repeat center;
 		}
 		.sello-menu-media-over{
+			background: url("{{ asset("/img/eventos/sello/sello-icon-media/menu-over.png") }}") no-repeat center;
+		}
+		.sello-menu-media-stay{
 			background: url("{{ asset("/img/eventos/sello/sello-icon-media/menu-over.png") }}") no-repeat center;
 		}
 		.sello-menu{
@@ -349,7 +355,10 @@
 				).click(function(){
 					$(".text-sellos").hide();
 					$(".text-sellos-quees").show();
-				});
+					$(this).addClass("sello-menu-interrogacion-stay");
+					$(".sello-menu-key").removeClass("sello-menu-key-stay");
+					$(".sello-menu-media").removeClass("sello-menu-media-stay");
+				}).click();
 				
 				$(".sello-menu-key").hover(
 					function(){
@@ -361,6 +370,9 @@
 				).click(function(){
 					$(".text-sellos").hide();
 					$(".text-sellos-key").show();
+					$(this).addClass("sello-menu-key-stay");
+					$(".sello-menu-interrogacion").removeClass("sello-menu-interrogacion-stay");
+					$(".sello-menu-media").removeClass("sello-menu-media-stay");
 				});;
 				$(".sello-menu-media").hover(
 					function(){
@@ -372,6 +384,9 @@
 				).click(function(){
 					$(".text-sellos").hide();
 					$(".text-sellos-media").show();
+					$(this).addClass("sello-menu-media-stay")
+					$(".sello-menu-interrogacion").removeClass("sello-menu-interrogacion-stay");
+					$(".sello-menu-key").removeClass("sello-menu-key-stay");
 				});;
 				
 				$(".sello-icon-interrogacion").hover(

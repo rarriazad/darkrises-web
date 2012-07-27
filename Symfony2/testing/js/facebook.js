@@ -32,7 +32,7 @@
 			FB.api('/me', function(user)
 			{
 				$(".facebook-photo").html("<img id='facebook-picture' src='https://graph.facebook.com/"+user.username+"/picture'/>");
-				$("#facebook-name").html(user.name);
+				$("#facebook-name").html(user.first_name);
 				$(".facebook-button").hide();
 				$(".facebook-button-login").show();
 				
