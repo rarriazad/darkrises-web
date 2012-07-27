@@ -56,9 +56,9 @@
 						success: function(){
 							if(actualPage == "/media/")
 								document.location.href= actualPage;
-							alert("Success :)");
-						},
-						error: function(){alert("Error!");}
+							//alert("Success :)");
+						}//,
+						//error: function(){alert("Error!");}
 					}).always(
 						function(){
 							if(actualPage == "/media/")
