@@ -35,19 +35,19 @@
                 <target>Dark Rises and all images associated with Dark Rises are property of © Copyright 2012 Last Seal S A. All rights reserved</target>
             </trans-unit>
             <trans-unit id="9">
-                <source>Todo comenzó una noche. Una estrella fugaz pasó por el oscuro cielo sin que nadie supiera que era exactamente. </source>
+                <source>Todo comenzó una noche. Una estrella fugaz pasó por el oscuro cielo sin que nadie supiera que era exactamente.</source>
                 <target>It all started one night. A shooting star passed through the dark night without anyone knowing what it was exactly.</target>
             </trans-unit>
             <trans-unit id="10">
-                <source>Con el pasar de los días, muchos fenómenos extraños fueron ocurriendo, hechos bizarros y paranormales empezaron a aparecer en la prensa mundialCon el pasar de los días numerosos fenómenos extraños empezaron a ocurrir, hechos paranormales y aterradores, sucesos que se hicieron habituales en la prensa mundial.</source>
+                <source>Con el pasar de los días numerosos fenómenos extraños empezaron a ocurrir, hechos paranormales y aterradores, sucesos que se hicieron habituales en la prensa mundial.</source>
                 <target>With the passing of days numerous strange phenomena started to occur, paranormal events and terrifying moments that became habitual at the world press.</target>
             </trans-unit>
             <trans-unit id="11">
-                <source>Criaturas sobrenaturales surgen de las sombras, están entre los humanos los acechan y los esperan. Todo esto empieza a ser tan común, tan frecuente, que hemos llegado al punto en que uno de estos seres se ha manifestado para contar exactamente lo que ha ocurrido en realidad. </source>
+                <source>Criaturas sobrenaturales surgen de las sombras, están entre los humanos los acechan y los esperan. Todo esto empieza a ser tan común, tan frecuente, que hemos llegado al punto en que uno de estos seres se ha manifestado para contar exactamente lo que ha ocurrido en realidad.</source>
                 <target>Supernatural creatures rise from the shadows, they are among the humans. They stalk them and wait. All of this starts to become very common, so frequent, that we have reached to the point in that one of these beings have manifested to count exactly what really happened.</target>
             </trans-unit>
             <trans-unit id="12">
-                <source>Ueyotl, así se hace llamar este ser. Declara que previo al paso de esta estrella algunas criaturas de gran poder pedían sacrificios para así poder abrir un portal. Este sacrificio constaba de la recolección de almas humanas antes del paso de la gran estrella. </source>
+                <source>Ueyotl, así se hace llamar este ser. Declara que previo al paso de esta estrella algunas criaturas de gran poder pedían sacrificios para así poder abrir un portal. Este sacrificio constaba de la recolección de almas humanas antes del paso de la gran estrella.</source>
                 <target>Ueyotl, that’s how this being is called. He declares that previous the pass of the star, some creatures with great power asked for great sacrifice so in that way to open a portal. This sacrifice consisted in the recollection of human souls before the pass of the great star.</target>
             </trans-unit>
             <trans-unit id="13">
@@ -55,15 +55,15 @@
                 <target>The portal has been opened, and thousands of creatures have passed to this world, they are present day and night, however, the night has become a tool of power for those beings, this give wildness to his most terrifying wishes.</target>
             </trans-unit>
             <trans-unit id="14">
-                <source>Sin embargo Ueyotl da una luz, una vana esperanza para cerrar aquel portal  y devolver a aquellas criaturas a su dimensión. </source>
+                <source>Sin embargo Ueyotl da una luz, una vana esperanza para cerrar aquel portal  y devolver a aquellas criaturas a su dimensión.</source>
                 <target>Despite of everything, Ueyotl has given a light. A vain hope to close the portal and return those creatures to their dimension.</target>
             </trans-unit>
             <trans-unit id="15">
-                <source>Revela que para lograrlo se debe reunir la mayor cantidad de apoyo de todas las personas que lean estas líneas. La condición es una sola, loguearse en www.darkrises.com, así dar apoyo y estar al tanto de cada acontecimiento que se aproxime. </source>
+                <source>Revela que para lograrlo se debe reunir la mayor cantidad de apoyo de todas las personas que lean estas líneas. La condición es una sola, loguearse en www.darkrises.com, así dar apoyo y estar al tanto de cada acontecimiento que se aproxime.</source>
                 <target>He reveals that to achieve it, everyone must gather the most help possible of everyone who reads these lines. The condition is one, link in to www.darkrises.com/en, therefore to aid and to be aware of every event that approaches.</target>
             </trans-unit>
             <trans-unit id="16">
-                <source>No se sabe en qué consiste cada desafío pero sólo queda una manera de averiguarlo. </source>
+                <source>Ueyotl  anuncia también que cada 2500 apoyos, él liberará un desafío para todos. No se sabe en qué consiste cada desafío pero sólo queda una manera de averiguarlo.</source>
                 <target>Ueyotl also announces that every 2500 people recruited, he will free a challenge to all of us. We don’t know what will the challenge consist in but, we only have one way to find out.</target>
             </trans-unit>
             <trans-unit id="17">
@@ -194,26 +194,126 @@
                 <source>Para registrarte, lo único que debes hacer es iniciar tu sesión de Facebook en nuestra página. Muchas gracias por el apoyo y esperamos que pronto estén divirtiéndose junto a nosotros.</source>
                 <target>To register, the only thing that you have to do is to start your Facebook session to our page. Thank you very much for your support and we soon hope that you will have fun with us.</target>
             </trans-unit>
-          <!--  <trans-unit id="49">
-                <source>que sólo sería posible si esas almas estuvieran</source>
-                <target>Login in Facebook</target>
+          <trans-unit id="49">
+                <source>Contexto</source>
+                <target>CONTEXT</target>
             </trans-unit>
             <trans-unit id="50">
-                <source>recolectadas antes del paso de la estrella fugaz.</source>
-                <target>Login in Facebook</target>
+                <source>Dark Rises es un juego de navegador free-to-play desarrollado por la empresa Last Seal para en una primera instancia entrar en la plataforma de red social Facebook. Consiste en un juego de rol que permite que miles de jugadores puedan participar en un mundo virtual de manera simultánea e interactuar entre ellos, más conocido como MMORPG.</source>
+                <target>Dark Rises is a free-to-play navigator game developed by the company Last Seal in a first instance to enter in the social networking platform Facebook. It consists in a RPG that permit that thousands of players can participate in a virtual world in a simultaneous way and interact between themselves, known as MMORPG.</target>
             </trans-unit>
             <trans-unit id="51">
-                <source>La estrella ha pasado y el portal ha sido abierto,</source>
-                <target>Login in Facebook</target>
+                <source>Ambientación</source>
+                <target>AMBIANCE</target>
             </trans-unit>
             <trans-unit id="52">
-                <source>miles de criaturas han pasado a este mundo y corren</source>
-                <target>Login in Facebook</target>
+                <source>Nos encontramos en un mundo contemporáneo sobrenatural, con una cantidad cada vez más creciente de crímenes y sucesos oscuros. Eso ha llevado a que un grupo de personas decida investigar lo que hay detrás y enfrentarse a lo desconocido. Con el pasar del tiempo, descubrirán que existe un conflicto aún mayor detrás de todo. El eterno conflicto entre los no tan benévolos ángeles y los nunca confiables demonios.</source>
+                <target>We are involved in a supernatural contemporaneous world, with an even more crescent quantity of paranormal events. That has led to a group of people to decide investigate what is deep under and confront the unknown. With the passing of time, you will discover that there is a bigger conflict behind the curtains. The eternal conflict between the not so benevolent angels and the never reliable demons.</target>
             </trans-unit>
             <trans-unit id="53">
-                <source>librememente por la noche dando rienda suelta a sus</source>
-                <target>Login in Facebook</target>
-            </trans-unit>-->
+                <source>Diferencias</source>
+                <target>DIFFERENCES</target>
+            </trans-unit>
+            <trans-unit id="54">
+                <source>El juego Dark Rises posee tres grandes diferencias en comparación con los otros juegos de Facebook. Dichas diferenciaciones irán apareciendo a medida que el juego vaya evolucionando. Contará con un comercio entre jugadores para que negocien cualquier tipo de bien virtual  entre usuarios. En su momento aparecerá un módulo de misiones y combates grupales, dónde se hace imprescindible la parte social. Y por último, y lo más importante, la creación periódica de eventos que determinará una raza ganadora y que repercutirá en la continuidad de la historia del juego.</source>
+                <target>The Dark Rises game possesses three big differences in comparison with the other Facebook games.  These differentiations will appear as the game evolves. It will trade between players to negotiate any virtual goods between users. In any moment a mission module and group combatants will appear where the social part is essential. And finally, and the most important, the periodic creation of events that will determine a winner race and that it will impact in the community of the game history.</target>
+            </trans-unit>
+            <trans-unit id="55">
+                <source>Personalización</source>
+                <target>PERSONALIZATION</target>
+            </trans-unit>
+            <trans-unit id="56">
+                <source>Dark Rises posee un sistema detallado para crear un avatar personalizado.  Desde vestimentas hasta peinados y accesorios. Además se incorporarán elementos de fondo como el entorno y el vehículo. Durante el desarrollo del juego se irán implementando más novedades para que el jugador pueda tener un avatar único, todo para que se pueda lograr una imagen única y propia.</source>
+                <target>Dark Rises possesses a detailed system to create a personalized avatar. From dressing to hair styles and accessories. Also, it will include background elements as in surroundings and vehicles. During the development of the game it will implement more novelties so the player can have a unique avatar, all to achieve a unique a proper image.</target>
+            </trans-unit>
+            <trans-unit id="57">
+                <source>Inventario</source>
+                <target>INVENTORY</target>
+            </trans-unit>
+            <trans-unit id="58">
+                <source>Se ha incorporado un sistema de inventario tradicional de los juegos de rol, aunque los objetos con los que se equipa al jugador son: armas blancas y de fuego, chalecos protectores, relojes, guantes, canilleras, zapatos y amuletos protectores. Podrás guardar todos tus equipajes en una mochila, un portaequipaje y un bunker.</source>
+                <target>It has been incorporated a system of traditional inventory of RPG, although the objects you equip to the player are: weapons and firearms, protective vests, watches, gloves, shin, shoes and protective amulets. You could keep your entire luggage in a backpack, a trunk and a bunker.</target>
+            </trans-unit>
+            <trans-unit id="59">
+                <source>Misiones y Combates</source>
+                <target>MISSIONS &amp; COMBATS</target>
+            </trans-unit>
+            <trans-unit id="60">
+                <source>Las misiones te llevarán a distintos lugares en donde están ocurriendo crímenes o avistamientos, tendrás que ir a enfrentarte con quien quiera que sea que esté ocasionando el terror en la población. También podrás desafiar a combate a otros jugadores, y lograr así, premios adicionales para mejorar a tu personaje.</source>
+                <target>The missions will take you to different places in where crimes or sightings are occurring, you will have to confront with whoever it is that is causing the horror in the population. You could also challenge to combat with other players and achieve in that way additional prizes to improve your character.</target>
+            </trans-unit>
+            <trans-unit id="61">
+                <source>Criaturas</source>
+                <target>CREATURES</target>
+            </trans-unit>
+            <trans-unit id="62">
+                <source>Una gran variedad de tipos y categorías de criaturas aparecen durante el juego. Podrás encontrar incorpóreos, aberraciones, humanos y semihumanos, no muertos, cambia formas, ymir, ajenos, demonios y ángeles. Encontrarás más detalles cuando entre al bestiario.</source>
+                <target>A huge variety of types and categories of creatures appear during the game. You can find incorporeal, aberrations, humans and demi humans, not dead, shift changers, ymir, outsiders, demons and angels. You will find more details when you enter to the bestiary.</target>
+            </trans-unit>
+            <trans-unit id="63">
+                <source>Comercio</source>
+                <target>COMMERCE</target>
+            </trans-unit>
+            <trans-unit id="64">
+                <source>Dark Rises posee un sistema de comercio con la tienda, donde los jugadores podrán comprar y vender los objetos y equipamientos que quieran. Además se incorpora el comercio entre jugadores, donde los mismos deciden los valores de compra y venta acorde a la oferta y demanda que se cree dentro del mundo del juego.</source>
+                <target>Dark Rises possesses a commerce system with the store where the players can buy and sale objects and equipment you want. Also it includes the commerce between players where the same decide the buy and sale values according to the offer and demand that is created in the game world.</target>
+            </trans-unit>
+            <trans-unit id="65">
+                <source>Mejoras</source>
+                <target>UPGRADES</target>
+            </trans-unit>
+            <trans-unit id="66">
+                <source>Cada equipamiento que se adquiera para el inventario podrá ser mejorado, y existen tres formas de mejorar el equipo. Mejora de nivel o poder (+0, +1, +2…+10), Bonos (entrega una facultad al equipo a través del traspaso de energía espiritual a éste) e Inscripciones (entrega una facultad al equipo mediante una grabado en éste). La forma en que se pueden combinar las diversas opciones que presentan estos tres tipos de mejoras, generan una gran variedad de estrategias en el combate.</source>
+                <target>Every equipment that you acquire to the inventory can be upgraded and there are three ways to improve the equipment. Improve the level or power (+0, +1, +2… +10), Bonus (it delivers a faculty to the equipment through the trespass of spiritual energy to this) and inscriptions (it delivers a faculty to the equipment through a recording to this). The way to combine the differed options that these types of three upgrades present, generate a huge variety of strategies in combat.</target>
+            </trans-unit>
+            <trans-unit id="67">
+                <source>Razas</source>
+                <target>RACES</target>
+            </trans-unit>
+            <trans-unit id="68">
+                <source>Durante el transcurso del juego, llegará el momento en que el jugador deberá decidir a qué raza quiere defender, ante ello tiene tres opciones: Unirse a los ángeles, a los demonios o a la propia raza humana. El jugador deberá elegirlo con sabiduría.</source>
+                <target>During the course of the game the moment will come when the player has to decide which race wants to defend, onto that the player has three options: Join the angels, the demons o or the human race. The player should select it wisely.</target>
+            </trans-unit>
+            <trans-unit id="69">
+                <source>Poderes</source>
+                <target>POWERS</target>
+            </trans-unit>
+            <trans-unit id="70">
+                <source>Existe una cantidad de poderes únicos pertenecientes a cada raza y clase, los que tendrán un gran valor estratégico durante los combates con criaturas y con otros jugadores. A medida que se sube en los niveles de experiencia, adquirirás puntos para distribuirlos en los poderes que quieras y así derrotar a cualquier amenaza.</source>
+                <target>Exists a quantity of unique powers belonging to every race and class, in which they will have a great strategic courage during combats with creatures and with other players. As the players go up in level of experience, the players will achieve points to distribute them in powers that they want and therefore defeat any threat.</target>
+            </trans-unit>
+            <trans-unit id="71">
+                <source>Títulos y Reputación</source>
+                <target>TITLES &amp; REPUTATION</target>
+            </trans-unit>
+            <trans-unit id="72">
+                <source>A medida que transcurre el juego y te enfrentas continuamente con un tipo de criatura específica, ganarás un título que te irá destacando ante los demás (Vampiros: profesional, Espíritus: amateur, etc.). Los títulos son: novato, amateur, profesional, experto y veterano. Por otra parte, tu reputación como jugador dependerá de cómo resulten los combates en que participas. Influirá si ganas siempre, si pierdes, si te retiras, etc. Dichos títulos y reputación podrán hacerse públicos en tu perfil para que los demás jugadores lo vean cuando te visiten.</source>
+                <target>As the game goes and you encounter continuously with other type of specific creature, you will gain a title that will let you enhance above others (Vampires: professional, Spirits: beginners, etc.). The titles are: rookie, beginner, professional, expert and veteran. On the other hand, your reputation as a player will depend on how combat will result in the combats you participate. It will influence if you always win, if you lose, if you decline, etc. These titles and reputation could be public in your profile for the people to see when they visit you.</target>
+            </trans-unit>
+            <trans-unit id="73">
+                <source>Crónicas</source>
+                <target>STORIES &amp; CHRONICLES</target>
+            </trans-unit>
+            <trans-unit id="74">
+                <source>Hemos dado espacio para potenciar lo que es la historia del juego, por lo que hemos dividido la parte escrita en dos secciones: Historia y Crónicas. La Historia será el guión principal de Dark Rises, la que se entregará en capítulos, y es la que lleva los sucesos y genera los eventos, es la que da paso a los cambios del juego por parte de los jugadores. En ésta los jugadores pueden inmortalizar los nombres de sus personajes. Las crónicas son relatos cortos para ambientar y explicar detalles del mundo, y éstas no están sujetas estrictamente a una correlación entre ellas, tampoco llevan un orden cronológico.</source>
+                <target>We have given space to power what is the story of the game, for in which we have divided the part into two sections: Story and Chronicles. The Story will be the main script of Dark Rises, in which it will be delivered in chapters and it’s the one that carries events and generate events. It is in which gives the pass for changes of the game for the players. In this part the players can immortalize the name of their characters.</target>
+            </trans-unit>
+            <trans-unit id="75">
+                <source>Misiones Grupales</source>
+                <target>GROUP MISSIONS</target>
+            </trans-unit>
+            <trans-unit id="76">
+                <source>Otra de las novedades de Dark Rises es que se potencia el juego grupal, habrán misiones y combates por grupos que los mismos usuarios pueden organizar. Podrán combinar amigos de diferentes habilidades y poderes para formar distintas estrategias y así formar un grupo muy poderoso.</source>
+                <target>Another novelty of Dark Rises is that group missions can enhance themselves; there will be missions and battles per group that the same users can organize. You can combine friends of different skills and powers to form different strategies and to that form a very powerful group.</target>
+            </trans-unit>
+            <trans-unit id="77">
+                <source>Eventos</source>
+                <target>EVENTS</target>
+            </trans-unit>
+            <trans-unit id="78">
+                <source>La mayor novedad de Dark Rises consiste en la organización periódica de misiones especiales que llaman a la participación de todos los jugadores. Consistirá en un enfrentamiento de las tres razas y la raza ganadora influenciará en la continuidad de la historia del juego. Mientras más jugadores de una raza participen, más probabilidades existen de que esa la raza ganadora.</source>
+                <target>The biggest innovation of Dark Rises consist in the periodic organization of special missions in which call the participation of all the players. It will consist of a confrontation among the three races and the winning race will influence in the community of the game story. The more players in a race participate, more possibilities exist that that race is the winner.</target>
+            </trans-unit>
             
         </body>
     </file>

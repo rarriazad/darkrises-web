@@ -9,8 +9,8 @@ security:
     providers:
         in_memory:
             users:
-                user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
+                #user:  { password: userpass, roles: [ 'ROLE_USER' ] }
+                darkrises: { password: wp_l4sts34l, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         dev:
@@ -35,5 +35,4 @@ security:
             #facebook: ~
 
     access_control:
-        #- { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY, requires_channel: https }
-        #- { path: ^/_internal, roles: IS_AUTHENTICATED_ANONYMOUSLY, ip: 127.0.0.1 }
+        - { path: ^/admin, roles: ROLE_ADMIN }

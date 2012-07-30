@@ -235,7 +235,7 @@
 				00000
 			</div>
 		</div>
-		<div class="counter-popup">¿Qué es ésto?</div>
+		<div class="counter-popup">{% trans %}¿Qué es esto?{% endtrans %}</div>
 	</div>
 	<div class="sello">
 		<div class="flash-wrapper">
@@ -272,6 +272,7 @@
 	  </div>
 	  
 	  </div>
+	  {% if (app.session.locale == 'es') %}
 	 <div class="info-sellos">
 	  	<div class="text-sellos text-sellos-quees">
 	  		<p class="title">¿Qué es Dark Rises?</p>
@@ -298,6 +299,7 @@
 	  		<p class="sello-menu-media sello-menu"></p>
 	  	</div>
 	  </div>
+	  {% endif %}
 	</div>
 {% endblock %}
 

@@ -173,6 +173,8 @@ body{
 	vertical-align: middle;
 	font-family: copperplate, serif;
 	display: block;
+	width: 300px;
+	margin-left: 10px;
 }
 
 .padding-top{
