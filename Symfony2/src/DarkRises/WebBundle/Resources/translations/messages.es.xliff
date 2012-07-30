@@ -30,6 +30,10 @@
                 <source>LogininFacebook</source>
                 <target>Login in Facebook</target>
             </trans-unit>
+            <trans-unit id="8">
+                <source>Proximamente</source>
+                <target>Próximamente</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

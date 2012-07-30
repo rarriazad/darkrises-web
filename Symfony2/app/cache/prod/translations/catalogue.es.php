@@ -56,6 +56,7 @@ $catalogue = new MessageCatalogue('es', array (
     'Bestiario' => 'Bestiario',
     'VerMas' => 'Ver Mas',
     'LogininFacebook' => 'Login in Facebook',
+    'Proximamente' => 'Próximamente',
   ),
 ));
 
