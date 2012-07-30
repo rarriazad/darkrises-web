@@ -295,14 +295,44 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\tcursor:pointer;
 \t\t\tmargin: 5px auto;
 \t\t}
+\t\t.padding-top{
+\t\t\tmargin-top: 5px;
+\t\t}
+\t\t.story1{
+\t\t\tmargin-right: 110px;
+\t\t}
+\t\t.story2{
+\t\t\tmargin-right: 115px;
+\t\t}
+\t\t.story3{
+\t\t\tmargin-right: 130px;
+\t\t}
+\t\t.story4{
+\t\t\tmargin-right: 150px;
+\t\t}
+\t\t.story5{
+\t\t\tmargin-right: 200px;
+\t\t}
+\t\t.story6{
+\t\t\tmargin-right: 250px;
+\t\t}
+\t\t.story7{
+\t\t\tmargin-right: 260px;
+\t\t}
+\t\t.story8{
+\t\t\tmargin-right: 300px;
+\t\t}
+\t\t.story9{
+\t\t\tmargin-right: 110px;
+\t\t}
 \t</style>
 ";
     }
 
-    // line 201
+    // line 231
     public function block_main($context, array $blocks = array())
     {
-        // line 202
+        // line 232
         echo "\t<div class=\"counter\">
 \t\t<div class=\"numeros margin\">
 \t\t\t<div class=\"cantidad copperplate white-glow\">
@@ -315,7 +345,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t<div class=\"flash-wrapper\">
 \t\t <object id=\"FlashID\" class=\"flash\" classid=\"clsid:D27CDB6E-AE6D-11cf-96B8-444553540000\" >
 \t\t\t<param name=\"movie\" value=\"";
-        // line 213
+        // line 243
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/animacionsello.swf"), "html", null, true);
         echo "\" />
 \t\t\t<param name=\"quality\" value=\"high\" />
@@ -327,7 +357,7 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\t<!-- La siguiente etiqueta object es para navegadores distintos de IE. Ocúltela a IE mediante IECC. -->
 \t\t\t<!--[if !IE]>-->
 \t\t\t<object type=\"application/x-shockwave-flash\" data=\"";
-        // line 222
+        // line 252
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/animacionsello.swf"), "html", null, true);
         echo "\" width=\"465\" height=\"440\">
 \t\t\t  <!--<![endif]-->
@@ -382,10 +412,10 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 ";
     }
 
-    // line 274
+    // line 304
     public function block_lightboxes($context, array $blocks = array())
     {
-        // line 275
+        // line 305
         echo "\t";
         $this->displayParentBlock("lightboxes", $context, $blocks);
         echo "
@@ -398,44 +428,60 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\t</div>
 \t\t\t
 \t\t\t<p class=\"black-glow\">
-\t\t\tTodo empezó una noche en que una estrella fugaz pasó por los cielos<br/>
-\t\t\tsin que nadie supiera que era exactamente.<br/>
-\t\t\t<br/>
-\t\t\tCon el pasar de los días, muchos fenómenos extraños fueron ocurriendo,<br/>
-\t\t\thechos bizarros y paranormales empezaron a aparecer en la prensa</br>
-\t\t\tmundial.<br/>
-\t\t\t<br/>
-\t\t\tAvistamientos de criaturas sobrenaturales empezaron a hacerse<br/> 
-\t\t\tmuy común, hasta tal punto que uno de ellas ha aparecido</br>
-\t\t\tpara contar exactamente que ha ocurrido.<br/>
-\t\t\t<br/>
-\t\t\tUeyotl, como se hace llamar este ser, dice que previo al<br/>
-\t\t\tpaso de esta estrella, algunas criaturas oscuras pedían<br/>
-\t\t\tsacrificios para dar la posibilidad de juntar</br>
-\t\t\talmas elegidas y tener la posibilidad de abrir un portal<br/>
-\t\t\tque sólo sería posible si esas almas estuvieran<br/>
-\t\t\trecolectadas antes del paso de la estrella fugaz.<br/>
-\t\t\t<br/>
-\t\t\tLa estrella ha pasado y el portal ha sido abierto,<br/>
-\t\t\tmiles de criaturas han pasado a este mundo y corren <br/>
-\t\t\tlibrememente por la noche dando rienda suelta a sus<br/>
-\t\t\tdeseos de sangre.<br/>
-\t\t\t<br/>
-\t\t\tUeyotl dice que sólo hay una manera de cerrarlo y <br/>
-\t\t\thacer que las criaturas se devuelvan a su dimensión.<br/>
-\t\t\t<br/>
-\t\t\tDebemos reunir la mayor cantidad de apoyo de todas<br/>
-\t\t\tlas personas que lean estas líneas.</br>
-\t\t\tLa condición es una sóla, inscribirse en esta página<br/>
-\t\t\ta través de Facebook para que vayan recibiendo<br/>
-\t\t\tnotícias de este evento.<br/>
-\t\t\t<br/>
-\t\t\tAdemás de eso, Ueyotl ha dicho que cada 2500<br/>
-\t\t\tapoyos, él liberará un desafío para todos.<br/> 
-\t\t\tNo sabemos en qué consiste dichos desafíos<br/>
-\t\t\tpero sólo hay una manera de averiguarlo.<br/>
-\t\t\t<br/>
-\t\t\tÚnete a esta tarea y logremos cerrar el<br/> portal.<br/>
+\t\t\t<div class=\"story1\">
+\t\t\t";
+        // line 316
+        echo $this->env->getExtension('translator')->getTranslator()->trans("Todo comenzó una noche. Una estrella fugaz pasó por el oscuro cielo sin que nadie supiera que era exactamente.", array(), "messages");
+        echo "<br/>
+\t\t\t</div>
+\t\t\t<div class=\"story2 padding-top clear\">
+\t\t\t";
+        // line 319
+        echo $this->env->getExtension('translator')->getTranslator()->trans("Con el pasar de los días numerosos fenómenos extraños empezaron a ocurrir, hechos paranormales y aterradores, sucesos que se hicieron habituales en la prensa mundial.", array(), "messages");
+        echo "<br/>
+\t\t\t</div>
+\t\t\t<div class=\"story3 padding-top clear\">
+\t\t\t";
+        // line 322
+        echo $this->env->getExtension('translator')->getTranslator()->trans("Criaturas sobrenaturales surgen de las sombras, están entre los humanos los acechan y los esperan. Todo esto empieza a ser tan común, tan frecuente, que hemos llegado al punto en que uno de estos seres se ha manifestado para contar exactamente lo que ha ocurrido en realidad.", array(), "messages");
+        echo "<br/>
+\t\t\t</div>
+\t\t\t<div class=\"story4 padding-top clear\">
+\t\t\t";
+        // line 325
+        echo $this->env->getExtension('translator')->getTranslator()->trans("Ueyotl, así se hace llamar este ser. Declara que previo al paso de esta estrella algunas criaturas de gran poder pedían sacrificios para así poder abrir un portal. Este sacrificio constaba de la recolección de almas humanas antes del paso de la gran estrella.", array(), "messages");
+        echo "<br/>
+\t\t\t</div>
+\t\t\t<div class=\"story5 padding-top clear\">
+\t\t\t";
+        // line 328
+        echo $this->env->getExtension('translator')->getTranslator()->trans("El portal ha sido abierto, y miles de criaturas han pasado a este mundo, están presentes día y noche, sin embargo la  noche es herramienta de poder para estos seres, esta da desenfreno a sus más aterradores deseos.", array(), "messages");
+        echo "<br/>
+\t\t\t</div>
+\t\t\t<div class=\"story6 padding-top clear\">
+\t\t\t";
+        // line 331
+        echo $this->env->getExtension('translator')->getTranslator()->trans("Sin embargo Ueyotl da una luz, una vana esperanza para cerrar aquel portal  y devolver a aquellas criaturas a su dimensión.", array(), "messages");
+        echo "<br/>
+\t\t\t</div>
+\t\t\t<div class=\"story7 padding-top clear\">
+\t\t\t";
+        // line 334
+        echo $this->env->getExtension('translator')->getTranslator()->trans("Revela que para lograrlo se debe reunir la mayor cantidad de apoyo de todas las personas que lean estas líneas. La condición es una sola, loguearse en www.darkrises.com, así dar apoyo y estar al tanto de cada acontecimiento que se aproxime.", array(), "messages");
+        echo "<br/>
+\t\t\t</div>
+\t\t\t<div class=\"story8 padding-top clear\">
+\t\t\t";
+        // line 337
+        echo $this->env->getExtension('translator')->getTranslator()->trans("Ueyotl  anuncia también que cada 2500 apoyos, él liberará un desafío para todos. No se sabe en qué consiste cada desafío pero sólo queda una manera de averiguarlo.", array(), "messages");
+        echo "<br/>
+\t\t\t</div>
+\t\t\t<div class=\"story9 padding-top clear\">
+\t\t\t";
+        // line 340
+        echo $this->env->getExtension('translator')->getTranslator()->trans("Únete a esta tarea y logremos cerrar el portal.", array(), "messages");
+        echo "<br/>
+\t\t\t</div>
 \t\t\t<br/>
 \t\t\t</p>
  \t\t</div>
@@ -443,23 +489,23 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 ";
     }
 
-    // line 329
+    // line 348
     public function block_end($context, array $blocks = array())
     {
-        // line 330
+        // line 349
         echo "\t<div class=\"end\">
 \t</div>
 \t";
-        // line 332
+        // line 351
         $this->displayParentBlock("end", $context, $blocks);
         echo "
 ";
     }
 
-    // line 336
+    // line 355
     public function block_javascript($context, array $blocks = array())
     {
-        // line 337
+        // line 356
         echo "\t";
         $this->displayParentBlock("javascript", $context, $blocks);
         echo "
@@ -569,10 +615,10 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 \t\t\t});
 \t</script>
 \t";
-        // line 443
+        // line 462
         if (isset($context["session"])) { $_session_ = $context["session"]; } else { $_session_ = null; }
         if (($_session_ == "first")) {
-            // line 444
+            // line 463
             echo "\t<script type=\"text/javascript\">
 \t\t\$(document).ready(
 \t\t\tfunction(){
@@ -584,27 +630,27 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
         }
     }
 
-    // line 454
+    // line 473
     public function block_hidden($context, array $blocks = array())
     {
-        // line 455
+        // line 474
         echo "\t";
         $this->displayParentBlock("hidden", $context, $blocks);
         echo "
 \t<img src=\"";
-        // line 456
+        // line 475
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-interrogacion/over.png"), "html", null, true);
         echo "\"/>
 \t<img src=\"";
-        // line 457
+        // line 476
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-key/over.png"), "html", null, true);
         echo "\"/>
 \t<img src=\"";
-        // line 458
+        // line 477
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/sello-icon-media/over.png"), "html", null, true);
         echo "\"/>
 \t<img src=\"";
-        // line 459
+        // line 478
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("/img/eventos/sello/pop-fondo.png"), "html", null, true);
         echo "\" />
 ";
@@ -622,6 +668,6 @@ class __TwigTemplate_4cb7051b12c0804e19fc70f9573df96e extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  606 => 459,  602 => 458,  598 => 457,  594 => 456,  589 => 455,  586 => 454,  574 => 444,  571 => 443,  461 => 337,  458 => 336,  452 => 332,  448 => 330,  445 => 329,  387 => 275,  384 => 274,  329 => 222,  317 => 213,  304 => 202,  301 => 201,  289 => 192,  283 => 189,  277 => 186,  269 => 181,  263 => 178,  257 => 175,  249 => 170,  243 => 167,  237 => 164,  204 => 134,  194 => 127,  186 => 122,  176 => 115,  168 => 110,  158 => 103,  135 => 83,  89 => 40,  82 => 36,  73 => 30,  61 => 21,  50 => 13,  41 => 7,  34 => 4,  31 => 3,);
+        return array (  652 => 478,  648 => 477,  644 => 476,  640 => 475,  635 => 474,  632 => 473,  620 => 463,  617 => 462,  507 => 356,  504 => 355,  498 => 351,  494 => 349,  491 => 348,  480 => 340,  474 => 337,  468 => 334,  462 => 331,  456 => 328,  450 => 325,  444 => 322,  438 => 319,  432 => 316,  417 => 305,  414 => 304,  359 => 252,  347 => 243,  334 => 232,  331 => 231,  289 => 192,  283 => 189,  277 => 186,  269 => 181,  263 => 178,  257 => 175,  249 => 170,  243 => 167,  237 => 164,  204 => 134,  194 => 127,  186 => 122,  176 => 115,  168 => 110,  158 => 103,  135 => 83,  89 => 40,  82 => 36,  73 => 30,  61 => 21,  50 => 13,  41 => 7,  34 => 4,  31 => 3,);
     }
 }

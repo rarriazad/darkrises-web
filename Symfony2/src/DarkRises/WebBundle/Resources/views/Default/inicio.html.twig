@@ -86,7 +86,7 @@
  {% block body %}
      <div class="video-trailer"> 
      	<div id="video">
-           <object class="video" id="smluiswf0" data="https://www.youtube.com/watch?v=VmxJJxRNArg?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0" waitforclick="false" wmode="transparent" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash">
+           <object class="video" id="smluiswf0" data="https://www.youtube.com/v/VmxJJxRNArg?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0" waitforclick="false" wmode="transparent" quality="high" allowscriptaccess="always" type="application/x-shockwave-flash">
               <param value="smluiswf0" name="id">
               <param value="https://www.youtube.com/v/VmxJJxRNArg?version=3&amp;feature=player_embedded&amp;autohide=1&amp;autoplay=0&amp;fs=1&amp;loop=0&amp;rel=0" name="swfSrc">
               <param value="640" name="width">
@@ -105,7 +105,7 @@
 				<a href="/guia/queues/"/>
 					<div class="inicio-quees"/>
 						<div class="inicio-quees-inside">
-							¿Qué es <br/> Dark Rises?				
+							{% trans %}¿Qué es{% endtrans %} <br/> {% trans %}Dark Rises?{% endtrans %}				
 						</div>
 					</div>
 				</a>
@@ -118,7 +118,7 @@
 			<a href="#facebook" class="link-to-login">
 					<div class="inicio-pack clear"/>
 						<div class="inicio-pack-inside">
-							¡Registrate y obtén el <br/> Pack de Principiante!				
+							{% trans %}¡Registrate y obtén el{% endtrans %} <br/> {% trans %}Pack de Principiante!{% endtrans %}				
 						</div>
 					</div>
 				</a>
@@ -162,20 +162,20 @@ new TWTR.Widget({
  	<div class="shadow-inside principiante yellow text-center" id="principiante"/>
  		<div class="shadow-padding">
 			<h1 class="copperplate"> {% trans %} Pack de Principiante {% endtrans %}</h1>
-			<p> Dark Rises es un juego que por el momento aún no está funcional en las redes sociales, es por eso que si te registras ahora, y como muestra de agradecimiento a la buena fe de nuestro juego, le regalaremos un pack de principiante que constará de todos los objetos que se listan a continuación. </p>
+			<p> {% trans %}Dark Rises es un juego que por el momento aún no está funcional en las redes sociales, es por eso que si te registras ahora, y como muestra de agradecimiento a la buena fe de nuestro juego, le regalaremos un pack de principiante que constará de todos los objetos que se listan a continuación.{% endtrans %} </p>
 			<div class="left">
 				<img src="{{ asset("img/inicio/popup/guantes.png") }}"/>
 			</div>
 			<div class="left popup-info">
-				<span class="yellow"> GUANTES NIVEL 2 (mejorado +8) </span>
+				<span class="yellow">{% trans %} GUANTES NIVEL 2 (mejorado +8){% endtrans %} </span>
 				<table class="white">
 					<tr>
-						<td> Mejoras </td>
+						<td>{% trans %} Mejoras{% endtrans %} </td>
 						<td> +0 </td>
 						<td> +8 </td>
 					</tr>
 					<tr>
-						<td> Defensa </td>
+						<td> {% trans %}Defensa{% endtrans %} </td>
 						<td> 1 </td>
 						<td> 9 </td>
 					</tr>
@@ -185,15 +185,15 @@ new TWTR.Widget({
 				<img src="{{ asset("img/inicio/popup/calzado.png") }}"/>
 			</div>
 			<div class="left popup-info">
-				<span class="yellow"> CALZADO NIVEL 3 (mejorado +8) </span>
+				<span class="yellow">{% trans %} CALZADO NIVEL 3 (mejorado +8){% endtrans %} </span>
 				<table class="white">
 					<tr>
-						<td> Mejoras </td>
+						<td> {% trans %}Mejoras{% endtrans %} </td>
 						<td> +0 </td>
 						<td> +8 </td>
 					</tr>
 					<tr>
-						<td> Def. Mágica </td>
+						<td> {% trans %}Def. Mágica{% endtrans %} </td>
 						<td> 1 </td>
 						<td> 9 </td>
 					</tr>
@@ -203,20 +203,20 @@ new TWTR.Widget({
 				<img src="{{ asset("img/inicio/popup/chaleco.png") }}"/>
 			</div>
 			<div class="left popup-info">
-				<span class="yellow"> CHALECO PROTECTOR NIVEL 1 (mejorado +8) </span>
+				<span class="yellow"> {% trans %}CHALECO PROTECTOR NIVEL 1 (mejorado +8){% endtrans %} </span>
 				<table class="white">
 					<tr>
-						<td> Mejoras </td>
+						<td> {% trans %}Mejoras{% endtrans %} </td>
 						<td> +0 </td>
 						<td> +8 </td>
 					</tr>
 					<tr>
-						<td> Defensa </td>
+						<td> {% trans %}Defensa{% endtrans %} </td>
 						<td> 8 </td>
 						<td> 40 </td>
 					</tr>
 					<tr>
-						<td> Def. Mágica </td>
+						<td> {% trans %}Def. Mágica{% endtrans %} </td>
 						<td> 8 </td>
 						<td> 48 </td>
 					</tr>
@@ -226,20 +226,20 @@ new TWTR.Widget({
 				<img src="{{ asset("img/inicio/popup/canillera.png") }}"/>
 			</div>
 			<div class="left popup-info">
-				<span class="yellow"> PROTECTOR LIGERO NIVEL 1 (mejorado +8) </span>
+				<span class="yellow"> {% trans %}PROTECTOR LIGERO NIVEL 1 (mejorado +8){% endtrans %} </span>
 				<table class="white">
 					<tr>
-						<td> Mejoras </td>
+						<td> {% trans %}Mejoras{% endtrans %} </td>
 						<td> +0 </td>
 						<td> +8 </td>
 					</tr>
 					<tr>
-						<td> Defensa </td>
+						<td> {% trans %}Defensa{% endtrans %} </td>
 						<td> 2 </td>
 						<td> 18 </td>
 					</tr>
 					<tr>
-						<td> Def. Mágica </td>
+						<td> {% trans %}Def. Mágica{% endtrans %} </td>
 						<td> 2 </td>
 						<td> 18 </td>
 					</tr>
@@ -249,20 +249,20 @@ new TWTR.Widget({
 				<img src="{{ asset("img/inicio/popup/cuchillo.png") }}"/>
 			</div>
 			<div class="left popup-info">
-				<span class="yellow"> CUCHILLO NIVEL 1 (mejorado +8) </span>
+				<span class="yellow"> {% trans %}CUCHILLO NIVEL 1 (mejorado +8){% endtrans %} </span>
 				<table class="white">
 					<tr>
-						<td> Mejoras </td>
+						<td> {% trans %}Mejoras{% endtrans %} </td>
 						<td> +0 </td>
 						<td> +8 </td>
 					</tr>
 					<tr>
-						<td> Daño</td>
+						<td> {% trans %}Daño{% endtrans %}</td>
 						<td> 30 - 40 </td>
 						<td> 78 - 96 </td>
 					</tr>
 					<tr>
-						<td> Daño Mágico </td>
+						<td> {% trans %}Daño Mágico{% endtrans %} </td>
 						<td> 30 - 40 </td>
 						<td> 78 - 96 </td>
 					</tr>
@@ -272,17 +272,17 @@ new TWTR.Widget({
 				<img src="{{ asset("img/inicio/popup/bono.png") }}"/>
 			</div>
 			<div class="left popup-info">
-				<span class="yellow"> ESPACIO EXTRA PARA BONO EN EQUIPO </span>
-				<p class="white"> Con la energía de manos hábiles, obtendrás un nuevo espacio para insertar un bono adicional a tu equipo y mejorarlo más aún para tener un equipo único.</p>
+				<span class="yellow"> {% trans %}ESPACIO EXTRA PARA BONO EN EQUIPO{% endtrans %} </span>
+				<p class="white"> {% trans %}Con la energía de manos hábiles, obtendrás un nuevo espacio para insertar un bono adicional a tu equipo y mejorarlo más aún para tener un equipo único.{% endtrans %}</p>
 			</div>
 			<div class="left clear">
 				<img src="{{ asset("img/inicio/popup/fondo.png") }}"/>
 			</div>
 			<div class="left popup-info">
-				<span class="yellow"> FONDO EXCLUSIVO PARA AVATAR </span>
-				<p class="white">Este fondo sólo lo tendrán las personas que obtuvieron este pack, fondo limitado y de colección para los jugadores.</p>
+				<span class="yellow">{% trans %}FONDO EXCLUSIVO PARA AVATAR{% endtrans %} </span>
+				<p class="white">{% trans %}Este fondo sólo lo tendrán las personas que obtuvieron este pack, fondo limitado y de colección para los jugadores.{% endtrans %}</p>
 			</div>
-			<p class="clear"> Para registrarte, lo único que debes hacer es iniciar tu sesión de Facebook en nuestra página. Muchas gracias por el apoyo y esperamos que pronto estén divirtiéndose junto a nosotros. </p>
+			<p class="clear"> {% trans %}Para registrarte, lo único que debes hacer es iniciar tu sesión de Facebook en nuestra página. Muchas gracias por el apoyo y esperamos que pronto estén divirtiéndose junto a nosotros.{% endtrans %} </p>
 		</div>
 	</div>
  {% endblock %}

@@ -30,6 +30,191 @@
                 <source>LogininFacebook</source>
                 <target>Login in Facebook</target>
             </trans-unit>
+            <trans-unit id="8">
+                <source>Dark Rises y todas las imagenes asociadas con Dark Rises son propiedad de © Copyright 2012 Last Seal S A. Todos los Derechos Reservados</source>
+                <target>Dark Rises and all images associated with Dark Rises are property of © Copyright 2012 Last Seal S A. All rights reserved</target>
+            </trans-unit>
+            <trans-unit id="9">
+                <source>Todo comenzó una noche. Una estrella fugaz pasó por el oscuro cielo sin que nadie supiera que era exactamente. </source>
+                <target>It all started one night. A shooting star passed through the dark night without anyone knowing what it was exactly.</target>
+            </trans-unit>
+            <trans-unit id="10">
+                <source>Con el pasar de los días, muchos fenómenos extraños fueron ocurriendo, hechos bizarros y paranormales empezaron a aparecer en la prensa mundialCon el pasar de los días numerosos fenómenos extraños empezaron a ocurrir, hechos paranormales y aterradores, sucesos que se hicieron habituales en la prensa mundial.</source>
+                <target>With the passing of days numerous strange phenomena started to occur, paranormal events and terrifying moments that became habitual at the world press.</target>
+            </trans-unit>
+            <trans-unit id="11">
+                <source>Criaturas sobrenaturales surgen de las sombras, están entre los humanos los acechan y los esperan. Todo esto empieza a ser tan común, tan frecuente, que hemos llegado al punto en que uno de estos seres se ha manifestado para contar exactamente lo que ha ocurrido en realidad. </source>
+                <target>Supernatural creatures rise from the shadows, they are among the humans. They stalk them and wait. All of this starts to become very common, so frequent, that we have reached to the point in that one of these beings have manifested to count exactly what really happened.</target>
+            </trans-unit>
+            <trans-unit id="12">
+                <source>Ueyotl, así se hace llamar este ser. Declara que previo al paso de esta estrella algunas criaturas de gran poder pedían sacrificios para así poder abrir un portal. Este sacrificio constaba de la recolección de almas humanas antes del paso de la gran estrella. </source>
+                <target>Ueyotl, that’s how this being is called. He declares that previous the pass of the star, some creatures with great power asked for great sacrifice so in that way to open a portal. This sacrifice consisted in the recollection of human souls before the pass of the great star.</target>
+            </trans-unit>
+            <trans-unit id="13">
+                <source>El portal ha sido abierto, y miles de criaturas han pasado a este mundo, están presentes día y noche, sin embargo la  noche es herramienta de poder para estos seres, esta da desenfreno a sus más aterradores deseos.</source>
+                <target>The portal has been opened, and thousands of creatures have passed to this world, they are present day and night, however, the night has become a tool of power for those beings, this give wildness to his most terrifying wishes.</target>
+            </trans-unit>
+            <trans-unit id="14">
+                <source>Sin embargo Ueyotl da una luz, una vana esperanza para cerrar aquel portal  y devolver a aquellas criaturas a su dimensión. </source>
+                <target>Despite of everything, Ueyotl has given a light. A vain hope to close the portal and return those creatures to their dimension.</target>
+            </trans-unit>
+            <trans-unit id="15">
+                <source>Revela que para lograrlo se debe reunir la mayor cantidad de apoyo de todas las personas que lean estas líneas. La condición es una sola, loguearse en www.darkrises.com, así dar apoyo y estar al tanto de cada acontecimiento que se aproxime. </source>
+                <target>He reveals that to achieve it, everyone must gather the most help possible of everyone who reads these lines. The condition is one, link in to www.darkrises.com/en, therefore to aid and to be aware of every event that approaches.</target>
+            </trans-unit>
+            <trans-unit id="16">
+                <source>No se sabe en qué consiste cada desafío pero sólo queda una manera de averiguarlo. </source>
+                <target>Ueyotl also announces that every 2500 people recruited, he will free a challenge to all of us. We don’t know what will the challenge consist in but, we only have one way to find out.</target>
+            </trans-unit>
+            <trans-unit id="17">
+                <source>Únete a esta tarea y logremos cerrar el portal.</source>
+                <target>Join in to this task and we will close the portal.</target>
+            </trans-unit>
+           <trans-unit id="18">
+                <source>Inicio</source>
+                <target>Home</target>
+            </trans-unit>
+            <trans-unit id="19">
+                <source>Guia del Juego</source>
+                <target>Game Guide</target>
+            </trans-unit>
+            <trans-unit id="20">
+                <source>Comunidad</source>
+                <target>Community</target>
+            </trans-unit>
+            <trans-unit id="21">
+                <source>Biblioteca</source>
+                <target>Stories</target>
+            </trans-unit>
+            <trans-unit id="22">
+                <source>Comprar</source>
+                <target>Store</target>
+            </trans-unit>
+            <trans-unit id="23">
+                <source>Eventos</source>
+                <target>Events</target>
+            </trans-unit>
+            <trans-unit id="24">
+                <source>Cerrar Sesión</source>
+                <target>Log Out</target>
+            </trans-unit>
+           <trans-unit id="25">
+                <source>¿Qué es</source>
+                <target>What is</target>
+            </trans-unit>
+            <trans-unit id="26">
+                <source>Dark Rises?</source>
+                <target>Dark Rises?</target>
+            </trans-unit>
+            <trans-unit id="27">
+                <source>¡Registrate y obtén el</source>
+                <target>Register and get the</target>
+            </trans-unit>
+            <trans-unit id="28">
+                <source>Pack de Principiante!</source>
+                <target>Beginner Pack!</target>
+            </trans-unit>
+            <trans-unit id="29">
+                <source>¿Qué es esto?</source>
+                <target>what is this?</target>
+            </trans-unit>
+            <trans-unit id="30">
+                <source>Ir al Juego</source>
+                <target>Go to the Game</target>
+            </trans-unit>
+            <trans-unit id="31">
+                <source>Próximamente</source>
+                <target>Soon</target>
+            </trans-unit>
+            <trans-unit id="32">
+                <source>Pack de Principiante</source>
+                <target>BEGINNER PACK</target>
+            </trans-unit>
+            <trans-unit id="33">
+                <source>Dark Rises es un juego que por el momento aún no está funcional en las redes sociales, es por eso que si te registras ahora, y como muestra de agradecimiento a la buena fe de nuestro juego, le regalaremos un pack de principiante que constará de todos los objetos que se listan a continuación.</source>
+                <target>Dark Rises is a game that for the moment is not yet functional in the social net, and that is why if you register now, and as shown of gratitude of having faith in our game, we will give a beginners pack that will consist all of the objects that are listed below:</target>
+            </trans-unit>
+            <trans-unit id="34">
+                <source>GUANTES NIVEL 2 (mejorado +8)</source>
+                <target>GLOVES LEVEL 2 (UPGRADED +8)</target>
+            </trans-unit>
+            <trans-unit id="35">
+                <source>Mejoras</source>
+                <target>Upgrade</target>
+            </trans-unit>
+            <trans-unit id="36">
+                <source>Defensa</source>
+                <target>Defense</target>
+            </trans-unit>
+            <trans-unit id="37">
+                <source>CALZADO NIVEL 3 (mejorado +8)</source>
+                <target>SHOES LEVEL 3 (UPGRADED +8)</target>
+            </trans-unit>
+            <trans-unit id="38">
+                <source>Def. Mágica</source>
+                <target>Magic Defense</target>
+            </trans-unit>
+            <trans-unit id="39">
+                <source>CHALECO PROTECTOR NIVEL 1 (mejorado +8)</source>
+                <target>PROTECTOR JACKET LEVEL 1 (UPGRADED +8)</target>
+            </trans-unit>
+           <trans-unit id="40">
+                <source>PROTECTOR LIGERO NIVEL 1 (mejorado +8)</source>
+                <target>LIGHT PROTECTOR LEVEL 1 (UPGRADED +8)</target>
+            </trans-unit>
+            <trans-unit id="41">
+                <source>CUCHILLO NIVEL 1 (mejorado +8)</source>
+                <target>KNIFE LEVEL 1 (UPGRADED +8)</target>
+            </trans-unit>
+            <trans-unit id="42">
+                <source>Daño</source>
+                <target>Damage</target>
+            </trans-unit>
+            <trans-unit id="43">
+                <source>Daño Mágico</source>
+                <target>Magic damage</target>
+            </trans-unit>
+            <trans-unit id="44">
+                <source>ESPACIO EXTRA PARA BONO EN EQUIPO</source>
+                <target>EXTRA SPACE FOR BONUS IN EQUIPMENT</target>
+            </trans-unit>
+            <trans-unit id="45">
+                <source>Con la energía de manos hábiles, obtendrás un nuevo espacio para insertar un bono adicional a tu equipo y mejorarlo más aún para tener un equipo único.</source>
+                <target>With the power of skilled hands, you will have a new space to put an additional bonus to your equipment and upgrade it more to obtain better equipment.</target>
+            </trans-unit>
+            <trans-unit id="46">
+                <source>FONDO EXCLUSIVO PARA AVATAR</source>
+                <target>EXCLUSIVE BACKGROUND TO AVATAR</target>
+            </trans-unit>
+            <trans-unit id="47">
+                <source>Este fondo sólo lo tendrán las personas que obtuvieron este pack, fondo limitado y de colección para los jugadores.</source>
+                <target>Only the people that obtained this pack will have this background, limited background and collection for the players.</target>
+            </trans-unit>
+            <trans-unit id="48">
+                <source>Para registrarte, lo único que debes hacer es iniciar tu sesión de Facebook en nuestra página. Muchas gracias por el apoyo y esperamos que pronto estén divirtiéndose junto a nosotros.</source>
+                <target>To register, the only thing that you have to do is to start your Facebook session to our page. Thank you very much for your support and we soon hope that you will have fun with us.</target>
+            </trans-unit>
+          <!--  <trans-unit id="49">
+                <source>que sólo sería posible si esas almas estuvieran</source>
+                <target>Login in Facebook</target>
+            </trans-unit>
+            <trans-unit id="50">
+                <source>recolectadas antes del paso de la estrella fugaz.</source>
+                <target>Login in Facebook</target>
+            </trans-unit>
+            <trans-unit id="51">
+                <source>La estrella ha pasado y el portal ha sido abierto,</source>
+                <target>Login in Facebook</target>
+            </trans-unit>
+            <trans-unit id="52">
+                <source>miles de criaturas han pasado a este mundo y corren</source>
+                <target>Login in Facebook</target>
+            </trans-unit>
+            <trans-unit id="53">
+                <source>librememente por la noche dando rienda suelta a sus</source>
+                <target>Login in Facebook</target>
+            </trans-unit>-->
+            
         </body>
     </file>
 </xliff>
