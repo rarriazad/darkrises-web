@@ -33,6 +33,11 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'DarkRises\\WebBundle\\Controller\\DefaultController::registerAction',  '_route' => 'DarkRisesWebBundle_counterpage',);
         }
 
+        // DarkRisesWebBundle_adminfanartpage
+        if ($pathinfo === '/admin/fanart') {
+            return array (  '_controller' => 'DarkRises\\WebBundle\\Controller\\DefaultController::uploadFanartAction',  '_route' => 'DarkRisesWebBundle_adminfanartpage',);
+        }
+
         // DarkRisesWebBundle_localesecondhomepage
         if (preg_match('#^/(?P<_locale>en|es)/(?P<name>[^/]+?)/(?P<second>[^/]+?)/?$#s', $pathinfo, $matches)) {
             if (substr($pathinfo, -1) !== '/') {
