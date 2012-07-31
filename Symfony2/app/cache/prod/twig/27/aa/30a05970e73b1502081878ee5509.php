@@ -71,17 +71,17 @@ class __TwigTemplate_27aa30a05970e73b1502081878ee5509 extends Twig_Template
 \t\t";
         // line 44
         $this->displayBlock('end', $context, $blocks);
-        // line 53
+        // line 54
         echo "\t\t<div style=\"display: none;\">
 \t\t\t";
-        // line 54
+        // line 55
         $this->displayBlock('hidden', $context, $blocks);
-        // line 57
+        // line 58
         echo "\t\t</div>
 \t\t";
-        // line 58
+        // line 59
         $this->displayBlock('javascript', $context, $blocks);
-        // line 61
+        // line 62
         echo "\t\t
 \t</body>
 </html>";
@@ -158,7 +158,7 @@ class __TwigTemplate_27aa30a05970e73b1502081878ee5509 extends Twig_Template
 \t\t\t";
         // line 46
         $this->displayBlock('footer', $context, $blocks);
-        // line 51
+        // line 52
         echo "\t\t</div>
 \t\t";
     }
@@ -173,26 +173,30 @@ class __TwigTemplate_27aa30a05970e73b1502081878ee5509 extends Twig_Template
         echo $this->env->getExtension('translator')->getTranslator()->trans("Dark Rises y todas las imagenes asociadas con Dark Rises son propiedad de © Copyright 2012 Last Seal S A. Todos los Derechos Reservados", array(), "messages");
         // line 49
         echo "\t\t\t</div>
+\t\t\t<img src=\"";
+        // line 50
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("img/credits.png"), "html", null, true);
+        echo "\" class=\"credits\" />
 \t\t\t";
     }
 
-    // line 54
+    // line 55
     public function block_hidden($context, array $blocks = array())
     {
-        // line 55
+        // line 56
         echo "\t\t\t\t";
         $this->env->loadTemplate("DarkRisesWebBundle:Default:hideMenu.html.twig")->display($context);
-        // line 56
+        // line 57
         echo "\t\t\t";
     }
 
-    // line 58
+    // line 59
     public function block_javascript($context, array $blocks = array())
     {
-        // line 59
+        // line 60
         echo "\t\t\t";
         $this->env->loadTemplate("DarkRisesWebBundle:Default:javascriptMenu.html.twig")->display($context);
-        // line 60
+        // line 61
         echo "\t\t";
     }
 
@@ -208,6 +212,6 @@ class __TwigTemplate_27aa30a05970e73b1502081878ee5509 extends Twig_Template
 
     public function getDebugInfo()
     {
-        return array (  191 => 59,  188 => 58,  184 => 56,  181 => 55,  178 => 54,  173 => 49,  171 => 48,  165 => 46,  160 => 51,  155 => 45,  152 => 44,  147 => 36,  144 => 35,  137 => 38,  130 => 32,  127 => 31,  123 => 30,  120 => 29,  117 => 28,  113 => 26,  110 => 25,  107 => 24,  102 => 17,  99 => 16,  95 => 13,  92 => 12,  83 => 61,  81 => 58,  78 => 57,  76 => 54,  71 => 44,  67 => 42,  64 => 31,  62 => 28,  59 => 27,  57 => 24,  51 => 21,  47 => 19,  45 => 16,  39 => 11,  27 => 1,  663 => 480,  659 => 479,  655 => 478,  651 => 477,  646 => 476,  643 => 475,  631 => 465,  628 => 464,  518 => 358,  515 => 357,  509 => 353,  505 => 351,  502 => 350,  491 => 342,  485 => 339,  479 => 336,  473 => 333,  467 => 330,  461 => 327,  455 => 324,  449 => 321,  443 => 318,  428 => 307,  425 => 306,  420 => 303,  391 => 276,  388 => 275,  362 => 252,  350 => 243,  342 => 238,  334 => 232,  331 => 231,  289 => 192,  283 => 189,  277 => 186,  269 => 181,  263 => 178,  257 => 175,  249 => 170,  243 => 167,  237 => 164,  204 => 134,  194 => 60,  186 => 122,  176 => 115,  168 => 47,  158 => 46,  135 => 35,  89 => 11,  82 => 36,  73 => 53,  61 => 21,  50 => 13,  41 => 14,  34 => 4,  31 => 3,);
+        return array (  198 => 61,  195 => 60,  192 => 59,  185 => 56,  182 => 55,  176 => 50,  171 => 48,  158 => 46,  152 => 44,  147 => 36,  144 => 35,  137 => 38,  130 => 32,  123 => 30,  120 => 29,  110 => 25,  107 => 24,  102 => 17,  99 => 16,  92 => 12,  89 => 11,  81 => 59,  76 => 55,  73 => 54,  71 => 44,  67 => 42,  64 => 31,  62 => 28,  59 => 27,  57 => 24,  47 => 19,  45 => 16,  41 => 14,  39 => 11,  200 => 79,  197 => 78,  194 => 77,  188 => 57,  183 => 71,  178 => 70,  173 => 49,  168 => 47,  165 => 46,  160 => 52,  155 => 45,  150 => 59,  145 => 58,  140 => 56,  135 => 35,  132 => 54,  127 => 31,  122 => 49,  117 => 28,  113 => 26,  109 => 45,  105 => 44,  100 => 43,  95 => 13,  91 => 40,  87 => 39,  83 => 62,  78 => 58,  75 => 36,  70 => 34,  65 => 31,  51 => 21,  37 => 7,  34 => 6,  30 => 4,  27 => 1,);
     }
 }
