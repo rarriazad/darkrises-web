@@ -49,7 +49,14 @@ class DefaultController extends Controller
         $restUrl = "http://developers.darkrises.com/fmartinez/backend.php/userinfo/preregisterweb";
         $method = "POST";
         $userinfo = $this->setFacebook();
-        $info = array ( "id" => $userinfo["id"], "name" => 'Cazador '.$userinfo["name"].'_'.$userinfo["id"], "gender"=> $userinfo["gender"], "callback" => 'Put your secret key here');
+       	if($userinfo["gender"] == 'female')
+        	$userinfo["gender"] = 1;
+        else
+        	$userinfo["gender"] = 0;
+        	
+        $info = array ( "id" => $userinfo["id"], "name" => 'Cazador '.$userinfo["last_name"].'_'.$userinfo["id"], "gender"=> $userinfo["gender"], "callback" => 'Put your secret key here');
+        
+        //error_log($info["gender"]);
         
         $request->request->get('info');
         $contentType = 'application/json';
