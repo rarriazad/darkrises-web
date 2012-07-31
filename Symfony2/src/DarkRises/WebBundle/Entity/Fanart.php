@@ -4,10 +4,12 @@ namespace DarkRises\WebBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
+use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="fanart")
+ * @ORM\HasLifecycleCallbacks
  */
 class Fanart
 {
@@ -28,31 +30,6 @@ class Fanart
 	*/
 	protected $id;
 	
-	/**
-     * @ORM\Column(type="string",length=500)
-     */
-	protected $likeAddress;
-	
-	/**
-     * @ORM\Column(type="string",length=500)
-     */
-	protected $shareFacebook;
-	
-	/**
-     * @ORM\Column(type="string",length=500)
-     */
-	protected $shareTwitter;
-	
-	/**
-     * @ORM\Column(type="string",length=500)
-     */
-	protected $shareGoogle;
-    
-    /**
-     * @ORM\Column(type="string",length=1000)
-     */
-    protected $commentsFacebook;
-    
     /**
      * @ORM\Column(type="string",length=500)
      */
@@ -84,7 +61,54 @@ class Fanart
      * @Assert\File(maxSize="6000000")
      */
     public $file;
-    
+
+// a property used temporarily while deleting
+    private $filenameForRemove;
+
+    /**
+     * @ORM\PrePersist()
+     * @ORM\PreUpdate()
+     */
+    public function preUpload()
+    {
+    	error_log("preupload");
+        if (null !== $this->file) {
+            $this->path = $this->autor.str_replace(" ", "", $this->file->getClientOriginalName());
+        }
+    }
+
+    /**
+     * @ORM\PostPersist()
+     * @ORM\PostUpdate()
+     */
+    public function upload()
+    {
+        if (null === $this->file) {
+            return;
+        }
+		
+        $this->file->move($this->getUploadRootDir(), $this->id.$this->autor.str_replace(" ", "", $this->file->getClientOriginalName()));
+
+        unset($this->file);
+    }
+
+    /**
+     * @ORM\PreRemove()
+     */
+    public function storeFilenameForRemove()
+    {
+        $this->filenameForRemove = $this->getAbsolutePath();
+    }
+
+    /**
+     * @ORM\PostRemove()
+     */
+    public function removeUpload()
+    {
+        if ($this->filenameForRemove) {
+            unlink($this->filenameForRemove);
+        }
+    }
     /**
      * Set agregado
      *
@@ -134,104 +158,24 @@ class Fanart
     {
         return $this->id;
     }
-
+    
     /**
-     * Set likeAddress
+     * Set path
      *
-     * @param string $likeAddress
+     * @param string $path
      */
-    public function setLikeAddress($likeAddress)
+    public function setPath($path)
     {
-        $this->likeAddress = $likeAddress;
+        $this->path = $path;
     }
 
     /**
-     * Get likeAddress
+     * Get path
      *
      * @return string 
      */
-    public function getLikeAddress()
+    public function getPath()
     {
-        return $this->likeAddress;
-    }
-
-    /**
-     * Set shareFacebook
-     *
-     * @param string $shareFacebook
-     */
-    public function setShareFacebook($shareFacebook)
-    {
-        $this->shareFacebook = $shareFacebook;
-    }
-
-    /**
-     * Get shareFacebook
-     *
-     * @return string 
-     */
-    public function getShareFacebook()
-    {
-        return $this->shareFacebook;
-    }
-
-    /**
-     * Set shareTwitter
-     *
-     * @param string $shareTwitter
-     */
-    public function setShareTwitter($shareTwitter)
-    {
-        $this->shareTwitter = $shareTwitter;
-    }
-
-    /**
-     * Get shareTwitter
-     *
-     * @return string 
-     */
-    public function getShareTwitter()
-    {
-        return $this->shareTwitter;
-    }
-
-    /**
-     * Set shareGoogle
-     *
-     * @param string $shareGoogle
-     */
-    public function setShareGoogle($shareGoogle)
-    {
-        $this->shareGoogle = $shareGoogle;
-    }
-
-    /**
-     * Get shareGoogle
-     *
-     * @return string 
-     */
-    public function getShareGoogle()
-    {
-        return $this->shareGoogle;
-    }
-
-    /**
-     * Set commentsFacebook
-     *
-     * @param string $commentsFacebook
-     */
-    public function setCommentsFacebook($commentsFacebook)
-    {
-        $this->commentsFacebook = $commentsFacebook;
-    }
-
-    /**
-     * Get commentsFacebook
-     *
-     * @return string 
-     */
-    public function getCommentsFacebook()
-    {
-        return $this->commentsFacebook;
+        return $this->path;
     }
 }

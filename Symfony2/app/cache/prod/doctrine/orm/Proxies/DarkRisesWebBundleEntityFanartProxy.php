@@ -48,6 +48,30 @@ class DarkRisesWebBundleEntityFanartProxy extends \DarkRises\WebBundle\Entity\Fa
         return parent::getWebPath();
     }
 
+    public function preUpload()
+    {
+        $this->__load();
+        return parent::preUpload();
+    }
+
+    public function upload()
+    {
+        $this->__load();
+        return parent::upload();
+    }
+
+    public function storeFilenameForRemove()
+    {
+        $this->__load();
+        return parent::storeFilenameForRemove();
+    }
+
+    public function removeUpload()
+    {
+        $this->__load();
+        return parent::removeUpload();
+    }
+
     public function setAgregado($agregado)
     {
         $this->__load();
@@ -78,70 +102,22 @@ class DarkRisesWebBundleEntityFanartProxy extends \DarkRises\WebBundle\Entity\Fa
         return parent::getId();
     }
 
-    public function setLikeAddress($likeAddress)
+    public function setPath($path)
     {
         $this->__load();
-        return parent::setLikeAddress($likeAddress);
+        return parent::setPath($path);
     }
 
-    public function getLikeAddress()
+    public function getPath()
     {
         $this->__load();
-        return parent::getLikeAddress();
-    }
-
-    public function setShareFacebook($shareFacebook)
-    {
-        $this->__load();
-        return parent::setShareFacebook($shareFacebook);
-    }
-
-    public function getShareFacebook()
-    {
-        $this->__load();
-        return parent::getShareFacebook();
-    }
-
-    public function setShareTwitter($shareTwitter)
-    {
-        $this->__load();
-        return parent::setShareTwitter($shareTwitter);
-    }
-
-    public function getShareTwitter()
-    {
-        $this->__load();
-        return parent::getShareTwitter();
-    }
-
-    public function setShareGoogle($shareGoogle)
-    {
-        $this->__load();
-        return parent::setShareGoogle($shareGoogle);
-    }
-
-    public function getShareGoogle()
-    {
-        $this->__load();
-        return parent::getShareGoogle();
-    }
-
-    public function setCommentsFacebook($commentsFacebook)
-    {
-        $this->__load();
-        return parent::setCommentsFacebook($commentsFacebook);
-    }
-
-    public function getCommentsFacebook()
-    {
-        $this->__load();
-        return parent::getCommentsFacebook();
+        return parent::getPath();
     }
 
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'agregado', 'autor', 'id', 'likeAddress', 'shareFacebook', 'shareTwitter', 'shareGoogle', 'commentsFacebook', 'path');
+        return array('__isInitialized__', 'agregado', 'autor', 'id', 'path');
     }
 
     public function __clone()

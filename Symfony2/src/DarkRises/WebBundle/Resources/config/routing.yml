@@ -4,6 +4,9 @@ DarkRisesWebBundle_counterpage:
 DarkRisesWebBundle_adminfanartpage:
     pattern:  /admin/fanart/
     defaults: { _controller: DarkRisesWebBundle:Admin:uploadFanart}
+DarkRisesWebBundle_adminfanartuploadpage:
+    pattern:  /admin/fanart/upload/
+    defaults: { _controller: DarkRisesWebBundle:Admin:uploadFanartNow}
 DarkRisesWebBundle_localesecondhomepage:
     pattern:  /{_locale}/{name}/{second}/
     defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", _locale: es, second: "empty" }
