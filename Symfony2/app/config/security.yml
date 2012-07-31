@@ -1,38 +1,19 @@
+# app/config/security.yml
 security:
-    encoders:
-        Symfony\Component\Security\Core\User\User: plaintext
+    firewalls:
+        secured_area:
+            pattern:    ^/
+            anonymous: ~
+            http_basic:
+                realm: "Mantenimiento Pagina Dark Rises"
 
-    role_hierarchy:
-        ROLE_ADMIN:       ROLE_USER
-        ROLE_SUPER_ADMIN: [ROLE_USER, ROLE_ADMIN, ROLE_ALLOWED_TO_SWITCH]
+    access_control:
+        - { path: ^/admin, roles: ROLE_ADMIN }
 
     providers:
         in_memory:
             users:
-                #user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                darkrises: { password: wp_l4sts34l, roles: [ 'ROLE_ADMIN' ] }
+                DarkRises: { password: wp_l4sts34l, roles: 'ROLE_ADMIN' }
 
-    firewalls:
-        dev:
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
-            security: false
-
-        login:
-            pattern:  ^/demo/secured/login$
-            security: false
-
-        secured_area:
-            pattern:    ^/demo/secured/
-            form_login:
-                check_path: /demo/secured/login_check
-                login_path: /demo/secured/login
-            logout:
-                path:   /demo/secured/logout
-                target: /demo/
-            #anonymous: ~
-            #http_basic:
-            #    realm: "Secured Demo Area"
-            #facebook: ~
-
-    access_control:
-        - { path: ^/admin, roles: ROLE_ADMIN }
+    encoders:
+        Symfony\Component\Security\Core\User\User: plaintext

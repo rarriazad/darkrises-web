@@ -199,6 +199,7 @@ body{
 	cursor: pointer;
 	font-size: 12px;
 	margin-top: -10px;
+	width: 100px;
 }
 
 #auth-loginlink{

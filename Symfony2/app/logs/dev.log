@@ -1,0 +1,4 @@
+[2012-07-31 12:44:24] doctrine.DEBUG: SET NAMES UTF8 ([]) [] []
+[2012-07-31 12:44:24] doctrine.DEBUG: SHOW FULL TABLES WHERE Table_type = 'BASE TABLE' ([]) [] []
+[2012-07-31 12:44:24] doctrine.DEBUG: SHOW FULL TABLES WHERE Table_type = 'BASE TABLE' ([]) [] []
+[2012-07-31 12:44:24] doctrine.DEBUG: CREATE TABLE fanart (id INT AUTO_INCREMENT NOT NULL, agregado DATETIME NOT NULL, autor VARCHAR(200) NOT NULL, likeAddress VARCHAR(500) NOT NULL, shareFacebook VARCHAR(500) NOT NULL, shareTwitter VARCHAR(500) NOT NULL, shareGoogle VARCHAR(500) NOT NULL, commentsFacebook VARCHAR(1000) NOT NULL, PRIMARY KEY(id)) ENGINE = InnoDB ([]) [] []
