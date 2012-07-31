@@ -21,11 +21,15 @@ class AdminController extends Controller
     	$fanart = new Fanart();
     	$fanart->setAgregado(new \DateTime('today'));
     	
-    	$form = $this->createFormBuilder($task)
+    	error_log("Hola!");
+    	
+    	$form = $this->createFormBuilder($fanart)
             ->add('file')
             ->add('agregado', 'date')
             ->getForm();
-            
+        
+        error_log("Hola!");
+        
         return $this->render('DarkRisesWebBundle:Admin:upload.html.twig', array(
             'form' => $form->createView(),
         ));

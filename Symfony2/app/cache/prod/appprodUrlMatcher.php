@@ -34,8 +34,11 @@ class appprodUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
         }
 
         // DarkRisesWebBundle_adminfanartpage
-        if ($pathinfo === '/admin/fanart') {
-            return array (  '_controller' => 'DarkRises\\WebBundle\\Controller\\DefaultController::uploadFanartAction',  '_route' => 'DarkRisesWebBundle_adminfanartpage',);
+        if (rtrim($pathinfo, '/') === '/admin/fanart') {
+            if (substr($pathinfo, -1) !== '/') {
+                return $this->redirect($pathinfo.'/', 'DarkRisesWebBundle_adminfanartpage');
+            }
+            return array (  '_controller' => 'DarkRises\\WebBundle\\Controller\\AdminController::uploadFanartAction',  '_route' => 'DarkRisesWebBundle_adminfanartpage',);
         }
 
         // DarkRisesWebBundle_localesecondhomepage
