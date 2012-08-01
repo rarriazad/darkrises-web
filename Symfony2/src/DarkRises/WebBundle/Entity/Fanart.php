@@ -48,10 +48,10 @@ class Fanart
     protected function getUploadRootDir()
     {
         // the absolute directory path where uploaded documents should be saved
-        return __DIR__.'/../../../../testing/'.$this->getUploadDir();
+        return __DIR__.'/../../../../web/'.$this->getUploadDir();
     }
 
-    protected function getUploadDir()
+    public function getUploadDir()
     {
         // get rid of the __DIR__ so it doesn't screw when displaying uploaded doc/image in the view.
         return 'uploads/fanart';
@@ -71,9 +71,8 @@ class Fanart
      */
     public function preUpload()
     {
-    	error_log("preupload");
         if (null !== $this->file) {
-            $this->path = $this->autor.str_replace(" ", "", $this->file->getClientOriginalName());
+            $this->path = str_replace(" ", "",$this->id.$this->autor).str_replace(" ", "", $this->file->getClientOriginalName());
         }
     }
 
@@ -87,7 +86,7 @@ class Fanart
             return;
         }
 		
-        $this->file->move($this->getUploadRootDir(), $this->id.$this->autor.str_replace(" ", "", $this->file->getClientOriginalName()));
+        $this->file->move($this->getUploadRootDir(), str_replace(" ", "",$this->id.$this->autor).str_replace(" ", "", $this->file->getClientOriginalName()));
 
         unset($this->file);
     }

@@ -18,9 +18,7 @@ class DefaultController extends Controller
 	public function wallpaperAction($number, $address)
     {
     	$userInfo = $this->setFacebook();
-    	
-    	$this->get("session")->clear();
-    	
+
     	if($userInfo != null){
 			return $this->render('DarkRisesWebBundle:Default:seen-wallpaper.html.twig', 
         		array(
@@ -55,8 +53,6 @@ class DefaultController extends Controller
         	$userinfo["gender"] = 0;
         	
         $info = array ( "id" => $userinfo["id"], "name" => 'Cazador '.$userinfo["last_name"].'_'.$userinfo["id"], "gender"=> $userinfo["gender"], "callback" => 'Put your secret key here');
-        
-        //error_log($info["gender"]);
         
         $request->request->get('info');
         $contentType = 'application/json';
@@ -232,6 +228,36 @@ class DefaultController extends Controller
 				)
 			);		
         }
+    }
+    
+    public function fanartpersonalAction($autor, $id){
+    
+    	$userInfo = $this->setFacebook();
+    
+    	$breadcrums0 = "Dark Rises";
+    	$breadcrums1 = "Fan Art";
+    	
+    	$fanart = $this->getDoctrine()
+        ->getRepository('DarkRisesWebBundle:Fanart')
+        ->find($id);
+    
+    	$fanart->setPath("/".$fanart->getUploadDir()."/".$fanart->getId().$fanart->getPath());
+    	
+    	return $this->render('DarkRisesWebBundle:Default:fanart-single.html.twig', 
+				array(
+					'facebook' => $userInfo, 
+					'breadcrums' => array( 
+						0 => array('crum' => $breadcrums0, 'address' => "/" ),
+						1 => array('crum' => $breadcrums1, 'address' => "/fanart/" )
+					),
+					'imagen' => array(
+						'path' => $fanart->getPath(),
+						'autor' => $fanart->getAutor(),
+						'agregado' => $fanart->getAgregado()
+					),
+					'address' => $this->get('request')->server->get('HTTP_HOST')."/fanart/".$autor."/".$id."/"
+				)
+			);		
     }
     
     private function setFacebook(){

@@ -1,0 +1,49 @@
+{% extends 'DarkRisesWebBundle:Default:base.html.twig' %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	<style type="text/css">
+		.imagen-completa{
+			display: block;
+			margin: auto;
+			border: #540606 solid 10px;
+		}
+		.imagen{
+			width:831px;
+			margin: auto;
+		}
+		.datos{
+			width: 484px;
+			height: 37px;
+			background: url("{{ asset('/img/galeria/datos.png') }}") no-repeat top;
+			float: left;
+			font-family: copperplate, serif;
+		}
+		.datos-inside{
+			padding-top:10px;
+			padding-left: 20px;
+		}
+	</style>
+{% endblock %}
+
+ {% block body %}
+ 	<div class="h2"><div class="inside-h2">{% trans %} Ilustraciones {% endtrans %}</div></div>
+ 	<div class="imagen clear">
+ 		<div class="datos"><div class="datos-inside">{% trans %}Agregado el:{% endtrans %} {{ imagen.agregado|date("m/d/Y") }} - {% trans %}Por:{% endtrans %} {{ imagen.autor }}</div></div>
+		<img src={{ imagen.path | imagine_filter('principal') }} class="imagen-completa clear"/>
+	</div>
+ {% endblock %}
+ 
+ {% block lightboxes %}
+ 	{{ parent() }}
+
+ {% endblock %}
+ 
+ {% block hidden %}
+ 	{{ parent() }}
+ 	
+ {% endblock %}
+
+{% block javascript %}
+	{{ parent() }}
+{% endblock %}

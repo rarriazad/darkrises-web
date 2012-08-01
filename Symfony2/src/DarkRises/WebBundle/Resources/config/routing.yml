@@ -7,6 +7,11 @@ DarkRisesWebBundle_adminfanartpage:
 DarkRisesWebBundle_adminfanartuploadpage:
     pattern:  /admin/fanart/upload/
     defaults: { _controller: DarkRisesWebBundle:Admin:uploadFanartNow}
+DarkRisesWebBundle_localefanartpersonalpage:
+    pattern:  /{_locale}/fanart/{autor}/{id}/
+    defaults: { _controller: DarkRisesWebBundle:Default:fanartpersonal, autor: "empty", _locale: es, id: "empty" }
+    requirements:
+        _locale: en|es
 DarkRisesWebBundle_localesecondhomepage:
     pattern:  /{_locale}/{name}/{second}/
     defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", _locale: es, second: "empty" }
@@ -22,6 +27,9 @@ DarkRisesWebBundle_localeindexpage:
     defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", _locale: es, second: "empty" }
     requirements:
         _locale: es|en
+DarkRisesWebBundle_fanartpersonalpage:
+    pattern:  /fanart/{autor}/{id}/
+    defaults: { _controller: DarkRisesWebBundle:Default:fanartpersonal, autor: "empty", id: "empty" }
 DarkRisesWebBundle_secondhomepage:
     pattern:  /{name}/{second}/
     defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", second: "empty" }

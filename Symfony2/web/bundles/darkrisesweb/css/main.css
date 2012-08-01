@@ -1,0 +1,131 @@
+body{
+	background: url("../img/fondo.png") no-repeat center top #000000;
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+.menu{
+	background: url("../img/fondo_menu.png") repeat-x top;
+	height: 121px;
+	margin: 0;
+	padding: 0;
+	z-index: 50000001;
+	position: relative;
+}
+
+.header{	
+	height: 142px;
+	width: 1100px !important;
+	margin: 0;
+	padding: 0;
+	z-index: 50000000;
+	position: relative;
+}
+
+.main-content{
+	background: url("../img/fondo_main.png") repeat-y;
+	height: 1000px;
+	width: 1006px !important;
+	z-index: 0;
+	position: relative;
+	margin-top: -15px !important; 
+	padding: 10px 0px 20px 0px;
+}
+
+.body{
+	margin-top:-10px;
+	clear: both;
+}
+
+.foot{
+	background: url("../img/footer.png") no-repeat top center;
+	height: 200px;
+}
+
+.nav{
+    float: left;
+    width: 100%;
+    padding-left:0;
+    padding-right:0;
+}
+
+.nav li{
+	float: left;
+	display: inline;
+	list-style: none;
+}
+.menu-buttons{
+	width: 110px;
+	height: 107px;
+	overflow: hidden;
+	display: block;
+	margin-top: -10px;
+}
+
+.button-inside{
+	width: 110px;
+	height: 226px;
+	display: block;
+	margin-top: -113px;
+}
+
+.button-inside:hover{
+	margin-top: -6px;
+}
+
+.button-inicio{
+	background: url("../img/botones/inicio.png") no-repeat center;
+}
+
+.button-guia{
+	background: url("../img/botones/guia.png") no-repeat center;
+}
+
+.button-media{
+	background: url("../img/botones/media.png") no-repeat center;
+}
+
+.button-comunidad{
+	background: url("../img/botones/comunidad.png") no-repeat center;
+}
+
+.button-biblioteca{
+	background: url("../img/botones/biblioteca.png") no-repeat center;
+}
+
+.button-comprar{
+	background: url("../img/botones/comprar.png") no-repeat center;
+}
+
+.button-eventos{
+	background: url("../img/botones/eventos.png") no-repeat center;
+}
+
+.login{
+	background: url("../img/background-login.png") no-repeat center;
+	width: 319px;
+	height: 101px;
+	margin-top: -10px;
+}
+
+.login-inside{
+	height:100%;
+	padding:10px 10px;
+}
+
+.idioma{
+	background: url("../img/fondo-idioma.png") no-repeat center;
+	width: 100px;
+	height: 41px;
+	float: right;
+	margin-top: -15px;
+}
+
+.breadcrums{
+	background: url("../img/fondo-breadcrums.png") no-repeat center;
+	width: 704px;
+	height: 41px;
+	float: left;
+	margin-top: -15px;
+}
