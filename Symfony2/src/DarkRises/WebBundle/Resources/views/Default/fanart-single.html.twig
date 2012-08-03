@@ -1,5 +1,9 @@
 {% extends 'DarkRisesWebBundle:Default:base.html.twig' %}
-
+{% block meta %}
+	<meta itemprop="name" content="La Galeria del Portal">
+<meta itemprop="description" content="Vean las criaturas que las personas nos están enviando. Visite www.darkrises.com y participe.'">
+<meta itemprop="image" content='http://{{ app.request.host~imagen.path }}'>
+{% endblock %}
 {% block stylesheets %}
 	{{ parent() }}
 	<style type="text/css">
@@ -23,6 +27,85 @@
 			padding-top:10px;
 			padding-left: 20px;
 		}
+		.like-border{
+			width: 6px;
+			height: 55px;
+			float: left;
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+		.like-left{
+			background: url("{{ asset('/img/galeria/like/left.png') }}") no-repeat top;
+		}
+		.like-right{
+			background: url("{{ asset('/img/galeria/like/right.png') }}") no-repeat top;
+			margin-left: -5px;
+		}
+		.like-body{
+			height: 55px;
+			width: 100px;
+			background: url("{{ asset('/img/galeria/like/body.png') }}") repeat-x top;
+			float: left;
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+		.fb-like{
+			margin: 15px 5px;
+		}
+		.black-tab-abajo-border{
+			width: 9px;
+			height: 51px;
+			float: left;
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+		.black-tab-abajo-left{
+			background: url("{{ asset('/img/galeria/black-tab-abajo/left.png') }}") no-repeat top;
+			margin-right: -5px;
+		}
+		.black-tab-abajo-right{
+			background: url("{{ asset('/img/galeria/black-tab-abajo/right.png') }}") no-repeat top;
+			margin-left: -5px;
+		}
+		.black-tab-abajo-body{
+			height: 55px;
+			width: 100px auto;
+			background: url("{{ asset('/img/galeria/black-tab-abajo/body.png') }}") repeat-x top;
+			float: left;
+			border: 0;
+			margin: 0;
+			padding: 0;
+		}
+		.volver-galeria{
+			margin-left: auto;
+			margin-right: auto;
+			width: 450px;
+			display: block;
+		}
+		.ver-mas{
+			margin: 3px 10px;
+			font-family: copperplate, serif;
+		}
+		.abajo{
+			display: block;
+			width: 821px;
+			text-align: center;
+		}
+		.compartir{
+			float: right;
+		}
+		.black-tab-abajo-inside{
+			
+		}
+		.share{
+			cursor: pointer;
+		}
+		.fb_dialog{
+			z-index: 500000000000 !important;
+		}
 	</style>
 {% endblock %}
 
@@ -31,6 +114,39 @@
  	<div class="imagen clear">
  		<div class="datos"><div class="datos-inside">{% trans %}Agregado el:{% endtrans %} {{ imagen.agregado|date("m/d/Y") }} - {% trans %}Por:{% endtrans %} {{ imagen.autor }}</div></div>
 		<img src={{ imagen.path | imagine_filter('principal') }} class="imagen-completa clear"/>
+		<div class="abajo clear">
+			<div class="like">
+				<div class="like-left like-border"></div>
+				<div class="like-body">
+					<fb:like href="{{ address }}" class="fb-like" send="false" layout="button_count" width="110" show_faces="false" colorscheme="light" font="tahoma"></fb:like>
+				</div>
+				<div class="like-right like-border"></div>
+			</div>
+			<div class="volver-galeria">
+				<div class="black-tab-abajo-left black-tab-abajo-border"></div>
+				<div class="black-tab-abajo-body">
+					<div class="ver-mas">
+						<div class="ver-mas-inside">{% trans %} Volver a Galería {% endtrans %}</div>
+					</div>
+				</div>
+				<div class="black-tab-abajo-right black-tab-abajo-border"></div>
+			</div>
+			<div class="compartir">
+				<div class="black-tab-abajo-left black-tab-abajo-border"></div>
+				<div class="black-tab-abajo-body">
+					<div class="black-tab-abajo-inside">
+						<img class="share" src="{{ asset('/img/galeria/facebook.png') }}" onClick="postToFeed();"/>
+						<img class="share twitter" onClick="twitterShare();" src="{{ asset('/img/galeria/twitter.png') }}"/>
+						<meta property="og:title" content="{% trans %} La Galeria del Portal {% endtrans %}"/>
+						<meta property="og:type" content="image"/>
+						<meta property="og:url" content="{{ address }}"/>
+						<meta property="og:image" content="http://{{ app.request.host~imagen.path }}"/>
+						<img class="share google" onClick="googleShare();" src="{{ asset('/img/galeria/google.png') }}"/>
+					</div>
+				</div>
+				<div class="black-tab-abajo-right black-tab-abajo-border"></div>
+			</div>
+		</div>
 	</div>
  {% endblock %}
  
@@ -46,4 +162,60 @@
 
 {% block javascript %}
 	{{ parent() }}
-{% endblock %}
+	<script type="text/javascript">
+		function postToFeed() {
+
+        // calling the API ...
+        var obj = {
+          method: 'feed',
+          link: 'http://{{ address }}',
+          picture: 'http://{{ app.request.host~imagen.path }}',
+          name: 'La Galeria del Portal',
+          caption: 'Vean las criaturas que las personas nos están enviando.',
+          description: 'Visite www.darkrises.com y participe.'
+        };
+
+        function callback(response) {
+          document.getElementById('msg').innerHTML = "Post ID: " + response['post_id'];
+        }
+
+        FB.ui(obj, callback);
+        
+        return false;
+      }
+      
+      function twitterShare() {
+      	var width  = 575,
+        height = 400,
+        left   = ($(window).width()  - width)  / 2,
+        top    = ($(window).height() - height) / 2,
+        url    = 'https://twitter.com/share?text=La%20Galeria%20del%20Portal(DarkRises.com)',
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left;
+    
+   		window.open(url, 'Twitter', opts).focus();
+ 
+    	return false;
+      }
+      
+      function googleShare(){
+      var width  = 480,
+        height = 380,
+        left   = ($(window).width()  - width)  / 2,
+        top    = ($(window).height() - height) / 2,
+        url    = 'https://plus.google.com/share?url={{ address }}?title=La%20Galeria%20del%20Portal(DarkRises.com)',
+        opts   = 'status=1' +
+                 ',width='  + width  +
+                 ',height=' + height +
+                 ',top='    + top    +
+                 ',left='   + left	 +
+                 ',scrollbars=no';
+    
+   		window.open(url, 'Google +', opts).focus();
+      }
+    
+	</script>
+	{% endblock %}

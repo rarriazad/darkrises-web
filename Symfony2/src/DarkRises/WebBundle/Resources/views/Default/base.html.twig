@@ -1,13 +1,21 @@
 <!Doctype html>
-<html xmlns:fb="http://www.facebook.com/2008/fbml"
-      xmlns:og="http://opengraphprotocol.org/schema/">
+<!-- Update your html tag to include the itemscope and itemtype attributes. -->
+<html itemscope itemtype="http://schema.org/Article">
 
-<meta property="fb:app_id" content="233902406664495" />
+<!-- Add the following three tags inside head. -->
+
+<html xmlns:fb="http://www.facebook.com/2008/fbml"
+      xmlns:og="http://opengraphprotocol.org/schema/"
+      xmlns:fb="http://ogp.me/ns/fb#">
+
+	<head>
+		<meta property="fb:app_id" content="233902406664495" />
 <meta property="og:image" content="http://photos-g.ak.fbcdn.net/photos-ak-snc7/v85006/135/233902406664495/app_1_233902406664495_865765470.gif" />
 <meta property="og:description" content="La oscuridad se acerca." />
-	<head>
 		<title>Dark Rises</title>
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+		{% block meta %}
+		{% endblock %}
 		{% block stylesheets %}
 		{% include 'DarkRisesWebBundle:Default:css.html.twig' %}
 		{% endblock %}

@@ -307,14 +307,25 @@
                 <target>Another novelty of Dark Rises is that group missions can enhance themselves; there will be missions and battles per group that the same users can organize. You can combine friends of different skills and powers to form different strategies and to that form a very powerful group.</target>
             </trans-unit>
             <trans-unit id="77">
-                <source>Eventos</source>
-                <target>EVENTS</target>
+                <source>Volver a Galería</source>
+                <target>Back to Gallery</target>
             </trans-unit>
             <trans-unit id="78">
                 <source>La mayor novedad de Dark Rises consiste en la organización periódica de misiones especiales que llaman a la participación de todos los jugadores. Consistirá en un enfrentamiento de las tres razas y la raza ganadora influenciará en la continuidad de la historia del juego. Mientras más jugadores de una raza participen, más probabilidades existen de que esa la raza ganadora.</source>
                 <target>The biggest innovation of Dark Rises consist in the periodic organization of special missions in which call the participation of all the players. It will consist of a confrontation among the three races and the winning race will influence in the community of the game story. The more players in a race participate, more possibilities exist that that race is the winner.</target>
             </trans-unit>
-            
+             <trans-unit id="79">
+                <source>Agregado el:</source>
+                <target>Added:</target>
+            </trans-unit>
+             <trans-unit id="80">
+                <source>Por:</source>
+                <target>By:</target>
+            </trans-unit>
+            <trans-unit id="81">
+                <source>Ilustraciones</source>
+                <target>Illustrations</target>
+            </trans-unit>
         </body>
     </file>
 </xliff>

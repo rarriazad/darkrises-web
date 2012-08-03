@@ -15,6 +15,11 @@ include_once __DIR__.'/../Facebook/facebook.php';
 
 class DefaultController extends Controller
 {
+	var $facebookArray = array(
+    	'appId'  => 215555631900581,
+		'secret' => '10b407375d68227eb7ae1943dd28d3c3'
+	);
+	
 	public function wallpaperAction($number, $address)
     {
     	$userInfo = $this->setFacebook();
@@ -255,16 +260,14 @@ class DefaultController extends Controller
 						'autor' => $fanart->getAutor(),
 						'agregado' => $fanart->getAgregado()
 					),
-					'address' => $this->get('request')->server->get('HTTP_HOST')."/fanart/".$autor."/".$id."/"
+					'address' => $this->get('request')->server->get('HTTP_HOST')."/fanart/".$autor."/".$id."/",
+					'appId' => $this->facebookArray["appId"]
 				)
 			);		
     }
     
     private function setFacebook(){
-    	$facebook = new \Facebook(array(
-		  'appId'  => 215555631900581,
-		  'secret' => '10b407375d68227eb7ae1943dd28d3c3',
-		));
+    	$facebook = new \Facebook($this->facebookArray);
 		
 		$userId = $facebook->getUser();
 		
