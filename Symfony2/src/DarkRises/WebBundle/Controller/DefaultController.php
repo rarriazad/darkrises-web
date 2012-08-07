@@ -242,13 +242,10 @@ class DefaultController extends Controller
     	$breadcrums0 = "Dark Rises";
     	$breadcrums1 = "Fan Art";
     	
-    	$fanart = $this->getDoctrine()
-        ->getRepository('DarkRisesWebBundle:Fanart')
-        ->find($id);
+    	$repository = $this->getDoctrine()->getRepository('DarkRisesWebBundle:Fanart');
+    	$fanart = $repository->find($id);
     	
-    	$smallGallery = $this->getDoctrine()
-        ->getRepository('DarkRisesWebBundle:Fanart')
-        ->smallGallery($id);
+    	$smallGallery = $repository->smallGallery($id);
 
     	return $this->render('DarkRisesWebBundle:Default:fanart-single.html.twig', 
 				array(
@@ -264,7 +261,9 @@ class DefaultController extends Controller
 					),
 					'address' => $this->get('request')->server->get('HTTP_HOST')."/fanart/".$autor."/".$id."/",
 					'appId' => $this->facebookArray["appId"],
-					'gallerySmall' => $smallGallery
+					'gallerySmall' => $smallGallery,
+					'next' => $repository->next($id),
+					'prev' => $repository->prev($id)
 				)
 			);		
     }

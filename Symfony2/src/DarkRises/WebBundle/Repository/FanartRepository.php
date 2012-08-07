@@ -14,12 +14,13 @@ class FanartRepository extends EntityRepository
 {
 	public function smallGallery($id)
     {
-        $result1 = $this->getEntityManager()
-            ->createQuery('select q FROM DarkRisesWebBundle:Fanart q where q.id in (SELECT p FROM DarkRisesWebBundle:Fanart p where p.id < :id order by p.id DESC) order by q.id ASC')
+    	$result = $this->getEntityManager()
+            ->createQuery('SELECT p FROM DarkRisesWebBundle:Fanart p where p.id < :id order by p.id DESC')
             ->setParameter('id', $id)
             ->setMaxResults(5)
         	->getResult();
     	
+    	$result1 = array_reverse($result);
     	
        $result2 = $this->getEntityManager()
             ->createQuery('SELECT p FROM DarkRisesWebBundle:Fanart p where p.id > :id order by p.id ASC')
@@ -37,5 +38,33 @@ class FanartRepository extends EntityRepository
 			}
         }
     	return $arrayGallery;
+    }
+    
+    public function next($id)
+    {
+       $result = $this->getEntityManager()
+            ->createQuery('SELECT p FROM DarkRisesWebBundle:Fanart p where p.id > :id order by p.id ASC')
+            ->setParameter('id', $id)
+            ->setMaxResults(1)
+        	->getResult();
+    	
+    	if(count($result) == 0)
+    		return "nothing";
+    	else
+    		return "/".strtolower(str_replace(" ", "",$result[0]->getAutor()))."/".$result[0]->getId()."/";
+    }
+    
+    public function prev($id)
+    {
+       $result = $this->getEntityManager()
+            ->createQuery('SELECT p FROM DarkRisesWebBundle:Fanart p where p.id < :id order by p.id DESC')
+            ->setParameter('id', $id)
+            ->setMaxResults(1)
+        	->getResult();
+    	
+    	if(count($result) == 0)
+    		return "nothing";
+    	else
+    		return "/".strtolower(str_replace(" ", "",$result[0]->getAutor()))."/".$result[0]->getId()."/";
     }
 }

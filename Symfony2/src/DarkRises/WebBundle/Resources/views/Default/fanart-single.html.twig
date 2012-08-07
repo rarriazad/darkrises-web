@@ -119,8 +119,17 @@
 		
 		#demo-frame > div.demo { padding: 10px !important; }
 		.scroll-pane { overflow: auto; width: 99%; float:left; padding: 10px 0px; }
-		.scroll-content { width: {{ (260 * (gallerySmall|length)) }}px; float: left; background: #11110f;}
-		.scroll-content-item { float: left; margin: 5px; font-size: 3em; line-height: 96px; text-align: center;  border: #540606 solid 5px; }
+		.scroll-content { width: {{ (259 * (gallerySmall|length)) }}px; float: left; background: #11110f; z-index: 1;}
+		.scroll-content-item { 
+			z-index: 2;
+			position: absolute;
+			margin: 5px;
+			font-size: 3em;
+			line-height: 96px;
+			text-align: center;
+			
+			display: block;
+		}
 		* html .scroll-content-item { display: inline; } /* IE6 float double margin bug */
 		.scroll-bar-wrap { background: #000000; clear: left; padding: 0 4px 0 2px; margin: 0 -1px -1px -1px; height: 30px}
 		.scroll-bar-wrap .ui-slider { background: none; border:0; height: 2em; margin: 0 auto;  }
@@ -137,6 +146,79 @@
 		}
 		.scroll-bar-wrap .ui-slider-handle .ui-icon { margin: -8px auto 0; position: relative; top: 50%; }
 	
+		.flechas{
+			position: absolute;
+			margin: auto;
+			width:823px;
+			margin: 8px;
+			display: none;
+		}
+		.flecha-izquierda{
+			-moz-transform: scaleX(-1);
+			-o-transform: scaleX(-1);
+			-webkit-transform: scaleX(-1);
+			transform: scaleX(-1);
+			filter: FlipH;
+			-ms-filter: "FlipH";
+			float: left;
+			display: block;
+		}
+		.flecha-derecha{
+			float: right;
+			display: block;
+		}
+		.principal{
+			position: relative;
+		}
+		.thumb{
+			position: relative;
+			text-align: center;
+			width: 259px;
+			height: 195px;
+			float: left;
+		}
+		.zoom{
+			z-index: 3;
+			width: 259px;
+			height: 195px;
+			cursor: pointer;
+		}
+		.zoom-up{
+			width: 259px;
+			height: 27px;
+			background: url("{{ asset('/img/galeria/zoom-mini/up.png') }}") no-repeat top;
+		}
+		.zoom-down{
+			width: 259px;
+			height: 27px;
+			margin-right: -5px;
+			background: url("{{ asset('/img/galeria/zoom-mini/down.png') }}") no-repeat top;
+		}
+		.zoom-cuerpo{
+			width: 259px;
+			height: 141px;
+			background: url("{{ asset('/img/galeria/zoom-mini/cuerpo.png') }}") repeat-y top;
+		}
+		.lupa{
+			display: block;
+			position: absolute;
+			right: 100px;
+			top: 60px;
+		}
+		.zoom-hover{
+			display:none;
+			left: 2px;
+			position: absolute;
+			top: 1px;
+		}
+		.zoom-normal{
+			border: 5px solid #540606;
+			height: 175px;
+			left: 9px;
+			position: absolute;
+			top: 5px;
+			width: 235px;
+		}
 	</style>
 {% endblock %}
 
@@ -144,7 +226,25 @@
  	<div class="h2"><div class="inside-h2">{% trans %} Ilustraciones {% endtrans %}</div></div>
  	<div class="imagen clear">
  		<div class="datos"><div class="datos-inside">{% trans %}Agregado el:{% endtrans %} {{ imagen.agregado|date("m/d/Y") }} - {% trans %}Por:{% endtrans %} {{ imagen.autor }}</div></div>
-		<img src={{ asset(imagen.path)  | imagine_filter('principal') }} class="imagen-completa clear"/>
+		<div class="principal clear">
+			<div class="flechas">
+				{% if prev == "nothing" %}
+					<img src="{{ asset("/img/galeria/flecha/off.png") }}" class="flecha-izquierda"/>
+				{% else %}
+					<a href="http://{{ app.request.host~"/fanart"~prev }}">
+						<img src="{{ asset("/img/galeria/flecha/on.png") }}" class="flecha-izquierda"/>
+					</a>
+				{% endif %}
+				{% if next == "nothing" %}
+					<img src="{{ asset("/img/galeria/flecha/off.png") }}" class="flecha-derecha"/>
+				{% else %}
+					<a href="http://{{ app.request.host~"/fanart"~next }}">
+						<img src="{{ asset("/img/galeria/flecha/on.png") }}" class="flecha-derecha"/>
+					</a>
+				{% endif %}
+			</div>
+			<a href="asset(imagen.path)" target="_blank"><img src={{ asset(imagen.path)  | imagine_filter('principal') }} class="imagen-completa"/></a>
+		</div>
 		<div class="abajo clear">
 			<div class="like">
 				<div class="like-left like-border"></div>
@@ -177,7 +277,20 @@
 			<div class="scroll-pane">
 				<div class="scroll-content">
 					{% for small in gallerySmall %}
-						<img class="scroll-content-item" src="{{ asset(small.path) | imagine_filter('side_gallery') }}" />
+						<div class="thumb">
+							<a href="http://{{ app.request.host~"/fanart"~small.dir }}">
+								<div class="zoom" style="background: url('{{ asset(small.path) | imagine_filter('side_gallery') }}') no-repeat center;">
+									<div class="zoom-normal"></div>
+									<div class="zoom-hover">
+										<div class="zoom-up"></div>
+										<div class="zoom-cuerpo">
+											<img src="{{ asset('/img/galeria/lupa.png') }}" class="lupa" />
+										</div>
+										<div class="zoom-down"></div>
+									</div>
+								</div>
+							</a>
+						</div>
 					{% endfor %} 
 				</div>
 				<div class="scroll-bar-wrap">
@@ -205,7 +318,35 @@
 		$(document).ready(
 			function(){
 				
+				{% if prev != "nothing" %}
+					$(".flecha-izquierda").hover(
+						function(){$(this).attr("src","{{ asset('/img/galeria/flecha/over.png') }}");},
+						function(){$(this).attr("src","{{ asset('/img/galeria/flecha/on.png') }}");}
+					);
+				{% endif %}
 				
+				{% if next != "nothing" %}
+					$(".flecha-derecha").hover(
+						function(){$(this).attr("src","{{ asset('/img/galeria/flecha/over.png') }}");},
+						function(){$(this).attr("src","{{ asset('/img/galeria/flecha/on.png') }}");}
+					);
+				{% endif %}
+				
+				$(".principal").hover(
+					function(){$(this).find(".flechas").show();},
+					function(){$(this).find(".flechas").hide();}
+				);
+				
+				$(".zoom").hover(
+					function(){
+						$(this).find(".zoom-hover").show();
+						$(this).find(".zoom-normal").hide();
+					},
+					function(){
+						$(this).find(".zoom-hover").hide();
+						$(this).find(".zoom-normal").show();
+					}
+				);
 				
 					var scrollPane = $( ".scroll-pane" ),
 						scrollContent = $( ".scroll-content" );
