@@ -243,7 +243,7 @@
 					</a>
 				{% endif %}
 			</div>
-			<a href="asset(imagen.path)" target="_blank"><img src={{ asset(imagen.path)  | imagine_filter('principal') }} class="imagen-completa"/></a>
+			<a href="http://{{ app.request.host~asset(imagen.path) }}" target="_blank"><img src={{ asset(imagen.path)  | imagine_filter('principal') }} class="imagen-completa"/></a>
 		</div>
 		<div class="abajo clear">
 			<div class="like">

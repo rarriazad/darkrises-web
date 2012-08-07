@@ -20890,3 +20890,5 @@
 [2012-08-06 16:31:47] security.INFO: Populated SecurityContext with an anonymous Token [] []
 [2012-08-06 16:31:47] request.INFO: Matched route "DarkRisesWebBundle_fanartpersonalpage" (parameters: "_controller": "DarkRises\WebBundle\Controller\DefaultController::fanartpersonalAction", "autor": "ubermedic", "id": "1", "_route": "DarkRisesWebBundle_fanartpersonalpage") [] []
 [2012-08-06 16:31:49] request.CRITICAL: Twig_Error_Runtime: An exception has been thrown during the rendering of a template ("Route "_imagine_side-gallery" does not exist.") in "DarkRisesWebBundle:Default:base.html.twig" at line 46. (uncaught exception) at /Users/xcontreras/Sites/darkrises-web/Symfony2/app/cache/prod/classes.php line 8328 [] []
+[2012-08-07 15:41:47] security.INFO: Populated SecurityContext with an anonymous Token [] []
+[2012-08-07 15:41:47] request.ERROR: Symfony\Component\HttpKernel\Exception\NotFoundHttpException: No route found for "GET /fanart/renderheads/16/asset(imagen.path)" (uncaught exception) at /Users/xcontreras/Sites/darkrises-web/Symfony2/app/cache/prod/classes.php line 4584 [] []
