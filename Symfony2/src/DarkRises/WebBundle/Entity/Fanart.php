@@ -9,6 +9,7 @@ use Symfony\Component\HttpFoundation\File\UploadedFile;
 /**
  * @ORM\Entity
  * @ORM\Table(name="fanart")
+ * @ORM\Entity(repositoryClass="DarkRises\WebBundle\Repository\FanartRepository")
  * @ORM\HasLifecycleCallbacks
  */
 class Fanart

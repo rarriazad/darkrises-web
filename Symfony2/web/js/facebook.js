@@ -25,17 +25,22 @@
       }
     });*/
 	$("#auth-loginlink #auth-loginlink-inside").click(function(){
-			FB.login(function(){},  {scope: 'email,user_about_me,user_games_activity,user_groups,publish_actions'}); 
-	});
-	FB.Event.subscribe('auth.login', function(response) {
-		if (response.status === 'connected'){
-			FB.api('/me', function(user)
-			{
+			FB.login(function(user){
 				$(".facebook-photo").html("<img id='facebook-picture' src='https://graph.facebook.com/"+user.username+"/picture'/>");
 				$("#facebook-name").html(user.first_name);
 				$(".facebook-button").hide();
 				$(".facebook-button-login").show();
-				
+			},  
+			{scope: 'email,user_about_me,user_games_activity,user_groups,publish_actions'}); 
+	});
+	FB.Event.subscribe('auth.login', function(response) {
+		if (response.status === 'connected'){
+			FB.api('/me', function(user)
+			{	
+				$(".facebook-photo").html("<img id='facebook-picture' src='https://graph.facebook.com/"+user.username+"/picture'/>");
+				$("#facebook-name").html(user.first_name);
+				$(".facebook-button").hide();
+				$(".facebook-button-login").show();
 				
 				var name = user.last_name;
 				var id = user.id;
@@ -142,17 +147,17 @@ window.location.href = app_frontend_base_url;
 */
 };
 
-(function(d){
+(function(d, s, id){
 var js, id = 'facebook-jssdk'; if (d.getElementById(id)) {return;}
 js = d.createElement('script'); js.id = id; js.async = true;
 js.src = "//connect.facebook.net/en_US/all.js";
 d.getElementsByTagName('head')[0].appendChild(js);
-}(document));
+}(document, 'script', 'facebook-jssdk'));
 
-(function(d, s, id) {
+/*(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/es_LA/all.js#xfbml=1&appId=215555631900581";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));
+}(document, 'script', 'facebook-jssdk'));*/

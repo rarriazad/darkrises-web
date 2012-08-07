@@ -1,8 +1,9 @@
 {% extends 'DarkRisesWebBundle:Default:base.html.twig' %}
 {% block meta %}
-	<meta itemprop="name" content="La Galeria del Portal">
-<meta itemprop="description" content="Vean las criaturas que las personas nos están enviando. Visite www.darkrises.com y participe.'">
-<meta itemprop="image" content='http://{{ app.request.host~imagen.path }}'>
+<meta property="og:title" content="{% trans %} La Galeria del Portal {% endtrans %}"/>
+<meta property="og:type" content="image"/>
+<meta property="og:url" content="{{ address }}"/>
+<meta property="og:image" content="http://{{ app.request.host~imagen.path }}"/>
 {% endblock %}
 {% block stylesheets %}
 	{{ parent() }}
@@ -64,7 +65,7 @@
 		}
 		.black-tab-abajo-left{
 			background: url("{{ asset('/img/galeria/black-tab-abajo/left.png') }}") no-repeat top;
-			margin-right: -5px;
+			margin-right: -1px;
 		}
 		.black-tab-abajo-right{
 			background: url("{{ asset('/img/galeria/black-tab-abajo/right.png') }}") no-repeat top;
@@ -91,7 +92,7 @@
 		}
 		.abajo{
 			display: block;
-			width: 821px;
+			width: 841px;
 			text-align: center;
 		}
 		.compartir{
@@ -102,10 +103,40 @@
 		}
 		.share{
 			cursor: pointer;
+			margin-right: 5px;
+    		margin-top: 10px;
+		}
+		.compartir-1{
+			margin-right: 8px;
+			margin-top: 15px;
+			margin-left: 8px;
+    		float: left;
+    		font-family: copperplate, serif;
 		}
 		.fb_dialog{
 			z-index: 500000000000 !important;
 		}
+		
+		#demo-frame > div.demo { padding: 10px !important; }
+		.scroll-pane { overflow: auto; width: 99%; float:left; padding: 10px 0px; }
+		.scroll-content { width: {{ (260 * (gallerySmall|length)) }}px; float: left; background: #11110f;}
+		.scroll-content-item { float: left; margin: 5px; font-size: 3em; line-height: 96px; text-align: center;  border: #540606 solid 5px; }
+		* html .scroll-content-item { display: inline; } /* IE6 float double margin bug */
+		.scroll-bar-wrap { background: #000000; clear: left; padding: 0 4px 0 2px; margin: 0 -1px -1px -1px; height: 30px}
+		.scroll-bar-wrap .ui-slider { background: none; border:0; height: 2em; margin: 0 auto;  }
+		.scroll-bar-wrap .ui-handle-helper-parent { position: relative; width: 100%; height: 100%; margin: 0 auto; }
+		.scroll-bar-wrap .ui-slider-handle { 
+			top:0.1em;
+			height: 20px;
+			width: {{ (841 / (gallerySmall|length)) - 10 }}px;
+			background: #0d0d0d; 
+			border-top: #2f2f2f solid 5px;
+			border-left: #090909 solid 5px;
+			border-bottom: #070707 solid 5px;
+			border-right: #1e1e1e solid 5px;
+		}
+		.scroll-bar-wrap .ui-slider-handle .ui-icon { margin: -8px auto 0; position: relative; top: 50%; }
+	
 	</style>
 {% endblock %}
 
@@ -113,12 +144,12 @@
  	<div class="h2"><div class="inside-h2">{% trans %} Ilustraciones {% endtrans %}</div></div>
  	<div class="imagen clear">
  		<div class="datos"><div class="datos-inside">{% trans %}Agregado el:{% endtrans %} {{ imagen.agregado|date("m/d/Y") }} - {% trans %}Por:{% endtrans %} {{ imagen.autor }}</div></div>
-		<img src={{ imagen.path | imagine_filter('principal') }} class="imagen-completa clear"/>
+		<img src={{ asset(imagen.path)  | imagine_filter('principal') }} class="imagen-completa clear"/>
 		<div class="abajo clear">
 			<div class="like">
 				<div class="like-left like-border"></div>
 				<div class="like-body">
-					<fb:like href="{{ address }}" class="fb-like" send="false" layout="button_count" width="110" show_faces="false" colorscheme="light" font="tahoma"></fb:like>
+					<fb:like href="http://{{ address }}" class="fb-like" send="false" layout="button_count" width="110" show_faces="false" colorscheme="light" font="tahoma"></fb:like>
 				</div>
 				<div class="like-right like-border"></div>
 			</div>
@@ -135,17 +166,25 @@
 				<div class="black-tab-abajo-left black-tab-abajo-border"></div>
 				<div class="black-tab-abajo-body">
 					<div class="black-tab-abajo-inside">
+						<span class="compartir-1">{% trans %} Compartir: {% endtrans %} </span>
 						<img class="share" src="{{ asset('/img/galeria/facebook.png') }}" onClick="postToFeed();"/>
 						<img class="share twitter" onClick="twitterShare();" src="{{ asset('/img/galeria/twitter.png') }}"/>
-						<meta property="og:title" content="{% trans %} La Galeria del Portal {% endtrans %}"/>
-						<meta property="og:type" content="image"/>
-						<meta property="og:url" content="{{ address }}"/>
-						<meta property="og:image" content="http://{{ app.request.host~imagen.path }}"/>
 						<img class="share google" onClick="googleShare();" src="{{ asset('/img/galeria/google.png') }}"/>
 					</div>
 				</div>
 				<div class="black-tab-abajo-right black-tab-abajo-border"></div>
 			</div>
+			<div class="scroll-pane">
+				<div class="scroll-content">
+					{% for small in gallerySmall %}
+						<img class="scroll-content-item" src="{{ asset(small.path) | imagine_filter('side_gallery') }}" />
+					{% endfor %} 
+				</div>
+				<div class="scroll-bar-wrap">
+					<div class="scroll-bar"></div>
+				</div>
+			</div>
+			<div class="fb-comments" data-href="http://{{ address }}" data-num-posts="2" data-width=" 841" data-colorscheme="dark"></div>
 		</div>
 	</div>
  {% endblock %}
@@ -157,12 +196,89 @@
  
  {% block hidden %}
  	{{ parent() }}
- 	
+ 
  {% endblock %}
 
 {% block javascript %}
 	{{ parent() }}
 	<script type="text/javascript">
+		$(document).ready(
+			function(){
+				
+				
+				
+					var scrollPane = $( ".scroll-pane" ),
+						scrollContent = $( ".scroll-content" );
+					
+					//build slider
+					var scrollbar = $( ".scroll-bar" ).slider({
+						slide: function( event, ui ) {
+							if ( scrollContent.width() > scrollPane.width() ) {
+								scrollContent.css( "margin-left", Math.round(
+									ui.value / 100 * ( scrollPane.width() - scrollContent.width() )
+								) + "px" );
+							} else {
+								scrollContent.css( "margin-left", 0 );
+							}
+						}
+					});
+					
+					//append icon to handle
+					var handleHelper = scrollbar.find( ".ui-slider-handle" )
+					.mousedown(function() {
+						scrollbar.width( handleHelper.width() );
+					})
+					.mouseup(function() {
+						scrollbar.width( "100%" );
+					})
+					.append( "<span class='ui-icon ui-icon-grip-dotted-vertical'></span>" )
+					.wrap( "<div class='ui-handle-helper-parent'></div>" ).parent();
+					
+					//change overflow to hidden now that slider handles the scrolling
+					scrollPane.css( "overflow", "hidden" );
+					
+					//size scrollbar and handle proportionally to scroll distance
+					function sizeScrollbar() {
+						var remainder = scrollContent.width() - scrollPane.width();
+						var proportion = remainder / scrollContent.width();
+						var handleSize = scrollPane.width() - ( proportion * scrollPane.width() );
+						scrollbar.find( ".ui-slider-handle" ).css({
+							width: handleSize,
+							"margin-left": -handleSize / 2
+						});
+						handleHelper.width( "" ).width( scrollbar.width() - handleSize );
+					}
+					
+					//reset slider value based on scroll content position
+					function resetValue() {
+						var remainder = scrollPane.width() - scrollContent.width();
+						var leftVal = scrollContent.css( "margin-left" ) === "auto" ? 0 :
+							parseInt( scrollContent.css( "margin-left" ) );
+						var percentage = Math.round( leftVal / remainder * 100 );
+						scrollbar.slider( "value", percentage );
+					}
+					
+					//if the slider is 100% and window gets larger, reveal content
+					function reflowContent() {
+							var showing = scrollContent.width() + parseInt( scrollContent.css( "margin-left" ), 10 );
+							var gap = scrollPane.width() - showing;
+							if ( gap > 0 ) {
+								scrollContent.css( "margin-left", parseInt( scrollContent.css( "margin-left" ), 10 ) + gap );
+							}
+					}
+					
+					//change handle position on window resize
+					$( window ).resize(function() {
+						resetValue();
+						sizeScrollbar();
+						reflowContent();
+					});
+					//init scrollbar size
+					setTimeout( sizeScrollbar, 10 );//safari wants a timeout
+					
+					$(".ui-slider-handle").html("").removeClass("ui-corner-all");
+				});			
+		
 		function postToFeed() {
 
         // calling the API ...
@@ -206,7 +322,7 @@
         height = 380,
         left   = ($(window).width()  - width)  / 2,
         top    = ($(window).height() - height) / 2,
-        url    = 'https://plus.google.com/share?url={{ address }}?title=La%20Galeria%20del%20Portal(DarkRises.com)',
+        url    = 'https://plus.google.com/share?url=http://{{ address }}',
         opts   = 'status=1' +
                  ',width='  + width  +
                  ',height=' + height +

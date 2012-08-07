@@ -245,9 +245,11 @@ class DefaultController extends Controller
     	$fanart = $this->getDoctrine()
         ->getRepository('DarkRisesWebBundle:Fanart')
         ->find($id);
-    
-    	$fanart->setPath("/".$fanart->getUploadDir()."/".$fanart->getId().$fanart->getPath());
     	
+    	$smallGallery = $this->getDoctrine()
+        ->getRepository('DarkRisesWebBundle:Fanart')
+        ->smallGallery($id);
+
     	return $this->render('DarkRisesWebBundle:Default:fanart-single.html.twig', 
 				array(
 					'facebook' => $userInfo, 
@@ -256,12 +258,13 @@ class DefaultController extends Controller
 						1 => array('crum' => $breadcrums1, 'address' => "/fanart/" )
 					),
 					'imagen' => array(
-						'path' => $fanart->getPath(),
+						'path' => "/".$fanart->getUploadDir()."/".$fanart->getId().$fanart->getPath(),
 						'autor' => $fanart->getAutor(),
 						'agregado' => $fanart->getAgregado()
 					),
 					'address' => $this->get('request')->server->get('HTTP_HOST')."/fanart/".$autor."/".$id."/",
-					'appId' => $this->facebookArray["appId"]
+					'appId' => $this->facebookArray["appId"],
+					'gallerySmall' => $smallGallery
 				)
 			);		
     }
