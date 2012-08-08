@@ -1,0 +1,16 @@
+{% for image in gallery %}
+	<div class="thumb">
+		<a href="http://{{ app.request.host~"/fanart"~image.dir}}">
+			<div class="zoom" style="background: url('{{ asset(image.path) | imagine_filter('side_gallery') }}') no-repeat center;">
+				<div class="zoom-normal"></div>
+				<div class="zoom-hover">
+					<div class="zoom-up"></div>
+					<div class="zoom-cuerpo">
+						<img src="{{ asset('/img/galeria/lupa.png') }}" class="lupa" />
+					</div>
+					<div class="zoom-down"></div>
+				</div>
+			</div>
+		</a>
+	</div>
+{% endfor %}

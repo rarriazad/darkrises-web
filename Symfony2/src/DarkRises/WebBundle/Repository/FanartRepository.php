@@ -3,6 +3,7 @@
 namespace DarkRises\WebBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
+use Doctrine\ORM\Tools\Pagination\Paginator;
 
 /**
  * FanartRepository
@@ -66,5 +67,36 @@ class FanartRepository extends EntityRepository
     		return "nothing";
     	else
     		return "/".strtolower(str_replace(" ", "",$result[0]->getAutor()))."/".$result[0]->getId()."/";
+    }
+    
+    public function count()
+    {
+    	$result = $this->getEntityManager()
+            ->createQuery('SELECT count(p) FROM DarkRisesWebBundle:Fanart p')
+            ->getResult();
+        
+        return $result[0][1];
+    }
+    
+    public function galleryPage($filter, $from, $amount)
+    {
+    	$dql = "select p FROM DarkRisesWebBundle:Fanart p order by p.".$filter." ASC";
+    	
+    	$result = $this->getEntityManager()
+            ->createQuery($dql)
+            ->setFirstResult($from)
+            ->setMaxResults($amount)
+        	->getResult();
+         
+        $arrayGallery = array();
+		
+		foreach($result as $s){
+			$arrayGallery[] = array(
+				'path' => "/".$s->getUploadDir()."/".$s->getId().$s->getPath(),
+				'dir' => "/".strtolower(str_replace(" ", "",$s->getAutor()))."/".$s->getId()."/"
+			);
+        }
+        
+        return $arrayGallery;
     }
 }

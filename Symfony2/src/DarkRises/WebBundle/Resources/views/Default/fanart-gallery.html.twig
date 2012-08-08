@@ -1,0 +1,317 @@
+{% extends 'DarkRisesWebBundle:Default:base.html.twig' %}
+{% block meta %}
+{% endblock %}
+{% block stylesheets %}
+	{{ parent() }}
+	<style type="text/css">
+		.thumb{
+			position: relative;
+			text-align: center;
+			width: 259px;
+			height: 195px;
+			float: left;
+		}
+		.zoom{
+			z-index: 3;
+			width: 259px;
+			height: 195px;
+			cursor: pointer;
+		}
+		.zoom-up{
+			width: 259px;
+			height: 27px;
+			background: url("{{ asset('/img/galeria/zoom-mini/up.png') }}") no-repeat top;
+		}
+		.zoom-down{
+			width: 259px;
+			height: 27px;
+			margin-right: -5px;
+			background: url("{{ asset('/img/galeria/zoom-mini/down.png') }}") no-repeat top;
+		}
+		.zoom-cuerpo{
+			width: 259px;
+			height: 141px;
+			background: url("{{ asset('/img/galeria/zoom-mini/cuerpo.png') }}") repeat-y top;
+		}
+		.lupa{
+			display: block;
+			position: absolute;
+			right: 100px;
+			top: 60px;
+		}
+		.zoom-hover{
+			display:none;
+			left: 2px;
+			position: absolute;
+			top: 1px;
+		}
+		.zoom-normal{
+			border: 5px solid #540606;
+			height: 175px;
+			left: 9px;
+			position: absolute;
+			top: 5px;
+			width: 235px;
+		}
+		.gallery{
+			width: 800px;
+			height: 600px;
+			overflow: hidden;
+			margin: auto;
+		}
+		.gallery-page-container{
+			height: 660px;
+		}
+		.gallery-slider{
+			margin-right: 0px;
+		}
+		.gallery-page{
+			width: 821px;
+			height: 660px;
+			float: left;
+		}
+		.center{
+			margin: auto;
+			display: block;
+			margin-top:300px;
+		}
+		.flechas{
+			margin: auto;
+			width:800px;
+		}
+		.flecha-izquierda{
+			-moz-transform: scaleX(-1);
+			-o-transform: scaleX(-1);
+			-webkit-transform: scaleX(-1);
+			transform: scaleX(-1);
+			filter: FlipH;
+			-ms-filter: "FlipH";
+			float: left;
+			display: block;
+		}
+		.flecha-derecha{
+			float: right;
+			display: block;
+			cursor: pointer;
+		}
+		.paginador{
+			width: 800px;
+			margin:auto;
+		}
+		.paginador-left{
+			width: 11px;
+			height: 46px;
+			float: left;
+			background: url("{{ asset('/img/galeria/paginador/fondo/borde-izquierdo.png') }}") no-repeat top;	
+		}
+		.paginador-right{
+			width: 11px;
+			height: 49px;
+			float: right;
+			background: url("{{ asset('/img/galeria/paginador/fondo/borde-derecho.png') }}") no-repeat top;	
+		}
+		.paginador-cuerpo{
+			height: 49px;
+			width: 778px;
+			background: url("{{ asset('/img/galeria/paginador/fondo/cuerpo.png') }}") repeat-x top;	
+			float: left;
+		}
+		.paginador-inside{
+			margin: 10px auto auto;
+			text-align: center;
+			width: 500px;
+		}
+		.flecha-izquierda-paginador{
+			-moz-transform: scaleX(-1);
+			-o-transform: scaleX(-1);
+			-webkit-transform: scaleX(-1);
+			transform: scaleX(-1);
+			filter: FlipH;
+			-ms-filter: "FlipH";
+			float: left;
+			display: block;
+		}
+		.flecha-derecha-paginador{
+			float: right;
+			display: block;
+			cursor: pointer;
+		}
+	</style>
+{% endblock %}
+
+ {% block body %}
+ 	<div class="h2"><div class="inside-h2">{% trans %} Ilustraciones {% endtrans %}</div></div>
+ 	<div class="flechas clear">
+		<img src="{{ asset("/img/galeria/flecha/off.png") }}" class="flecha-izquierda"/>		
+		<img src="{{ asset("/img/galeria/flecha/off.png") }}" class="flecha-derecha"/>
+	</div>
+ 	<div class="gallery clear">
+ 		<div class="gallery-page-container">
+ 			<div class="gallery-slider">
+ 			
+ 			</div>
+		</div>
+ 	</div>
+ 	<div class="paginador clear">
+ 		<div class="paginador-left"></div>
+ 		<div class="paginador-cuerpo">
+ 			<div class="paginador-inside">
+ 				<img src="{{ asset("/img/galeria/paginador/flecha/off.png") }}" class="flecha-izquierda-paginador"/>		
+				<img src="{{ asset("/img/galeria/paginador/flecha/off.png") }}" class="flecha-derecha-paginador"/>
+ 			</div>
+ 		</div>
+ 		<div class="paginador-right"></div>
+ 	</div>
+			
+ {% endblock %}
+ 
+ {% block lightboxes %}
+ 	{{ parent() }}
+
+ {% endblock %}
+ 
+ {% block hidden %}
+ 	{{ parent() }}
+ 	<img src="{{ asset('/img/galeria/flecha/over.png') }}"/>
+ {% endblock %}
+
+{% block javascript %}
+	{{ parent() }}
+	<script type="text/javascript">
+		var amount_per_page = 9;
+		var filter_per_page = "id";
+		var page_amount = Math.ceil({{ count }}/amount_per_page);
+		
+		$(document).ready(
+			function(){
+
+				/*$(".flecha-izquierda").hover(
+					function(){$(this).attr("src","{{ asset('/img/galeria/flecha/over.png') }}");},
+					function(){$(this).attr("src","{{ asset('/img/galeria/flecha/on.png') }}");}
+				);*/
+				
+				if(page_amount > 1)
+					bindRight();
+				
+				i = 0;
+				container = $(".gallery-page-container");
+				container.css("width", (821*page_amount)+"px");
+				
+				while(i < page_amount){
+					container.find(".gallery-slider").append('<div class="gallery-page gallery-page-'+i+'"></div>');
+					i++;
+				}	
+				gallery(".gallery-page-0",0, amount_per_page, filter_per_page);
+					
+			});	
+		
+		function moveGallery(pages){
+			container = $(".gallery-page-container");
+			actual = parseInt(container.find(".gallery-slider").css("margin-left").split("px")[0]) * -1;
+			move = parseInt($(".gallery").css("width").split("px")[0]);
+			total = parseInt(container.css("width").split("px")[0]);
+			margin = move*pages + actual;
+			
+			//container.animate({margin-right: margin});
+			container.find(".gallery-slider").css("margin-left", (margin * -1)+"px");
+			
+			if(margin < 1 ){
+				margin = 0;
+				unbindLeft();
+			}else if(margin > (move*(page_amount - 1) - 1)){
+				margin = (total - move);
+				unbindRight();
+			}else{
+				bindLeft();
+				bindRight();
+			}
+			
+			actualPage = Math.ceil((margin * page_amount)/(total - move)) - 1;
+			if($(".gallery-page-"+actualPage).html() == "")
+				gallery(".gallery-page-"+actualPage, actualPage);
+		}
+		
+		function unbindLeft(){
+			$(".flecha-izquierda").attr("src","{{ asset('/img/galeria/flecha/off.png') }}").unbind("click").unbind("hover").css("cursor", "");
+			$(".flecha-izquierda-paginador").attr("src","{{ asset('/img/galeria/paginador/flecha/off.png') }}").unbind("click").unbind("hover").css("cursor", "");
+		}
+		
+		function unbindRight(){
+			$(".flecha-derecha").attr("src","{{ asset('/img/galeria/flecha/off.png') }}").unbind("click").unbind("hover").css("cursor", "");
+			$(".flecha-derecha-paginador").attr("src","{{ asset('/img/galeria/paginador/flecha/off.png') }}").unbind("click").unbind("hover").css("cursor", "");
+		}
+		
+		function bindRight(){
+				$(".flecha-derecha").attr("src","{{ asset('/img/galeria/flecha/on.png') }}"
+				).unbind("click").unbind("hover").hover(
+					function(){$(this).attr("src","{{ asset('/img/galeria/flecha/over.png') }}");},
+					function(){$(this).attr("src","{{ asset('/img/galeria/flecha/on.png') }}");}
+				).click(
+					function(){moveGallery(1);}
+				).css("cursor", "pointer");
+				
+				$(".flecha-derecha-paginador").attr("src","{{ asset('/img/galeria/paginador/flecha/on.png') }}"
+				).unbind("click").unbind("hover").hover(
+					function(){$(this).attr("src","{{ asset('/img/galeria/paginador/flecha/over.png') }}");},
+					function(){$(this).attr("src","{{ asset('/img/galeria/paginador/flecha/on.png') }}");}
+				).click(
+					function(){moveGallery(1);}
+				).css("cursor", "pointer");
+		}
+		
+		function bindLeft(){
+				$(".flecha-izquierda").attr("src","{{ asset('/img/galeria/flecha/on.png') }}"
+				).unbind("click").unbind("hover").hover(
+					function(){$(this).attr("src","{{ asset('/img/galeria/flecha/over.png') }}");},
+					function(){$(this).attr("src","{{ asset('/img/galeria/flecha/on.png') }}");}
+				).click(
+					function(){moveGallery(-1);}
+				).css("cursor", "pointer");
+				
+				$(".flecha-izquierda-paginador").attr("src","{{ asset('/img/galeria/paginador/flecha/on.png') }}"
+				).unbind("click").unbind("hover").hover(
+					function(){$(this).attr("src","{{ asset('/img/galeria/paginador/flecha/over.png') }}");},
+					function(){$(this).attr("src","{{ asset('/img/galeria/paginador/flecha/on.png') }}");}
+				).click(
+					function(){moveGallery(-1);}
+				).css("cursor", "pointer");
+	
+		}
+		
+		function gallery(section, from, amount, filter){
+		
+			if(!amount)
+				amount = 9;
+			if(!filter)
+				filter = "id";
+			
+			$(".gallery .gallery-page-container .gallery-slider "+section).html('<img class="center" src="{{ asset("img/galeria/loading.gif") }}" />');
+			
+			$.ajax({
+				data : { "filter" : filter, "from": from*amount, "amount" : amount },
+				type : 'POST',
+				url : 'http://{{ app.request.host}}/gallery/',
+				dataType: 'html',
+				success: function(result){
+					$(".gallery .gallery-page-container .gallery-slider "+section).html(result);
+					
+					$(".gallery .gallery-page-container .gallery-slider "+section+" .thumb .zoom").hover(
+						function(){
+							$(this).find(".zoom-hover").show();
+							$(this).find(".zoom-normal").hide();
+						},
+						function(){
+							$(this).find(".zoom-hover").hide();
+							$(this).find(".zoom-normal").show();
+						}
+					);
+				},
+				error: function(){
+					$(".gallery .gallery-page-container ").html("Nada");
+				}
+			});
+	
+		}
+	
+	</script>
+	{% endblock %}

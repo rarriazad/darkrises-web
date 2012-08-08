@@ -268,6 +268,50 @@ class DefaultController extends Controller
 			);		
     }
     
+    public function fanartgalleryAction($filter){
+    
+    	$userInfo = $this->setFacebook();
+    
+    	$breadcrums0 = "Dark Rises";
+    	$breadcrums1 = "Fan Art";
+    
+    	$repository = $this->getDoctrine()->getRepository('DarkRisesWebBundle:Fanart');
+    	$count = $repository->count();
+    	
+    	return $this->render('DarkRisesWebBundle:Default:fanart-gallery.html.twig', 
+				array(
+					'facebook' => $userInfo, 
+					'breadcrums' => array( 
+						0 => array('crum' => $breadcrums0, 'address' => "/" ),
+						1 => array('crum' => $breadcrums1, 'address' => "/fanart/" )
+					),
+					'count' => $count
+				)
+			);
+    }
+    
+    public function galleryAction(Request $request){
+    	
+    	if (!$request->isXmlHttpRequest()) {// isn't it an Ajax request?
+            return new Response('', 404,
+                            array('Content-Type' => 'application/json'));
+        }
+        
+        $filter = $request->request->get('filter');
+        $from = $request->request->get('from');
+        $amount = $request->request->get('amount');
+        
+        $repository = $this->getDoctrine()->getRepository('DarkRisesWebBundle:Fanart');
+    	$gallery = $repository->galleryPage($filter, $from, $amount);
+    	
+    	return $this->render('DarkRisesWebBundle:Default:fanart-gallery-page.html.twig', 
+    			array(
+    				'gallery' => $gallery 
+    			)
+    		);
+    	
+    }
+    
     private function setFacebook(){
     	$facebook = new \Facebook($this->facebookArray);
 		

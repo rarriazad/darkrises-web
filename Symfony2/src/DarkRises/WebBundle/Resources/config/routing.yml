@@ -1,6 +1,9 @@
 DarkRisesWebBundle_counterpage:
     pattern:  /register/
     defaults: { _controller: DarkRisesWebBundle:Default:register}
+DarkRisesWebBundle_gallerypage:
+    pattern:  /gallery/
+    defaults: { _controller: DarkRisesWebBundle:Default:gallery}
 DarkRisesWebBundle_adminfanartpage:
     pattern:  /admin/fanart/
     defaults: { _controller: DarkRisesWebBundle:Admin:uploadFanart}
@@ -10,6 +13,16 @@ DarkRisesWebBundle_adminfanartuploadpage:
 DarkRisesWebBundle_localefanartpersonalpage:
     pattern:  /{_locale}/fanart/{autor}/{id}/
     defaults: { _controller: DarkRisesWebBundle:Default:fanartpersonal, autor: "empty", _locale: es, id: "empty" }
+    requirements:
+        _locale: en|es
+DarkRisesWebBundle_localefanartgalleryfilterpage:
+    pattern:  /{_locale}/fanart/{filter}/
+    defaults: { _controller: DarkRisesWebBundle:Default:fanartgallery, filter: "id", _locale: es}
+    requirements:
+        _locale: en|es
+DarkRisesWebBundle_localefanartgallerypage:
+    pattern:  /{_locale}/fanart/
+    defaults: { _controller: DarkRisesWebBundle:Default:fanartgallery, filter: "empty", _locale: es}
     requirements:
         _locale: en|es
 DarkRisesWebBundle_localesecondhomepage:
@@ -30,6 +43,12 @@ DarkRisesWebBundle_localeindexpage:
 DarkRisesWebBundle_fanartpersonalpage:
     pattern:  /fanart/{autor}/{id}/
     defaults: { _controller: DarkRisesWebBundle:Default:fanartpersonal, autor: "empty", id: "empty" }
+DarkRisesWebBundle_fanartgalleryfilterpage:
+    pattern:  /fanart/{filter}/
+    defaults: { _controller: DarkRisesWebBundle:Default:fanartgallery, filter: "empty"}
+DarkRisesWebBundle_fanartgallerypage:
+    pattern:  /fanart/
+    defaults: { _controller: DarkRisesWebBundle:Default:fanartgallery, filter: "empty"}
 DarkRisesWebBundle_secondhomepage:
     pattern:  /{name}/{second}/
     defaults: { _controller: DarkRisesWebBundle:Default:index, name: "empty", second: "empty" }
