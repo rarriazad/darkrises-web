@@ -25,11 +25,7 @@ class AdminController extends Controller
         
 			$form->bindRequest($this->getRequest());
 			$em = $this->getDoctrine()->getEntityManager();
-			
-			//$fanart->upload();
-			error_log("preupload");
 			$em->persist($fanart);
-			error_log("upload");
 			$em->flush();
 		}
         

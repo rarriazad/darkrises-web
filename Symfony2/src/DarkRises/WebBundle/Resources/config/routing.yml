@@ -4,6 +4,9 @@ DarkRisesWebBundle_counterpage:
 DarkRisesWebBundle_gallerypage:
     pattern:  /gallery/
     defaults: { _controller: DarkRisesWebBundle:Default:gallery}
+DarkRisesWebBundle_sendfanartpage:
+    pattern:  /sendFanart/
+    defaults: { _controller: DarkRisesWebBundle:Default:sendfanart}
 DarkRisesWebBundle_adminfanartpage:
     pattern:  /admin/fanart/
     defaults: { _controller: DarkRisesWebBundle:Admin:uploadFanart}

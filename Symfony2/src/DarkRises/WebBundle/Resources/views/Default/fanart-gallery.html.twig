@@ -64,11 +64,17 @@
 		}
 		.gallery-slider{
 			margin-right: 0px;
+			border: 0;
+			margin: 0;
+			padding: 0;
 		}
 		.gallery-page{
-			width: 821px;
-			height: 660px;
+			width: 800px;
+			height: 600px;
 			float: left;
+			border: 0;
+			margin: 0;
+			padding: 0;
 		}
 		.center{
 			margin: auto;
@@ -119,7 +125,7 @@
 		.paginador-inside{
 			margin: 10px auto auto;
 			text-align: center;
-			width: 500px;
+			width: auto;
 		}
 		.flecha-izquierda-paginador{
 			-moz-transform: scaleX(-1);
@@ -132,15 +138,71 @@
 			display: block;
 		}
 		.flecha-derecha-paginador{
-			float: right;
+			float: left;
 			display: block;
 			cursor: pointer;
+		}
+		.flecha-izquierda-jump{
+			-moz-transform: scaleX(-1);
+			-o-transform: scaleX(-1);
+			-webkit-transform: scaleX(-1);
+			transform: scaleX(-1);
+			filter: FlipH;
+			-ms-filter: "FlipH";
+			float: left;
+			display: block;
+		}
+		.flecha-derecha-jump{
+			float: left;
+			display: block;
+			cursor: pointer;
+		}
+		.popup-enviar-click{
+			color: #eb452b;
+		}
+		.number-page{
+			background: url("{{ asset("img/galeria/actual-page.png") }}") no-repeat center;
+			width: 47px;
+			height: 28px;
+			display: block;
+			float: left;
+			margin-top: -2px;
+		}
+		.number-page input{
+			border: none;
+			background: transparent;
+			width: 37px;
+			height: 18px;
+			display: block;
+			margin: 5px auto auto;
+			font-family: copperplate, serif;
+			text-align: center;
+		}
+		.page-count{
+			font-family: copperplate, serif;
+			width: 37px;
+			height: 18px;
+			float: left;
+		}
+		.ir-page{
+			float:left;
 		}
 	</style>
 {% endblock %}
 
  {% block body %}
  	<div class="h2"><div class="inside-h2">{% trans %} Ilustraciones {% endtrans %}</div></div>
+ 	<div class="clear">
+		<p>{% trans %} Ueyotl está dispuesto a repartir algunas recompensas si Uds. envían retratos hablados de las criaturas que han visto deambulando por la ciudad. {% endtrans %} </p>
+	
+		<p>{% trans %}Desde que se abrió el portal, los avistamientos han sido más frecuentes y requerimos de tu ayuda para poder documentar y catalogar a todos estos seres sobrenaturales que han aparecido.{% endtrans %} </p>
+	
+		<p>{% trans %}Si te has encontrado con algún ser sobrenatural, por favor envíanos tu imagen.{% endtrans %} </p>
+	
+		<p>{% trans %}Investigaremos y recompensaremos a las imágenes que nos lleve a algún resultado favorable.{% endtrans %} </p>
+	
+		<p>{% trans %}Para enviar tu ilustración, por favor visite {% endtrans %} <a href="http://{{ app.request.host}}/sendFanart" class="popup-enviar-click"> {% trans %} aqui {% endtrans %} </a> </p>
+	</div>
  	<div class="flechas clear">
 		<img src="{{ asset("/img/galeria/flecha/off.png") }}" class="flecha-izquierda"/>		
 		<img src="{{ asset("/img/galeria/flecha/off.png") }}" class="flecha-derecha"/>
@@ -156,8 +218,13 @@
  		<div class="paginador-left"></div>
  		<div class="paginador-cuerpo">
  			<div class="paginador-inside">
- 				<img src="{{ asset("/img/galeria/paginador/flecha/off.png") }}" class="flecha-izquierda-paginador"/>		
+ 				<img src="{{ asset("/img/galeria/paginador/jump/off.png") }}" class="flecha-izquierda-jump"/>
+ 				<img src="{{ asset("/img/galeria/paginador/flecha/off.png") }}" class="flecha-izquierda-paginador"/>
+ 				<div class="number-page"><input size="2" type="text" value="1"/></div>
+ 				<div class="page-count"></div>
+ 				<img src="{{ asset("/img/galeria/paginador/ir/off.png") }}" class="ir-page"/>
 				<img src="{{ asset("/img/galeria/paginador/flecha/off.png") }}" class="flecha-derecha-paginador"/>
+				<img src="{{ asset("/img/galeria/paginador/jump/off.png") }}" class="flecha-derecha-jump"/>
  			</div>
  		</div>
  		<div class="paginador-right"></div>
@@ -167,7 +234,6 @@
  
  {% block lightboxes %}
  	{{ parent() }}
-
  {% endblock %}
  
  {% block hidden %}
@@ -181,64 +247,100 @@
 		var amount_per_page = 9;
 		var filter_per_page = "id";
 		var page_amount = Math.ceil({{ count }}/amount_per_page);
+		var actual_page = 0;
 		
 		$(document).ready(
 			function(){
-
-				/*$(".flecha-izquierda").hover(
-					function(){$(this).attr("src","{{ asset('/img/galeria/flecha/over.png') }}");},
-					function(){$(this).attr("src","{{ asset('/img/galeria/flecha/on.png') }}");}
-				);*/
 				
 				if(page_amount > 1)
 					bindRight();
 				
 				i = 0;
 				container = $(".gallery-page-container");
-				container.css("width", (821*page_amount)+"px");
 				
 				while(i < page_amount){
 					container.find(".gallery-slider").append('<div class="gallery-page gallery-page-'+i+'"></div>');
 					i++;
 				}	
 				gallery(".gallery-page-0",0, amount_per_page, filter_per_page);
-					
-			});	
+				$(".page-count").html("/ "+page_amount);
+				$(".number-page input").val(actual_page + 1);
+				
+				if(page_amount > 1){
+					$(".ir-page").attr("src", "{{ asset('/img/galeria/paginador/ir/on.png') }}")
+						.hover(
+							function(){$(this).attr("src","{{ asset('/img/galeria/paginador/ir/over.png') }}");},
+							function(){$(this).attr("src","{{ asset('/img/galeria/paginador/ir/on.png') }}");}
+						).click(
+							function(){
+								valor = parseInt($(".number-page input").val()) - 1;
+								if((valor + 1) > page_amount){
+									valor = page_amount;
+									$(".number-page input").val(page_amount);
+								}
+								
+								if(valor < actual_page)
+									moveGallery(valor - actual_page - 1);
+								else if(valor != actual_page)
+									moveGallery(valor - actual_page);
+							}
+						);
+				}
+				container.css("width", (parseInt($(".gallery-page").css("width").split("px")[0])*page_amount)+"px");
+				$(".paginador-inside").css("width", ($(".flecha-izquierda-jump").width() + 
+													$(".flecha-derecha-jump").width() + 
+													$(".flecha-izquierda-paginador").width() +
+													$(".flecha-derecha-paginador").width() +
+													$(".number-page").width() +
+													$(".page-count").width() +
+													$(".ir-page").width()) +
+													"px");
+			}
+		);	
 		
 		function moveGallery(pages){
 			container = $(".gallery-page-container");
 			actual = parseInt(container.find(".gallery-slider").css("margin-left").split("px")[0]) * -1;
-			move = parseInt($(".gallery").css("width").split("px")[0]);
+			move = parseInt($(".gallery-page").css("width").split("px")[0]);
 			total = parseInt(container.css("width").split("px")[0]);
-			margin = move*pages + actual;
+			margin_move = (move*pages) + actual;
 			
 			//container.animate({margin-right: margin});
-			container.find(".gallery-slider").css("margin-left", (margin * -1)+"px");
 			
-			if(margin < 1 ){
-				margin = 0;
+			if(margin_move < 1 ){
+				margin_move = 0;
 				unbindLeft();
-			}else if(margin > (move*(page_amount - 1) - 1)){
-				margin = (total - move);
+				bindRight();
+				actual_page = 0;
+			}else if(margin_move > (move*(page_amount - 1) - 1)){
+				margin_move = total - move;
 				unbindRight();
+				bindLeft();
+				actual_page = page_amount - 1;
 			}else{
 				bindLeft();
 				bindRight();
+				actual_page = actual_page + pages;
 			}
 			
-			actualPage = Math.ceil((margin * page_amount)/(total - move)) - 1;
-			if($(".gallery-page-"+actualPage).html() == "")
-				gallery(".gallery-page-"+actualPage, actualPage);
+			container.find(".gallery-slider").css("margin-left", (margin_move * -1)+"px");
+			
+			
+			$(".number-page input").val(actual_page + 1);
+			if($(".gallery-page-"+actual_page).html() == "")
+				gallery(".gallery-page-"+actual_page, actual_page);
 		}
 		
 		function unbindLeft(){
 			$(".flecha-izquierda").attr("src","{{ asset('/img/galeria/flecha/off.png') }}").unbind("click").unbind("hover").css("cursor", "");
 			$(".flecha-izquierda-paginador").attr("src","{{ asset('/img/galeria/paginador/flecha/off.png') }}").unbind("click").unbind("hover").css("cursor", "");
+			$(".flecha-izquierda-jump").attr("src","{{ asset('/img/galeria/paginador/jump/off.png') }}").unbind("click").unbind("hover").css("cursor", "");
 		}
 		
 		function unbindRight(){
 			$(".flecha-derecha").attr("src","{{ asset('/img/galeria/flecha/off.png') }}").unbind("click").unbind("hover").css("cursor", "");
 			$(".flecha-derecha-paginador").attr("src","{{ asset('/img/galeria/paginador/flecha/off.png') }}").unbind("click").unbind("hover").css("cursor", "");
+			$(".flecha-derecha-jump").attr("src","{{ asset('/img/galeria/paginador/jump/off.png') }}").unbind("click").unbind("hover").css("cursor", "");
 		}
 		
 		function bindRight(){
@@ -256,6 +358,14 @@
 					function(){$(this).attr("src","{{ asset('/img/galeria/paginador/flecha/on.png') }}");}
 				).click(
 					function(){moveGallery(1);}
+				).css("cursor", "pointer");
+				
+				$(".flecha-derecha-jump").attr("src","{{ asset('/img/galeria/paginador/jump/on.png') }}"
+				).unbind("click").unbind("hover").hover(
+					function(){$(this).attr("src","{{ asset('/img/galeria/paginador/jump/over.png') }}");},
+					function(){$(this).attr("src","{{ asset('/img/galeria/paginador/jump/on.png') }}");}
+				).click(
+					function(){moveGallery(page_amount);}
 				).css("cursor", "pointer");
 		}
 		
@@ -275,7 +385,14 @@
 				).click(
 					function(){moveGallery(-1);}
 				).css("cursor", "pointer");
-	
+				
+				$(".flecha-izquierda-jump").attr("src","{{ asset('/img/galeria/paginador/jump/on.png') }}"
+				).unbind("click").unbind("hover").hover(
+					function(){$(this).attr("src","{{ asset('/img/galeria/paginador/jump/over.png') }}");},
+					function(){$(this).attr("src","{{ asset('/img/galeria/paginador/jump/on.png') }}");}
+				).click(
+					function(){moveGallery((page_amount * -1));}
+				).css("cursor", "pointer");
 		}
 		
 		function gallery(section, from, amount, filter){

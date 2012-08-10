@@ -1,0 +1,8 @@
+{% extends 'DarkRisesWebBundle:Default:base.html.twig' %}
+{% block body %}
+<form action='http://{{ app.request.host}}/sendFanart/' class="upload-fanart" method="post" {{ form_enctype(form) }}>
+    {{ form_widget(form) }}
+
+    <input type="submit" />
+</form>
+{% endblock %}

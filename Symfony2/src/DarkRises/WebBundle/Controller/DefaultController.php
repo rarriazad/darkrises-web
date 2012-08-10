@@ -312,6 +312,51 @@ class DefaultController extends Controller
     	
     }
     
+    public function sendfanartAction(Request $request){
+        
+        $userInfo = $this->setFacebook();
+    
+    	$breadcrums0 = "Dark Rises";
+    	$breadcrums1 = "Fan Art";
+    	$breadcrums2 = "Enviar Fan Art";
+    	
+        $defaultData = array('Comentarios' => 'Type your message here');
+   		
+   		$form = $this->createFormBuilder($defaultData)
+        ->add('Nombre', 'text')
+        ->add('E-Mail', 'email')
+        ->add('Imagen','file')
+        ->add('Comentarios', 'textarea')
+        ->getForm();
+
+        if ($request->getMethod() == 'POST') {
+            $form->bindRequest($request);
+			
+            $data = $form->getData();
+            
+            $message = \Swift_Message::newInstance()
+            	->setSubject('FanArt')
+            	->setTo(array('darkrisesfanart1@gmail.com'))
+            	->setFrom(array($data["E-Mail"] => $data["Nombre"]))
+            	->setBody('Autor:'.$data["Nombre"]."</br> Comentarios:".$data["Comentarios"])
+ 				->attach(\Swift_Attachment::fromPath($data["Imagen"]->getPathName() , $data["Imagen"]->getMimeType()));
+
+			$this->get('mailer')->send($message);
+        }
+        
+    	
+    	return $this->render('DarkRisesWebBundle:Default:send-fanart.html.twig', array(
+            'form' => $form->createView(),
+            'facebook' => $userInfo, 
+			'breadcrums' => array( 
+				0 => array('crum' => $breadcrums0, 'address' => "/" ),
+				1 => array('crum' => $breadcrums1, 'address' => "/fanart/" ),
+				2 => array('crum' => $breadcrums2, 'address' => "/sendFanart/" )
+			)
+        ));
+    	
+    }
+    
     private function setFacebook(){
     	$facebook = new \Facebook($this->facebookArray);
 		
