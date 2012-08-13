@@ -10,6 +10,10 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Cookie;
+use Symfony\Component\Validator\Constraints\Email;
+use Symfony\Component\Validator\Constraints\NotBlank;
+use Symfony\Component\Validator\Constraints\Image;
+use Symfony\Component\Validator\Constraints\Collection;
 
 include_once __DIR__.'/../Facebook/facebook.php';
 
@@ -321,27 +325,47 @@ class DefaultController extends Controller
     	$breadcrums2 = "Enviar Fan Art";
     	
         $defaultData = array('Comentarios' => 'Type your message here');
+        
+        $collectionConstraint = new Collection(array(
+			'Nombre' => new NotBlank(array('message' => 'Nombre no puede ser vacío' )),
+			'E-Mail' => new Email(array('message' => 'Dirección de E-Mail no Válida')),
+			'E-Mail' => new NotBlank(array('message' => 'E-Mail no puede ser vacío')),
+			'Imagen' => new Image(array('message' => 'La imagen debe ser formato .jpg, .png o .gif y menos de 25 Mgs')),
+			'Imagen' => new NotBlank(array('message' => 'Imagen no puede ser vacío'))
+		));
    		
-   		$form = $this->createFormBuilder($defaultData)
+   		$form = $this->createFormBuilder($defaultData, array('validation_constraint' => $collectionConstraint))
         ->add('Nombre', 'text')
         ->add('E-Mail', 'email')
         ->add('Imagen','file')
         ->add('Comentarios', 'textarea')
         ->getForm();
-
+ 
+ 		$errorMessage = "";
+ 		
         if ($request->getMethod() == 'POST') {
+            
+            $validateImage = new Image(array('message' => 'La imagen debe ser formato .jpg, .png o .gif y menos de 25 Mgs'));
             $form->bindRequest($request);
 			
             $data = $form->getData();
             
-            $message = \Swift_Message::newInstance()
-            	->setSubject('FanArt')
-            	->setTo(array('darkrisesfanart1@gmail.com'))
-            	->setFrom(array($data["E-Mail"] => $data["Nombre"]))
-            	->setBody('Autor:'.$data["Nombre"]."</br> Comentarios:".$data["Comentarios"])
- 				->attach(\Swift_Attachment::fromPath($data["Imagen"]->getPathName() , $data["Imagen"]->getMimeType()));
+            $errorList = $this->get('validator')->validateValue($data["Imagen"], $validateImage);
 
-			$this->get('mailer')->send($message);
+    		if (count($errorList) == 0) {
+				$message = \Swift_Message::newInstance()
+						->setSubject('FanArt')
+						->setTo(array('darkrisesfanart1@gmail.com'))
+						->setFrom(array($data["E-Mail"] => $data["Nombre"]))
+						->setBody('Autor:'.$data["Nombre"]."</br> Comentarios:".$data["Comentarios"])
+						->attach(\Swift_Attachment::fromPath($data["Imagen"]->getPathName() , $data["Imagen"]->getMimeType()));
+		
+					$this->get('mailer')->send($message);
+			} else {
+				$errorMessage = $errorList[0]->getMessage();
+			}
+            
+            
         }
         
     	
@@ -352,7 +376,8 @@ class DefaultController extends Controller
 				0 => array('crum' => $breadcrums0, 'address' => "/" ),
 				1 => array('crum' => $breadcrums1, 'address' => "/fanart/" ),
 				2 => array('crum' => $breadcrums2, 'address' => "/sendFanart/" )
-			)
+			),
+			'error' => $errorMessage
         ));
     	
     }

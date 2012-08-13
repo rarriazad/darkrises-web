@@ -21,6 +21,7 @@ class Fanart
 
 	/**
      * @ORM\Column(type="string",length=200)
+     * @Assert\NotBlank()
      */
 	protected $autor;
 	
@@ -33,6 +34,8 @@ class Fanart
 	
     /**
      * @ORM\Column(type="string",length=500)
+     * @Assert\Image()
+     * @Assert\NotBlank()
      */
 	protected $path;
 

@@ -1,5 +1,9 @@
-<form action="/admin/fanart/" class="upload-fanart" method="post" {{ form_enctype(form) }}>
+{% extends 'DarkRisesWebBundle:Admin:base.html.twig' %}
+{% block body %}
+<h2> Subir Nueva Imagen </h2>
+<form action="http://{{ app.request.host}}/admin/fanart/upload/" class="upload-fanart" method="post" {{ form_enctype(form) }}>
     {{ form_widget(form) }}
 
     <input type="submit" />
 </form>
+{% endblock %}

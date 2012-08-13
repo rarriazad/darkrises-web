@@ -1,0 +1,32 @@
+<!Doctype html>
+	<head>
+		<title>Dark Rises WebPage - Admin</title>
+		<style>
+			#menu{
+				width: 35%;
+				float: left;
+			}
+			#cuerpo{
+				float: left;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="title">
+			<h1> Dark Rises WebPage - Admin </h1>
+		</div>
+		<div id="menu">
+			<ul>
+				<li>Fan Art
+					<ul> 
+						<li><a href="http://{{ app.request.host}}/admin/fanart/upload/">Upload</a></li>
+						<li><a href="http://{{ app.request.host}}/admin/fanart/edit/">Edit </a></li>
+					</ul>
+				</li>
+			</ul>
+		</div>
+		<div id="cuerpo">
+			{% block body %}
+			{% endblock %}
+		</div>
+	</body>

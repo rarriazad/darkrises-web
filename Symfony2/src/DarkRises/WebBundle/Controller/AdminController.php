@@ -24,13 +24,22 @@ class AdminController extends Controller
         if ($this->getRequest()->getMethod() === 'POST') {
         
 			$form->bindRequest($this->getRequest());
-			$em = $this->getDoctrine()->getEntityManager();
-			$em->persist($fanart);
-			$em->flush();
+			
+			if ($form->isValid()) {
+				$em = $this->getDoctrine()->getEntityManager();
+				$em->persist($fanart);
+				$em->flush();
+			} 
+			
 		}
         
         return $this->render('DarkRisesWebBundle:Admin:upload.html.twig', array(
             'form' => $form->createView()
         ));
+    }
+    
+    public function mainAction()
+    {
+    	return $this->render('DarkRisesWebBundle:Admin:base.html.twig');	
     }
 }

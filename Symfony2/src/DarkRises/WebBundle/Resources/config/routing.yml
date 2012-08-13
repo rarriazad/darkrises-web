@@ -7,12 +7,12 @@ DarkRisesWebBundle_gallerypage:
 DarkRisesWebBundle_sendfanartpage:
     pattern:  /sendFanart/
     defaults: { _controller: DarkRisesWebBundle:Default:sendfanart}
-DarkRisesWebBundle_adminfanartpage:
-    pattern:  /admin/fanart/
-    defaults: { _controller: DarkRisesWebBundle:Admin:uploadFanart}
 DarkRisesWebBundle_adminfanartuploadpage:
     pattern:  /admin/fanart/upload/
-    defaults: { _controller: DarkRisesWebBundle:Admin:uploadFanartNow}
+    defaults: { _controller: DarkRisesWebBundle:Admin:uploadFanart}
+DarkRisesWebBundle_adminmainpage:
+    pattern: /admin/
+    defaults: { _controller: DarkRisesWebBundle:Admin:main}
 DarkRisesWebBundle_localefanartpersonalpage:
     pattern:  /{_locale}/fanart/{autor}/{id}/
     defaults: { _controller: DarkRisesWebBundle:Default:fanartpersonal, autor: "empty", _locale: es, id: "empty" }
