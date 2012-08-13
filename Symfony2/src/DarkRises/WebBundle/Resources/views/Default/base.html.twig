@@ -55,7 +55,15 @@
 			<div class="foot yellow">
 			{% trans %} Dark Rises y todas las imagenes asociadas con Dark Rises son propiedad de © Copyright 2012 Last Seal S A. Todos los Derechos Reservados {% endtrans %}
 			</div>
-			<img src="{{ asset("img/credits.png") }}" class="credits" />
+			<img src="{{ asset("img/credits.png") }}" class="credits" id="credits" usemap="#credits"/>
+			<map id="_credits" name="credits">
+				<area shape="rect" target="_blank" coords="10,37,160,96" href="http://www.corfo.cl/" alt="CORFO" title="CORFO"    />
+				<area shape="rect" target="_blank" coords="187,25,263,96" href="http://www.gobiernodechile.cl/" alt="Gobierno de Chile" title="Gobierno de Chile"    />
+				<area shape="rect" target="_blank" coords="288,37,432,96" href="http://www.lastseal.com/" alt="Last Seal" title="Last Seal"    />
+				<area shape="rect" target="_blank" coords="472,34,589,93" href="http://www.usm.cl/" alt="Universidad Técnica Federico Santa María" title="Universidad Técnica Federico Santa María"    />
+				<area shape="rect" target="_blank" coords="618,29,739,95" href="http://www.3ie.cl/" alt="Instituto Internacional para la Innovación Empresarial" title="Instituto Internacional para la Innovación Empresarial"    />
+				<area shape="rect" target="_blank" coords="764,99,766,101" href="http://www.image-maps.com/index.php?aff=mapped_users_6201208131120509" alt="Image Map" title="Image Map" />
+			</map>
 			{% endblock %}
 		</div>
 		{% endblock %}
