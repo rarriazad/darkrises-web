@@ -329,9 +329,7 @@ class DefaultController extends Controller
         $collectionConstraint = new Collection(array(
 			'Nombre' => new NotBlank(array('message' => 'Nombre no puede ser vacío' )),
 			'E-Mail' => new Email(array('message' => 'Dirección de E-Mail no Válida')),
-			'E-Mail' => new NotBlank(array('message' => 'E-Mail no puede ser vacío')),
-			'Imagen' => new Image(array('message' => 'La imagen debe ser formato .jpg, .png o .gif y menos de 25 Mgs')),
-			'Imagen' => new NotBlank(array('message' => 'Imagen no puede ser vacío'))
+			'Imagen' => new Image()//array('message' => 'La imagen debe ser formato .jpg, .png o .gif y menos de 25 Mgs')),
 		));
    		
    		$form = $this->createFormBuilder($defaultData, array('validation_constraint' => $collectionConstraint))
@@ -345,7 +343,7 @@ class DefaultController extends Controller
  		
         if ($request->getMethod() == 'POST') {
             
-            $validateImage = new Image(array('message' => 'La imagen debe ser formato .jpg, .png o .gif y menos de 25 Mgs'));
+            $validateImage = new Image();
             $form->bindRequest($request);
 			
             $data = $form->getData();
@@ -354,31 +352,28 @@ class DefaultController extends Controller
 
     		if (count($errorList) == 0) {
 				$message = \Swift_Message::newInstance()
-						->setSubject('FanArt')
-						->setTo(array('darkrisesfanart1@gmail.com'))
-						->setFrom(array($data["E-Mail"] => $data["Nombre"]))
-						->setBody('Autor:'.$data["Nombre"]."</br> Comentarios:".$data["Comentarios"])
-						->attach(\Swift_Attachment::fromPath($data["Imagen"]->getPathName() , $data["Imagen"]->getMimeType()));
-		
-					$this->get('mailer')->send($message);
-			} else {
-				$errorMessage = $errorList[0]->getMessage();
-			}
-            
-            
+					->setSubject('FanArt')
+					->setTo(array('darkrisesfanart1@gmail.com'))
+					->setFrom(array($data["E-Mail"] => $data["Nombre"]))
+					->setBody('Autor:'.$data["Nombre"]."</br> Comentarios:".$data["Comentarios"])
+					->attach(\Swift_Attachment::fromPath($data["Imagen"]->getPathName() , $data["Imagen"]->getMimeType()));
+	
+				$this->get('mailer')->send($message);
+			} 
         }
         
     	
-    	return $this->render('DarkRisesWebBundle:Default:send-fanart.html.twig', array(
-            'form' => $form->createView(),
-            'facebook' => $userInfo, 
-			'breadcrums' => array( 
-				0 => array('crum' => $breadcrums0, 'address' => "/" ),
-				1 => array('crum' => $breadcrums1, 'address' => "/fanart/" ),
-				2 => array('crum' => $breadcrums2, 'address' => "/sendFanart/" )
-			),
-			'error' => $errorMessage
-        ));
+    	return $this->render('DarkRisesWebBundle:Default:send-fanart.html.twig',
+    		array(
+				'form' => $form->createView(),
+				'facebook' => $userInfo, 
+				'breadcrums' => array( 
+					0 => array('crum' => $breadcrums0, 'address' => "/" ),
+					1 => array('crum' => $breadcrums1, 'address' => "/fanart/" ),
+					2 => array('crum' => $breadcrums2, 'address' => "/sendFanart/" )
+				)
+			)
+		);
     	
     }
     
