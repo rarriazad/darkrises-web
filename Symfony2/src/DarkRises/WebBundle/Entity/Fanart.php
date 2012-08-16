@@ -35,7 +35,6 @@ class Fanart
     /**
      * @ORM\Column(type="string",length=500)
      * @Assert\Image()
-     * @Assert\NotBlank()
      */
 	protected $path;
 
@@ -76,7 +75,7 @@ class Fanart
     public function preUpload()
     {
         if (null !== $this->file) {
-            $this->path = str_replace(" ", "",$this->id.$this->autor).str_replace(" ", "", $this->file->getClientOriginalName());
+            $this->path = str_replace(" ", "",$this->autor).str_replace(" ", "", $this->file->getClientOriginalName());
         }
     }
 

@@ -1,32 +1,40 @@
 <!Doctype html>
 	<head>
 		<title>Dark Rises WebPage - Admin</title>
+		<link href="{{ asset("css/oocss/template.css") }}" media="all" type="text/css" rel="stylesheet">
+		<link href="{{ asset("css/oocss/grids.css") }}" media="all" type="text/css" rel="stylesheet">
 		<style>
-			#menu{
-				width: 35%;
+		{% block css %}
+			.edit-block{
 				float: left;
+				display: block;
 			}
-			#cuerpo{
-				float: left;
+			.edit-block-image{
+				float: left
 			}
+		{% endblock %}
 		</style>
 	</head>
 	<body>
-		<div id="title">
-			<h1> Dark Rises WebPage - Admin </h1>
-		</div>
-		<div id="menu">
-			<ul>
-				<li>Fan Art
-					<ul> 
-						<li><a href="http://{{ app.request.host}}/admin/fanart/upload/">Upload</a></li>
-						<li><a href="http://{{ app.request.host}}/admin/fanart/edit/">Edit </a></li>
+		<div class="page">
+			<div class="head" id="title">
+				<h1> Dark Rises WebPage - Admin </h1>
+			</div>
+			<div id="body" class="body">
+				<div id="menu" class="leftCol">
+					<ul>
+						<li>Fan Art
+							<ul> 
+								<li><a href="http://{{ app.request.host}}/admin/fanart/upload/">Upload</a></li>
+								<li><a href="http://{{ app.request.host}}/admin/fanart/list/">Edit </a></li>
+							</ul>
+						</li>
 					</ul>
-				</li>
-			</ul>
-		</div>
-		<div id="cuerpo">
-			{% block body %}
-			{% endblock %}
+				</div>
+				<div id="cuerpo" class="main">
+					{% block body %}
+					{% endblock %}
+				</div>
+			</div>
 		</div>
 	</body>

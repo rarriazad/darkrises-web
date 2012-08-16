@@ -1,0 +1,36 @@
+{% extends 'DarkRisesWebBundle:Admin:base.html.twig' %}
+{% block css %}
+	{{ parent () }}
+	.unit{
+		margin: 10px;
+		border: 1px solid;
+		height: auto;
+		width: 95%;
+	}
+{% endblock %}
+{% block body %}
+<h2> Lista de Imágenes </h2>
+<div class="line">
+	{% for item in list %}	
+			<div class="unit">
+				<ul class="edit-block size1of2">
+					<li>Autor: {{ item.autor }}</li>
+					<li>Fecha: {{ item.agregado|date("m/d/Y h:s") }}</li>
+					<li>
+						<a href="http://{{ app.request.host~"/admin/fanart/edit/"~item.id~"/" }}">
+							Edit
+						</a>
+						/
+						<a href="http://{{ app.request.host~"/admin/fanart/delete/"~item.id~"/" }}">
+							Borrar
+						</a>
+					</li>
+				</ul>
+				<a href="asset(uploadDir~'/'~item.id~item.path)" target=_blank>
+					<img class="edit-block-image" src="{{ asset(uploadDir~'/'~item.id~item.path) | imagine_filter('side_gallery') }}" />
+				</a>
+			</ul>
+		</div>
+	{% endfor %}
+</div>
+{% endblock %}

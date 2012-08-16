@@ -99,4 +99,5 @@ class FanartRepository extends EntityRepository
         
         return $arrayGallery;
     }
+    
 }

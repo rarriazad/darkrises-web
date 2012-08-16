@@ -10,6 +10,15 @@ DarkRisesWebBundle_sendfanartpage:
 DarkRisesWebBundle_adminfanartuploadpage:
     pattern:  /admin/fanart/upload/
     defaults: { _controller: DarkRisesWebBundle:Admin:uploadFanart}
+DarkRisesWebBundle_adminfanartlistpage:
+    pattern:  /admin/fanart/list/
+    defaults: { _controller: DarkRisesWebBundle:Admin:listFanart}
+DarkRisesWebBundle_adminfanartdeletepage:
+    pattern:  /admin/fanart/delete/{id}/
+    defaults: { _controller: DarkRisesWebBundle:Admin:deleteFanart, id: "empty"}
+DarkRisesWebBundle_adminfanarteditpage:
+    pattern:  /admin/fanart/edit/{id}/
+    defaults: { _controller: DarkRisesWebBundle:Admin:editFanart, id: "empty"}
 DarkRisesWebBundle_adminmainpage:
     pattern: /admin/
     defaults: { _controller: DarkRisesWebBundle:Admin:main}

@@ -1,9 +1,16 @@
 {% extends 'DarkRisesWebBundle:Admin:base.html.twig' %}
 {% block body %}
 <h2> Subir Nueva Imagen </h2>
-<form action="http://{{ app.request.host}}/admin/fanart/upload/" class="upload-fanart" method="post" {{ form_enctype(form) }}>
+{% if upload == 'edit' %}
+<form name="form" action="http://{{ app.request.host}}/admin/fanart/{{ upload }}/{{ id }}/" class="upload-fanart" method="post" {{ form_enctype(form) }}>
+{% else %}
+<form name="form" action="http://{{ app.request.host}}/admin/fanart/{{ upload }}/" class="upload-fanart" method="post" {{ form_enctype(form) }}>
+{% endif %}
     {{ form_widget(form) }}
 
     <input type="submit" />
 </form>
+{% if upload == 'edit' %}
+	<img src={{ asset(fanart)  | imagine_filter('principal') }} class="imagen-completa"/>
+{% endif %}
 {% endblock %}
